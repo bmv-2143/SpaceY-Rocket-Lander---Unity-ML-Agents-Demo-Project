@@ -1,0 +1,140 @@
+
+# ------------------------------------------------------------------------------
+#                                 Unity and IDEs
+# ------------------------------------------------------------------------------
+# Based on "The complete guide to Unity & Git":
+# http://www.gamasutra.com/blogs/TimPettersen/20161206/286981/The_complete_guide_to_Unity__Git.php
+
+# Unity
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/Assets/AssetStoreTools*
+sysinfo.txt
+*.pidb.meta
+
+# VS/Rider/MD/Consulo
+ExportedObj/
+.consulo/
+.idea/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# Builds
+*.apk
+*.unitypackage
+*.app
+*.exe
+
+# ------------------------------------------------------------------------------
+#                                 OS FILES
+# ------------------------------------------------------------------------------
+# Created by https://www.gitignore.io/api/windows,osx,linux
+
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+
+### OSX ###
+*.DS_Store
+.DS_Store?
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+# Thumbnails
+._*
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+
+### Linux ###
+*~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
+# End of https://www.gitignore.io/api/windows,osx,linux
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# based on: https://gist.github.com/demonixis/6774458
+# ------------------------------------------------------------------------------
+# Lightmaps
+*.exr
+*.exr.meta
+LightmapSnapshot.asset
+LightmapSnapshot.asset.meta
+LightingData.asset
+LightingData.asset.meta
+
+# ------------------------------------------------------------------------------
+# Project specific lightmaps exclusion:
+#
+# Ignore baked lightmaps for game levels:
+# ------------------------------------------------------------------------------
+/Assets/_Scenes/Game Levels/Pack\ ?/Level\ ?/
+/Assets/_Scenes/Game Levels/Pack\ ?/Level\ ?.meta
+/Assets/_Scenes/Game Levels/Pack\ ?/Level\ ??/
+/Assets/_Scenes/Game Levels/Pack\ ?/Level\ ??.meta
+/Assets/_Scenes/Game Levels/Pack\ ??/Level\ ?/
+/Assets/_Scenes/Game Levels/Pack\ ??/Level\ ?.meta
+/Assets/_Scenes/Game Levels/Pack\ ??/Level\ ??/
+/Assets/_Scenes/Game Levels/Pack\ ??/Level\ ??.meta
+
+# ------------------------------------------------------------------------------
+# Specific rules for Machine Learning project
+# ------------------------------------------------------------------------------
+
+#/Assets/ML-Agents/
+/Assets/ML-Agents/Plugins/

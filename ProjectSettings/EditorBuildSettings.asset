@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/ExperimentsMy/NumberDemo/Scene.unity
+    guid: e3fee4559dccc764d964b95ac881fd73
+  - enabled: 0
+    path: Assets/ExperimentsMy/LunarLanderDemo/Scenes/LunarLanderScene.unity
+    guid: 3cb59b02161e8c941a0ef123799cc8b6
+  - enabled: 1
+    path: Assets/ExperimentsMy/LunarLanderDemo/Scenes/LunarLanderPlanet.unity
+    guid: d04c260d3fead174192cc38ec2bb58bf
