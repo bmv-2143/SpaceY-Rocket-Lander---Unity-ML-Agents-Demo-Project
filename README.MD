@@ -3,6 +3,9 @@
 This project demonstrates how machine learning algorithm can be used to teach
 a rocket to lift off from one planet, then fly and land onto another.
 
+You can find a video that shows how neural network drives the rocket
+[here](https://youtu.be/NBz9mrxIMJo).
+
 Rocket has six engines that apply different acceleration at different positions
 of rocket body.
 
