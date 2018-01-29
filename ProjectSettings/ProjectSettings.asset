@@ -255,7 +255,7 @@ PlayerSettings:
     height: 180
     banner: {fileID: 0}
   androidGamepadSupportLevel: 0
-  resolutionDialogBanner: {fileID: 2800000, guid: b926d2d7ecf0f5742904033454641bcb,
+  resolutionDialogBanner: {fileID: 2800000, guid: 4363a4e21edb71c41b43ae2f13601ec0,
     type: 3}
   m_BuildTargetIcons: []
   m_BuildTargetBatching: []
