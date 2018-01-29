@@ -14,6 +14,7 @@ public class Probe : MonoBehaviour {
     {
         NONE,
         TRIGGER_ENTER,
+        TRIGGER_EXIT,
         COLLISION_EXIT,
         TRIGGER_STAY
     }
@@ -28,6 +29,11 @@ public class Probe : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         ProbeMonitor.SendProbeTriggerEvent(probeType, TriggerType.TRIGGER_ENTER);
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        ProbeMonitor.SendProbeTriggerEvent(probeType, TriggerType.TRIGGER_EXIT);
     }
 
     void OnTriggerStay(Collider other)
