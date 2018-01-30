@@ -235,15 +235,15 @@ public class RocketLanderAgent : Agent
         if (paramsText2 != null && Time.frameCount % 5 == 0)
         {
             paramsText2.text =
-                string.Format("PosX:{0}, posY:{1}, velX:{2},\nvelY:{3}, orient:{4}, angVelZ:{5}, acclX:{6}, acclY:{7}",
-                FormatFloat(relativePosX),
-                FormatFloat(relativePosY),
-                FormatFloat(rocketVelocityX),
-                FormatFloat(rocketVelocityY),
-                FormatFloat(rocketOrientation),
-                FormatFloat(rocketAngularVelocityZ),
-                FormatFloat(linearAcceleration.x),
-                FormatFloat(linearAcceleration.y));
+                string.Format("PosX:{0}\nPosY:{1}\nVelX:{2}\nVelY:{3}\nOrient:{4}\nAngVelZ:{5}\nAcclX:{6}\nAcclY:{7}",
+                FormatFloat(relativePosX, 9),
+                FormatFloat(relativePosY, 9),
+                FormatFloat(rocketVelocityX, 9),
+                FormatFloat(rocketVelocityY, 9),
+                FormatFloat(rocketOrientation, 7),
+                FormatFloat(rocketAngularVelocityZ, 6),
+                FormatFloat(linearAcceleration.x, 8),
+                FormatFloat(linearAcceleration.y, 8));
         }
 
         return state;
@@ -259,10 +259,10 @@ public class RocketLanderAgent : Agent
 
         if (paramsText1 != null && Time.frameCount % 15 == 0)
         {
-            paramsText1.text = string.Format("S:{0},F:{1},stp:{2},",
+            paramsText1.text = string.Format("Success:{0},Fail:{1},stp:{2},",
                 solved, failed, myStepCountInLastSession);
 
-            paramsText3.text = string.Format("FP:{0},FA:{1},FS:{2},FR:{3}",
+            paramsText3.text = string.Format("Fail: Position:{0}, Accident:{1}, Speed:{2}, Rotation:{3}",
                 failCounterPosition, failCounterAccident, failCounterSpeed, failCounterRotation);
 
         }
@@ -844,9 +844,8 @@ public class RocketLanderAgent : Agent
         DEATH_ZONE_RIGHT = new Vector3(failureBorderRight, 0f, 0f);
     }
 
-    private string FormatFloat(float value)
+    private string FormatFloat(float value, int padding)
     {
-        const int PADDING = 6;
-        return Math.Round(value, 2).ToString().PadLeft(PADDING);
+        return Math.Round(value, 2).ToString().PadLeft(padding);
     }
 }
