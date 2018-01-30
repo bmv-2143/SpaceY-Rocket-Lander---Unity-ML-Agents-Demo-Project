@@ -23,3 +23,7 @@ the top right corner, in which you can control the rocket with the following key
 
 If you want to run trained models in Unity you need to install TensorFlowSharp
 plugin as described [here](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Getting-Started-with-Balance-Ball.md#setting-up-tensorflowsharp-support).
+
+## Training
+
+You can find more detail how to train this simulation [here](Assets/SpaceYRocketLanderDemo/Docs/HOW_TO_TRAIN.MD)

@@ -3,6 +3,9 @@
 public class ProbeMonitor : MonoBehaviour {
 
     [SerializeField]
+    private bool simplifiedLanding = false;
+
+    [SerializeField]
     private GameObject leftLegLandingProbe;
 
     [SerializeField]
@@ -55,14 +58,30 @@ public class ProbeMonitor : MonoBehaviour {
 
     private void ProbeTriggerHandler(Probe.ProbeType probeType, Probe.TriggerType triggerType)
     {
-        if (probeType == Probe.ProbeType.LEFT_LEG && triggerType == Probe.TriggerType.TRIGGER_STAY)
+        if (probeType == Probe.ProbeType.LEFT_LEG)
         {
-            leftLegLanded = true;
+            if (triggerType == Probe.TriggerType.TRIGGER_STAY)
+            {
+                leftLegLanded = true;
+            } 
+            
+            else if (!simplifiedLanding && triggerType == Probe.TriggerType.TRIGGER_EXIT)
+            {
+                leftLegLanded = false;
+            }
         }
 
-        if (probeType == Probe.ProbeType.RIGHT_LEG && triggerType == Probe.TriggerType.TRIGGER_STAY)
+        if (probeType == Probe.ProbeType.RIGHT_LEG)
         {
-            rightLegLanded = true;
+            if (triggerType == Probe.TriggerType.TRIGGER_STAY)
+            {
+                rightLegLanded = true;
+            }
+
+            else if (!simplifiedLanding && triggerType == Probe.TriggerType.TRIGGER_EXIT)
+            {
+                rightLegLanded = false;
+            }
         }
 
         if (probeType == Probe.ProbeType.HULL && triggerType == Probe.TriggerType.TRIGGER_ENTER)

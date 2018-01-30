@@ -25,7 +25,17 @@
         rocketStartPosBorderY = (float)resetParameters["rocket_start_pos_border_y"];
     }
 
- //   public override void AcademyStep()
-	//{
-	//}
+    //   public override void AcademyStep()
+    //{
+    //}
+
+    public void SetScreenToHd()
+    {
+        inferenceConfiguration = new ScreenConfiguration(1280, 720, 5, 1.0f, 60);
+    }
+
+    public void SetScreenToFullHd()
+    {
+        inferenceConfiguration = new ScreenConfiguration(1920, 1080, 5, 1.0f, 60);
+    }
 }
