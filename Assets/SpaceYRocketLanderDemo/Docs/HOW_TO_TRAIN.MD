@@ -4,13 +4,15 @@
 
 Use Tensorflow\Tensorboard\Python environment from
 [Unity ML-Agents](https://github.com/Unity-Technologies/ml-agents) repository
-to train the model.
+to train SpaceY simulation.
 
 ## Hyperparameters
 
-The following Hyperparameters and curriculum file (see below) produced rather good results (~91-94% success rate on 32.8x20.5 game field) in SpaceY simulation.
+After training with the following Hyperparameters and Curriculum file (see below)
+the algorithm was able to achieve rather good results (~91-94% success rate on
+  32.8x20.5 game field).
 
-Skip frames parameter in the Academy in Unity Project was set to 8.
+"FrameToSkip" parameter in the Academy in Unity Project was set to 8.
 
 ```python
 ### General parameters
@@ -38,8 +40,6 @@ epsilon = 0.3 # Acceptable threshold around ratio of old and new policy probabil
 buffer_size = 10400 # How large the experience buffer should be before gradient descent.
 learning_rate = 8e-5 # Model learning rate.
 
-# 256 (used in n1_run_14_based) - failed to improve even a little after 2m steps
-# 48 - is the last value that produces some results and used in most models
 hidden_units = 64 # Number of units in hidden layer.
 batch_size = 20 # How many experiences per gradient descent update step.
 normalize = True
