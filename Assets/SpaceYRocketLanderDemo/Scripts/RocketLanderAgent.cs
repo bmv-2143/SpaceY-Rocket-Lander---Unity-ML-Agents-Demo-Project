@@ -61,6 +61,12 @@ public class RocketLanderAgent : Agent
     private Button switchBrainButton;
 
     [SerializeField]
+    private Button switchScreenToHdButton;
+
+    [SerializeField]
+    private Button switchScreenToFullHdButton;
+
+    [SerializeField]
     private Text successText;
 
     [SerializeField]
@@ -131,8 +137,11 @@ public class RocketLanderAgent : Agent
     public override void InitializeAgent()
     {
         // configure SwitchBrainButton
-        switchBrainButton.onClick.AddListener(() => SwitchBrainType());
+        switchBrainButton.onClick.AddListener(SwitchBrainType);
         UpdateSwitchBrainButtonTextAndShowHint();
+
+        switchScreenToHdButton.onClick.AddListener(SwitchToHd);
+        switchScreenToFullHdButton.onClick.AddListener(SwitchToFullHd);
 
         InitializeBorders();
         SetUpDeathZones();
@@ -482,6 +491,17 @@ public class RocketLanderAgent : Agent
     //                                      Public API
     // --------------------------------------------------------------------------------------------
 
+    public void SwitchToHd()
+    {
+        academy.SetScreenToHd();
+        ResetSession();
+    }
+
+    public void SwitchToFullHd()
+    {
+        academy.SetScreenToFullHd();
+        ResetSession();
+    }
 
     public void SwitchBrainType()
     {
@@ -502,21 +522,30 @@ public class RocketLanderAgent : Agent
         done = true;
         UpdateSwitchBrainButtonTextAndShowHint();
 
-        // reset counters
+        ResetSession();
+    }
+
+    // --------------------------------------------------------------------------------------------
+    //                                     Private Methods
+    // --------------------------------------------------------------------------------------------
+
+    private void ResetSession()
+    {
+        ResetCounters();
+
+        academy.InitEnvironment();
+        ResetObjectsPosInScene();
+    }
+
+    private void ResetCounters()
+    {
         solved = 0;
         failed = 0;
         failCounterPosition = 0;
         failCounterAccident = 0;
         failCounterSpeed = 0;
         failCounterRotation = 0;
-
-        academy.InitEnvironment();
-        ResetObjectsPosInScene();
     }
-
-    // --------------------------------------------------------------------------------------------
-    //                                     Private Methods
-    // --------------------------------------------------------------------------------------------
 
     private void UpdateSwitchBrainButtonTextAndShowHint()
     {

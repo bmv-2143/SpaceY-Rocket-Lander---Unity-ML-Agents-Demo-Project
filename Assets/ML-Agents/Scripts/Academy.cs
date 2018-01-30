@@ -59,7 +59,7 @@ public abstract class Academy : MonoBehaviour
     [SerializeField]
     private ScreenConfiguration trainingConfiguration = new ScreenConfiguration(80, 80, 1, 100.0f, -1);
     [SerializeField]
-    private ScreenConfiguration inferenceConfiguration = new ScreenConfiguration(1280, 720, 5, 1.0f, 60);
+    protected ScreenConfiguration inferenceConfiguration = new ScreenConfiguration(1280, 720, 5, 1.0f, 60);
     [SerializeField]
     private ResetParameter[] defaultResetParameters;
     public Dictionary<string, float> resetParameters;
