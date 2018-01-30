@@ -2281,6 +2281,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114393884537538184, guid: 7be3104085a740241a54d7b29d09d20c,
+        type: 2}
+      propertyPath: simplifiedLanding
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7be3104085a740241a54d7b29d09d20c, type: 2}
   m_IsPrefabParent: 0
