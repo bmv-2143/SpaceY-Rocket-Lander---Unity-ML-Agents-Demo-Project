@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using HumbleGames.BallThrowerGame.Utilities;
+using UnityEngine;
 
 namespace HumbleGames
 {
