@@ -1,7 +1,6 @@
 using UnityEngine;
 
-
-namespace UnityStandardAssets._2D
+namespace HumbleGames
 {
     public class CameraFollow : MonoBehaviour
     {
