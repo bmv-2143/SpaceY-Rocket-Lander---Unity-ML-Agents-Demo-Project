@@ -71,9 +71,18 @@ namespace HumbleGames
         private float engineBurstParticlesPlayDuration = 0.3f;
 
 
-
+        private Vector3 initialRotation;
 
         private Coroutine engineParticlesEmissionCoroutine;
+
+        // ------------------------------------------------------------------------------------------------------------
+        //                                         Unity Lifecycle
+        // ------------------------------------------------------------------------------------------------------------
+
+        private void Awake()
+        {
+            initialRotation = transform.localEulerAngles;
+        }
 
         // ------------------------------------------------------------------------------------------------------------
         //                                             Public API
@@ -86,7 +95,9 @@ namespace HumbleGames
 
         public void ResetRocket()
         {
-        
+            transform.localEulerAngles = initialRotation;
+            rocketRb.velocity = Vector3.zero;
+            rocketRb.angularVelocity = Vector3.zero;
         }
 
         public void ActivateMainBottomEngine()
