@@ -119,7 +119,7 @@ namespace HumbleGames.MLAgents
 
         private void UpdateMinDistanceBetweenPlanets()
         {
-            minDistanceBetweenPlanets = planetDesignationAreaWidth / 3;
+            minDistanceBetweenPlanets = planetDesignationAreaWidth / 2;
         }
 
         /// <summary>
