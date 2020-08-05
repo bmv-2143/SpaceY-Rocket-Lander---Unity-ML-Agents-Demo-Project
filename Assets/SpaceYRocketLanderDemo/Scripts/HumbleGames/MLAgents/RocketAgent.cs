@@ -15,7 +15,7 @@ namespace HumbleGames.MLAgents
 
         [SerializeField]
         private SimulationState simulationState;
-        
+
         [SerializeField]
         private TagHolder tagHolder;
 
@@ -24,6 +24,12 @@ namespace HumbleGames.MLAgents
 
         [SerializeField]
         private RocketNew rocket;
+
+        [SerializeField]
+        private GameObject leftLegLandingProbe;
+
+        [SerializeField]
+        private GameObject rightLegLandingProbe;
 
         // TODO: remove this dependency, use events instead
         [SerializeField]
@@ -41,12 +47,58 @@ namespace HumbleGames.MLAgents
 
         private void OnCollisionEnter(Collision collision)
         {
-            Debug.Log("collision: " + collision.transform.name);
+            HandleCollisionEnterOrStay(collision);
+        }
 
-            if (collision.transform.CompareTag(tagHolder.deathZone))
-            {
-                simulationState.isDeathZoneCollisionAccident = true;
-            }
+        private void OnCollisionStay(Collision collision)
+        {
+            HandleCollisionEnterOrStay(collision);
+        }
+
+        private void HandleCollisionEnterOrStay(Collision collision) 
+        {
+            //Debug.Log("Collision: " + collision.transform.name);
+
+            // Leg probes landing (potential success)
+            simulationState.isLeftLegLanded = IsLeftLegProbeCollision(collision) && IsTargetPlanetCollision(collision);
+            simulationState.isRightLegLanded = IsRightLegProbeCollision(collision) && IsTargetPlanetCollision(collision);
+
+            // ********************************************************************************************************
+            //                                        NOTE:
+            // If rocket's speed is very high it can trigger PlanetCollision(Falure) case even if it landed precisely 
+            // on both leg probes. 
+            // If you want to avoid such behaviour increase the size of leg probes or accuracy of PhysX in 
+            // ProjectSettings.
+            // ********************************************************************************************************
+
+            // Collision with a planet (failure)
+            simulationState.isPlanetCollisionAccident =
+                (IsTargetPlanetCollision(collision) || IsPlanetCollision(collision)) &&
+                !(IsRightLegProbeCollision(collision) || IsLeftLegProbeCollision(collision));
+
+
+            // Collision with DeathZones (failure)
+            simulationState.isDeathZoneCollisionAccident = collision.transform.CompareTag(tagHolder.deathZone);
+        }
+
+        private bool IsLeftLegProbeCollision(Collision collision)
+        {
+            return collision.GetContact(0).thisCollider.CompareTag(tagHolder.legLeftLandingProbe);
+        }
+
+        private bool IsRightLegProbeCollision(Collision collision)
+        {
+            return collision.GetContact(0).thisCollider.CompareTag(tagHolder.legRightLandingProbe);
+        }
+
+        private bool IsTargetPlanetCollision(Collision collision)
+        {
+            return collision.GetContact(0).otherCollider.CompareTag(tagHolder.targetPlanet);
+        }
+
+        private bool IsPlanetCollision(Collision collision)
+        {
+            return collision.GetContact(0).otherCollider.CompareTag(tagHolder.planet);
         }
 
         // ------------------------------------------------------------------------------------------------------------
@@ -240,6 +292,7 @@ namespace HumbleGames.MLAgents
         {
             if (simulationState.isDeathZoneCollisionAccident)
             {
+                Debug.LogFormat("FAILURE: DeathZoneCollision", LOG_TAG);
                 GiveDeathZoneCollisionReward();
                 EndEpisode();
                 return;
@@ -247,6 +300,7 @@ namespace HumbleGames.MLAgents
 
             if (simulationState.isPlanetCollisionAccident)
             {
+                Debug.LogFormat("FAILURE: PlanetCollision", LOG_TAG);
                 GivePlanetCollisionReward();
                 EndEpisode();
                 return;
@@ -254,6 +308,7 @@ namespace HumbleGames.MLAgents
 
             if (simulationState.IsLandingSucces())
             {
+                Debug.LogFormat("SUCCESS: Successfull landing", LOG_TAG);
                 GiveLandingSuccessReward();
                 EndEpisode();
                 return;

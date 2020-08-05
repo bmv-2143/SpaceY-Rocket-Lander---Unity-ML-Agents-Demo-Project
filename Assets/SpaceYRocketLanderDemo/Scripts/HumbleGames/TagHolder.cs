@@ -6,5 +6,9 @@ namespace HumbleGames
     public class TagHolder : ScriptableObject
     {
         public string deathZone = "DeathZone";
+        public string legLeftLandingProbe = "LegLeftLandingProbe";
+        public string legRightLandingProbe = "LegRightLandingProbe";
+        public string targetPlanet = "TargetPlanet";
+        public string planet = "Planet";
     }
 }

@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - DeathZone
+  - LegLeftLandingProbe
+  - LegRightLandingProbe
+  - TargetPlanet
+  - Planet
   layers:
   - Default
   - TransparentFX
