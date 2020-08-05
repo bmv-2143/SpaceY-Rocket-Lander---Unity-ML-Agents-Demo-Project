@@ -950,7 +950,7 @@ MonoBehaviour:
   planet2: {fileID: 824612473}
   rocket: {fileID: 2057002620}
   planetBodyToDesignateOn: {fileID: 1037223176}
-  rocketToPlanetBodyOffset: 1
+  rocketToPlanetBodyOffset: 0.9
 --- !u!1 &799166052
 GameObject:
   m_ObjectHideFlags: 0
@@ -1337,7 +1337,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663799433}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.63801, y: 3.4332986, z: 0}
+  m_LocalPosition: {x: 5.8291388, y: 6.0626116, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1037223177}
@@ -1937,7 +1937,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824612473}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.039555, y: -3.529097, z: 0}
+  m_LocalPosition: {x: 14.004416, y: -8.580914, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1488787312}
@@ -2288,11 +2288,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4535147295775796, guid: 7be3104085a740241a54d7b29d09d20c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.63801
+      value: 5.8291388
       objectReference: {fileID: 0}
     - target: {fileID: 4535147295775796, guid: 7be3104085a740241a54d7b29d09d20c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.433298
+      value: 10.962611
       objectReference: {fileID: 0}
     - target: {fileID: 4535147295775796, guid: 7be3104085a740241a54d7b29d09d20c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2328,8 +2328,45 @@ PrefabInstance:
       propertyPath: simplifiedLanding
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114304219711983116, guid: 7be3104085a740241a54d7b29d09d20c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7be3104085a740241a54d7b29d09d20c, type: 3}
+--- !u!198 &1674934155 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198639962036278282, guid: 7be3104085a740241a54d7b29d09d20c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1674934154}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1674934156 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198174766800718928, guid: 7be3104085a740241a54d7b29d09d20c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1674934154}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1674934157 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198438268506277940, guid: 7be3104085a740241a54d7b29d09d20c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1674934154}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1674934158 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198563970777192886, guid: 7be3104085a740241a54d7b29d09d20c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1674934154}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1674934159 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198861570289892918, guid: 7be3104085a740241a54d7b29d09d20c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1674934154}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1674934160 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198656962689644748, guid: 7be3104085a740241a54d7b29d09d20c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1674934154}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1707736716
 GameObject:
   m_ObjectHideFlags: 0
@@ -2462,7 +2499,6 @@ GameObject:
   - component: {fileID: 1715640922}
   - component: {fileID: 1715640921}
   - component: {fileID: 1715640926}
-  - component: {fileID: 1715640927}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2562,18 +2598,6 @@ MonoBehaviour:
   maxXAndY: {x: 300, y: 300}
   minXAndY: {x: -300, y: -300}
   m_Player: {fileID: 2057002622}
---- !u!114 &1715640927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1715640920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1790719424
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3492,7 +3516,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2057002620}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb27a472ea7b43d4e93403bb81389a75, type: 3}
   m_Name: 
@@ -3501,6 +3525,8 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 0
+  rocket: {fileID: 2057002625}
+  simulationArea: {fileID: 781539141}
 --- !u!114 &2057002624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3516,12 +3542,37 @@ MonoBehaviour:
   m_BrainParameters:
     VectorObservationSize: 1
     NumStackedVectorObservations: 1
-    VectorActionSize: 01000000
+    VectorActionSize: 010000000100000001000000010000000100000001000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
-  m_BehaviorType: 0
+  m_BehaviorType: 1
   m_BehaviorName: My Behavior
   TeamId: 0
   m_UseChildSensors: 1
+--- !u!114 &2057002625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057002620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5a6a37cd05e7904a911e0167bdeb641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableParticles: 1
+  useGravity: 1
+  powerMainEngine: 14
+  powerStopEngine: 7
+  powerSideEngines: 0.2
+  rocketRb: {fileID: 2057002619}
+  particlesMainBottomEngine: {fileID: 1674934160}
+  particlesStopTopEngine: {fileID: 1674934159}
+  particlesBottomLeftEngine: {fileID: 1674934158}
+  particlesBottomRightEngine: {fileID: 1674934157}
+  particlesTopLeftEngine: {fileID: 1674934156}
+  particlesTopRightEngine: {fileID: 1674934155}
+  engineBurstParticlesPlayDuration: 0.3

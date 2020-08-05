@@ -84,6 +84,21 @@ namespace HumbleGames.MLAgents
 
         private float deathZoneBorderThickness = 0.05f;
 
+        // ------------------------------------------------------------------------------------------------------------
+        //                                       Public API
+        // ------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Resets the <see cref="SimulationArea"/>
+        /// </summary>
+        public void Reset()
+        {
+            DesignatePlanets();
+        }
+
+        // ------------------------------------------------------------------------------------------------------------
+        //                                  Unity Lifecycle Methods
+        // ------------------------------------------------------------------------------------------------------------
 
         private void OnValidate()
         {
@@ -99,6 +114,8 @@ namespace HumbleGames.MLAgents
         {
             UpdateMinDistanceBetweenPlanets();
         }
+
+        // ------------------------------------------------------------------------------------------------------------
 
         private void UpdateMinDistanceBetweenPlanets()
         {

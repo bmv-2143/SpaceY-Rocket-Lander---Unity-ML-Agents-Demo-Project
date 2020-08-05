@@ -9,6 +9,16 @@ namespace HumbleGames.MLAgents
 {
     public class RocketAgent : Agent
     {
+        private readonly string LOG_TAG = typeof(RocketAgent).Name;
+
+        private const RocketAgent classHelper = null;
+
+        [SerializeField]
+        private RocketNew rocket;
+
+        // TODO: remove this dependency, use events instead
+        [SerializeField]
+        private SimulationArea simulationArea;
 
         // ------------------------------------------------------------------------------------------------------------
         //                                Unity Lifecycle calls
@@ -29,7 +39,9 @@ namespace HumbleGames.MLAgents
         /// </summary>
         public override void Initialize()
         {
-            throw new NotImplementedException();
+            base.Initialize();
+
+            //throw new NotImplementedException();
         }
 
         /// <summary>
@@ -37,7 +49,8 @@ namespace HumbleGames.MLAgents
         /// </summary>
         public override void OnEpisodeBegin()
         {
-            throw new NotImplementedException();
+            Reset();
+            simulationArea.Reset();
         }
 
         /// <summary>
@@ -45,7 +58,7 @@ namespace HumbleGames.MLAgents
         /// </summary>
         public override void CollectObservations(VectorSensor sensor)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         /// <summary>
@@ -54,7 +67,9 @@ namespace HumbleGames.MLAgents
         /// <param name="vectorAction">The list of actions to take</param>
         public override void OnActionReceived(float[] vectorAction)
         {
-            throw new NotImplementedException();
+            ApplyActions(vectorAction);
+            
+            GiveStepwiseReward();
         }
 
         /// <summary>
@@ -64,6 +79,170 @@ namespace HumbleGames.MLAgents
         /// </summary>
         /// <returns>A vectorAction array of floats that will be passed into <see cref="AgentAction(float[])"/></returns>
         public override void Heuristic(float[] actionsOut)
+        {
+            MapKeysToActions(actionsOut);
+        }
+
+        // ============================================================================================================
+        // ============================================================================================================
+
+        /// <summary>
+        /// Resets <see cref="RocketAgent"/>
+        /// </summary>
+        private void Reset()
+        {
+            rocket.ResetRocket();
+        }
+
+        private void MapKeysToActions(float[] actionsOut)
+        {
+            // --------------------------------------------------------------------------------------------------------
+            // Rocket Controls:
+            // 
+            //       S   
+            //       ^
+            //    Q | | E
+            //      | |
+            //      | |
+            //    A | | D
+            //     /   \
+            //       W
+            // 
+            // --------------------------------------------------------------------------------------------------------
+
+            // Move forward (main bottom\stern engine)
+            if (Input.GetKey(KeyCode.W))
+            {
+                //Debug.LogFormat("{0}: {1}: Key: W", LOG_TAG, nameof(classHelper.MapKeysToActions));
+                actionsOut[0] = 1f;
+            }
+
+            // Move backwards (auxiliary top\bow engine)
+            else if (Input.GetKey(KeyCode.S))
+            {
+                //Debug.LogFormat("{0}: {1}: Key: S", LOG_TAG, nameof(classHelper.MapKeysToActions));
+                actionsOut[0] = 2f;
+            }
+
+            // Top left auxiliary engine
+            else if (Input.GetKey(KeyCode.Q))
+            {
+                //Debug.LogFormat("{0}: {1}: Key: Q", LOG_TAG, nameof(classHelper.MapKeysToActions));
+                actionsOut[0] = 3f;
+            }
+
+            // Top right auxiliary engine
+            else if (Input.GetKey(KeyCode.E))
+            {
+                //Debug.LogFormat("{0}: {1}: Key: E", LOG_TAG, nameof(classHelper.MapKeysToActions));
+                actionsOut[0] = 4f;
+            }
+
+            // Bottom left auxiliary engine
+            else if (Input.GetKey(KeyCode.A))
+            {
+                //Debug.LogFormat("{0}: {1}: Key: A", LOG_TAG, nameof(classHelper.MapKeysToActions));
+                actionsOut[0] = 5f;
+            }
+
+            // Bottom right auxiliary engine
+            else if (Input.GetKey(KeyCode.D))
+            {
+                //Debug.LogFormat("{0}: {1}: Key: D", LOG_TAG, nameof(classHelper.MapKeysToActions));
+                actionsOut[0] = 6f;
+            }
+
+            // No keys detected - do nothing
+            else
+            {
+                actionsOut[0] = 0;
+            }
+        }
+
+        private void ApplyActions(float[] vectorAction)
+        {
+            // --------------------------------------------------------------------------------------------------------
+            // Actions:
+            //
+            // vectorAction[0] == 0 - do nothing, engines are off
+            // vectorAction[0] == 1 - BOTTOM MAIN engine is ON
+            // vectorAction[0] == 2 - auxiliary TOP STOP engine is ON
+            // vectorAction[0] == 3 - auxiliary TOP LEFT engine is ON
+            // vectorAction[0] == 4 - auxiliary TOP RIGHT engine is ON
+            // vectorAction[0] == 5 - auxiliary BOTTOM LEFT engine is ON
+            // vectorAction[0] == 6 - auxiliary BOTTOM RIGHT engine is ON
+            //
+            // --------------------------------------------------------------------------------------------------------
+
+            Debug.LogFormat("{0}: {1}: Action: {2}", LOG_TAG, nameof(classHelper.ApplyActions), vectorAction[0]);
+
+            switch (vectorAction[0])
+            {
+                case 0:
+                    // do nothing, don't turn on engines
+                    break;
+
+                case 1:
+                    // MAIN BOTTOM engine is ON
+                    rocket.ActivateMainBottomEngine();
+                    break;
+
+                case 2:
+                    // auxiliary TOP STOP engine is ON
+                    rocket.ActivateStopTopEngine();
+                    break;
+
+                case 3:
+                    // auxiliary TOP LEFT engine is ON
+                    rocket.ActivateAuxiliaryTopLeftEngine();
+                    break;
+
+                case 4:
+                    // auxiliary TOP RIGHT engine is ON
+                    rocket.ActivateAuxiliaryTopRightEngine();
+                    break;
+
+                case 5:
+                    // auxiliary LEFT BOTTOM engine is ON
+                    rocket.ActivateAuxiliaryBottomLeftEngine();
+                    break;
+
+                case 6:
+                    // auxiliary RIGHT BOTTOM engine is ON
+                    rocket.ActivateAuxiliaryBottomRightEngine();
+                    break;
+
+                default:
+                    Debug.LogErrorFormat("{0}: {1}: Unexpected Action: {2}", LOG_TAG, nameof(classHelper.ApplyActions), vectorAction[0]);
+                    break;
+            }
+        }
+
+        // ------------------------------------------------------------------------------------------------------------
+        //                                          Rewards
+        // ------------------------------------------------------------------------------------------------------------
+
+        // TODO: move all rewarding object to a separate class (ScriptablObject)
+
+        /// <summary>
+        /// Applies a tiny negative reward every step to encourage action
+        /// </summary>
+        private void GiveStepwiseReward()
+        {
+            if (MaxStep > 0) AddReward(-1f / MaxStep);
+        }
+
+        private void GiveLandingSuccessReward()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void GiveDeathZoneCollisionReward()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void GivePlanetCollisionReward()
         {
             throw new NotImplementedException();
         }
