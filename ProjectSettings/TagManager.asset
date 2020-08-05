@@ -3,10 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - ROCKET
-  - EXCLUDE_FROM_CENTER_OF_MASS
-  - TARGET_PLANET
+  tags: []
   layers:
   - Default
   - TransparentFX
