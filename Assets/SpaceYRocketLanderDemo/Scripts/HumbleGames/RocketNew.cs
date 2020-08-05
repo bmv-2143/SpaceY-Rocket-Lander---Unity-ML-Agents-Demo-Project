@@ -25,6 +25,30 @@ namespace HumbleGames
         [SerializeField]
         private Rigidbody rocketRb;
 
+        [Header("Engines")]
+
+        [SerializeField]
+        private RocketEngine mainBottomEngine;
+
+        [SerializeField]
+        private RocketEngine stopTopEngine;
+        
+        [SerializeField]
+        private RocketEngine bottomLeftEngine;
+        
+        [SerializeField]
+        private RocketEngine bottomRightEngine;
+        
+        [SerializeField]
+        private RocketEngine topLeftEngine;
+        
+        [SerializeField]
+        private RocketEngine topRightEngine;
+
+
+
+        [Header("Visualisation")]
+
         [SerializeField]
         private ParticleSystem particlesMainBottomEngine;
 
@@ -42,8 +66,6 @@ namespace HumbleGames
 
         [SerializeField]
         private ParticleSystem particlesTopRightEngine;
-
-        [Header("Visualisation")]
 
         [SerializeField]
         private float engineBurstParticlesPlayDuration = 0.3f;
@@ -70,31 +92,37 @@ namespace HumbleGames
         public void ActivateMainBottomEngine()
         {
             ActivateEngineParticles(particlesMainBottomEngine);
+            mainBottomEngine.ApplyEngineForce(rocketRb, powerMainEngine);
         }
 
         public void ActivateStopTopEngine()
         {
             ActivateEngineParticles(particlesStopTopEngine);
+            stopTopEngine.ApplyEngineForce(rocketRb, powerStopEngine);
         }
 
         public void ActivateAuxiliaryTopLeftEngine()
         {
             ActivateEngineParticles(particlesTopLeftEngine);
+            topLeftEngine.ApplyEngineForce(rocketRb, powerSideEngines);
         }
 
         public void ActivateAuxiliaryTopRightEngine()
         {
             ActivateEngineParticles(particlesTopRightEngine);
+            topRightEngine.ApplyEngineForce(rocketRb, powerSideEngines);
         }
 
         public void ActivateAuxiliaryBottomLeftEngine()
         {
             ActivateEngineParticles(particlesBottomLeftEngine);
+            bottomLeftEngine.ApplyEngineForce(rocketRb, powerSideEngines);
         }
 
         public void ActivateAuxiliaryBottomRightEngine()
         {
             ActivateEngineParticles(particlesBottomRightEngine);
+            bottomRightEngine.ApplyEngineForce(rocketRb, powerSideEngines);
         }
 
         private void ActivateEngineParticles(ParticleSystem particleSystem)
