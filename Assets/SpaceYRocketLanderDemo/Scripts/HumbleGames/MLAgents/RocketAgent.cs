@@ -14,6 +14,15 @@ namespace HumbleGames.MLAgents
         private const RocketAgent classHelper = null;
 
         [SerializeField]
+        private SimulationState simulationState;
+        
+        [SerializeField]
+        private TagHolder tagHolder;
+
+        [SerializeField]
+        private RewardConfig rewardConfig;
+
+        [SerializeField]
         private RocketNew rocket;
 
         // TODO: remove this dependency, use events instead
@@ -27,7 +36,17 @@ namespace HumbleGames.MLAgents
         // Update is called once per frame
         private void FixedUpdate()
         {
+            ProcessSimulationState();
+        }
 
+        private void OnCollisionEnter(Collision collision)
+        {
+            Debug.Log("collision: " + collision.transform.name);
+
+            if (collision.transform.CompareTag(tagHolder.deathZone))
+            {
+                simulationState.isDeathZoneCollisionAccident = true;
+            }
         }
 
         // ------------------------------------------------------------------------------------------------------------
@@ -40,8 +59,6 @@ namespace HumbleGames.MLAgents
         public override void Initialize()
         {
             base.Initialize();
-
-            //throw new NotImplementedException();
         }
 
         /// <summary>
@@ -49,6 +66,7 @@ namespace HumbleGames.MLAgents
         /// </summary>
         public override void OnEpisodeBegin()
         {
+            simulationState.Reset();
             Reset();
             simulationArea.Reset();
         }
@@ -174,7 +192,7 @@ namespace HumbleGames.MLAgents
             //
             // --------------------------------------------------------------------------------------------------------
 
-            Debug.LogFormat("{0}: {1}: Action: {2}", LOG_TAG, nameof(classHelper.ApplyActions), vectorAction[0]);
+            //Debug.LogFormat("{0}: {1}: Action: {2}", LOG_TAG, nameof(classHelper.ApplyActions), vectorAction[0]);
 
             switch (vectorAction[0])
             {
@@ -218,6 +236,30 @@ namespace HumbleGames.MLAgents
             }
         }
 
+        private void ProcessSimulationState()
+        {
+            if (simulationState.isDeathZoneCollisionAccident)
+            {
+                GiveDeathZoneCollisionReward();
+                EndEpisode();
+                return;
+            }
+
+            if (simulationState.isPlanetCollisionAccident)
+            {
+                GivePlanetCollisionReward();
+                EndEpisode();
+                return;
+            }
+
+            if (simulationState.IsLandingSucces())
+            {
+                GiveLandingSuccessReward();
+                EndEpisode();
+                return;
+            }
+        }
+
         // ------------------------------------------------------------------------------------------------------------
         //                                          Rewards
         // ------------------------------------------------------------------------------------------------------------
@@ -229,22 +271,25 @@ namespace HumbleGames.MLAgents
         /// </summary>
         private void GiveStepwiseReward()
         {
-            if (MaxStep > 0) AddReward(-1f / MaxStep);
+            if (MaxStep > 0) 
+            { 
+                AddReward(rewardConfig.agentStepwiseRewardBase / MaxStep);
+            }
         }
 
         private void GiveLandingSuccessReward()
         {
-            throw new NotImplementedException();
+            AddReward(rewardConfig.landingSuccessReward);
         }
 
         private void GiveDeathZoneCollisionReward()
         {
-            throw new NotImplementedException();
+            AddReward(rewardConfig.deathZoneCollisionReward);
         }
 
         private void GivePlanetCollisionReward()
         {
-            throw new NotImplementedException();
+            AddReward(rewardConfig.planetCollisionReward);
         }
     }
 }
