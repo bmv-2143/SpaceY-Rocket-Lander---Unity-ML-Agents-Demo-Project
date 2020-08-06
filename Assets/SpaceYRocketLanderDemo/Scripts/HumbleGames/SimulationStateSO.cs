@@ -1,13 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace HumbleGames
 {
-    public class SimulationState : MonoBehaviour
+    [CreateAssetMenu(fileName = "SimulationState", menuName = "ScriptableObjects/SimulationState", order = 1)]
+    public class SimulationStateSO : ScriptableObject
     {
         public bool isDeathZoneCollisionAccident;
-
+        
         public bool isPlanetCollisionAccident;
 
         public bool isLeftLegLanded;

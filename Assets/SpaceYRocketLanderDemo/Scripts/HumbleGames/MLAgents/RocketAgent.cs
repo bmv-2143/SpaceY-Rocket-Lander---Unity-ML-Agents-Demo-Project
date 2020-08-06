@@ -9,10 +9,7 @@ namespace HumbleGames.MLAgents
         private readonly string LOG_TAG = typeof(RocketAgent).Name;
 
         private const RocketAgent classHelper = null;
-
-        [SerializeField]
-        private SimulationState simulationState;
-
+        
         [SerializeField]
         private TagHolder tagHolder;
 
@@ -35,9 +32,8 @@ namespace HumbleGames.MLAgents
         [SerializeField]
         private GameObject targetPlanet;
 
-
+        private SimulationState simulationState;
         private RocketNew rocketControl;
-
         private Rigidbody rocketRb;
 
         // ------------------------------------------------------------------------------------------------------------
@@ -48,6 +44,7 @@ namespace HumbleGames.MLAgents
         {
             rocketRb = GetComponent<Rigidbody>();
             rocketControl = GetComponent<RocketNew>();
+            simulationState = GetComponent<SimulationState>();
         }
 
         private void FixedUpdate()
