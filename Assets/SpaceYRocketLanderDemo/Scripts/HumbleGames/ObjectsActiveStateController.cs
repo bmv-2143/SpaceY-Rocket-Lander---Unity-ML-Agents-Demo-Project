@@ -12,23 +12,31 @@ namespace HumbleGames
         private CameraFollow cameraFollow;
 
         [SerializeField]
-        private GameObject[] objsDeactivateInTrainingMode;
+        private GameObject[] objsToDeactivateInTrainingMode;
+        
+        [SerializeField]
+        private GameObject[] objsToActivateInTrainingMode;
 
 
         private void OnEnable()
         {
+            cameraFollow.enabled = IsTrainingMode();
+
             // if it is not Heuristic mode => deactivate these objects for other modes (training)
-            foreach (GameObject go in objsDeactivateInTrainingMode)
+            foreach (GameObject go in objsToActivateInTrainingMode)
             {
-                go.SetActive(ShouldObjectBeActive());
+                go.SetActive(IsTrainingMode());
             }
 
-            cameraFollow.enabled = ShouldObjectBeActive();
+            foreach (GameObject go in objsToDeactivateInTrainingMode)
+            {
+                go.SetActive(!IsTrainingMode());
+            }
         }
 
-        private bool ShouldObjectBeActive()
+        private bool IsTrainingMode()
         {
-            return behaviorParameters.BehaviorType == BehaviorType.HeuristicOnly;
+            return behaviorParameters.BehaviorType != BehaviorType.HeuristicOnly;
         }
     }
 }

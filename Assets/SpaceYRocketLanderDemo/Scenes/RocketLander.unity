@@ -12818,14 +12818,15 @@ MonoBehaviour:
   behaviorParameters: {fileID: 6569713505141529494, guid: 8f4cc6605c60e234781f3ce7fc3ae389,
     type: 3}
   cameraFollow: {fileID: 1715640926}
-  objsDeactivateInTrainingMode:
-  - {fileID: 1335631847}
-  - {fileID: 1793508149}
-  - {fileID: 1693202504}
+  objsToDeactivateInTrainingMode:
   - {fileID: 97166900}
   - {fileID: 1049338484}
   - {fileID: 1017846908}
   - {fileID: 1208999934}
+  objsToActivateInTrainingMode:
+  - {fileID: 1335631847}
+  - {fileID: 1793508149}
+  - {fileID: 1693202504}
 --- !u!4 &2124271158
 Transform:
   m_ObjectHideFlags: 0
