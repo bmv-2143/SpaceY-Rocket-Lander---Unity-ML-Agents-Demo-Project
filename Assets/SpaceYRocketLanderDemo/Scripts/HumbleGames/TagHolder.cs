@@ -9,6 +9,6 @@ namespace HumbleGames
         public string legLeftLandingProbe = "LegLeftLandingProbe";
         public string legRightLandingProbe = "LegRightLandingProbe";
         public string targetPlanet = "TargetPlanet";
-        public string planet = "Planet";
+        public string basePlanet = "BasePlanet";
     }
 }

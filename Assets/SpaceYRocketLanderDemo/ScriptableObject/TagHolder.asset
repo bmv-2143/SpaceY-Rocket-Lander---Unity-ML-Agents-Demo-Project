@@ -13,3 +13,7 @@ MonoBehaviour:
   m_Name: TagHolder
   m_EditorClassIdentifier: 
   deathZone: DeathZone
+  legLeftLandingProbe: LegLeftLandingProbe
+  legRightLandingProbe: LegRightLandingProbe
+  targetPlanet: TargetPlanet
+  basePlanet: BasePlanet

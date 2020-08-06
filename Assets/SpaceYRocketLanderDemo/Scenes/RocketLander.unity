@@ -3789,7 +3789,7 @@ GameObject:
   - component: {fileID: 716836635}
   m_Layer: 8
   m_Name: PlanetBody 1 (base)
-  m_TagString: Planet
+  m_TagString: BasePlanet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5800,7 +5800,7 @@ GameObject:
   - component: {fileID: 1020600246}
   m_Layer: 8
   m_Name: PlanetBody 1 (base)
-  m_TagString: Planet
+  m_TagString: BasePlanet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5945,7 +5945,7 @@ GameObject:
   - component: {fileID: 1037223178}
   m_Layer: 8
   m_Name: PlanetBody 1 (base)
-  m_TagString: Planet
+  m_TagString: BasePlanet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7753,7 +7753,7 @@ GameObject:
   - component: {fileID: 1416647357}
   m_Layer: 8
   m_Name: PlanetBody 1 (base)
-  m_TagString: Planet
+  m_TagString: BasePlanet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

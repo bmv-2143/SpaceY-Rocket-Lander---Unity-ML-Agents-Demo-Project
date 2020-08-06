@@ -78,9 +78,16 @@ namespace HumbleGames.MLAgents
                 simulationState.isRightLegLanded = true;
             }
 
+            // Leg probes touch base planet (give a little negative reward, to prevent agent sitting on planet)
+            if ((IsLeftLegProbeCollision(collision) && IsBasePlanetCollision(collision)) ||
+                (IsRightLegProbeCollision(collision) && IsBasePlanetCollision(collision)))
+            {
+                GiveLegProbeTouchesBasePlanetReward();
+            }
+
             // Collision with a planet (failure)
             simulationState.isPlanetCollisionAccident =
-                (IsTargetPlanetCollision(collision) || IsPlanetCollision(collision)) &&
+                (IsTargetPlanetCollision(collision) || IsBasePlanetCollision(collision)) &&
                 !(IsRightLegProbeCollision(collision) || IsLeftLegProbeCollision(collision));
 
 
@@ -103,9 +110,9 @@ namespace HumbleGames.MLAgents
             return collision.GetContact(0).otherCollider.CompareTag(tagHolder.targetPlanet);
         }
 
-        private bool IsPlanetCollision(Collision collision)
+        private bool IsBasePlanetCollision(Collision collision)
         {
-            return collision.GetContact(0).otherCollider.CompareTag(tagHolder.planet);
+            return collision.GetContact(0).otherCollider.CompareTag(tagHolder.basePlanet);
         }
 
         // ------------------------------------------------------------------------------------------------------------
@@ -387,6 +394,11 @@ namespace HumbleGames.MLAgents
         private void GivePlanetCollisionReward()
         {
             AddReward(rewardConfig.planetCollisionReward);
+        }
+
+        private void GiveLegProbeTouchesBasePlanetReward()
+        {
+            AddReward(rewardConfig.legProbeTouchesBasePlanetReward);
         }
     }
 }
