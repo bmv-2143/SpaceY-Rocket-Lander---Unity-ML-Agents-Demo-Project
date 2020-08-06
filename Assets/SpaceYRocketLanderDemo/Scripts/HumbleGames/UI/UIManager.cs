@@ -43,9 +43,9 @@ namespace HumbleGames.UI
             EventManager.OnSimulationEnd -= OnSimulationEnd;
         }
 
-        private void OnSimulationEnd(SimulationFinishStatus status)
+        private void OnSimulationEnd(SimulationEndStatus status)
         {
-            if (status == SimulationFinishStatus.SUCCESS)
+            if (status == SimulationEndStatus.SUCCESS)
             {
                 ShowEndGameText(successTextView, successMessage);
             }
@@ -69,14 +69,14 @@ namespace HumbleGames.UI
             targetObject.SetActive(false);
         }
 
-        private string GetFailureMessage(SimulationFinishStatus status)
+        private string GetFailureMessage(SimulationEndStatus status)
         {
-            if (status == SimulationFinishStatus.FAILURE_PLANET_COLLISION)
+            if (status == SimulationEndStatus.FAILURE_PLANET_COLLISION)
             {
                 return failureMessagePrefix + "Planet Collision";
             }
 
-            else if (status == SimulationFinishStatus.FAILURE_DEATH_ZONE_COLLISION)
+            else if (status == SimulationEndStatus.FAILURE_DEATH_ZONE_COLLISION)
             {
                 return failureMessagePrefix + "DeathZone Collision";
             }

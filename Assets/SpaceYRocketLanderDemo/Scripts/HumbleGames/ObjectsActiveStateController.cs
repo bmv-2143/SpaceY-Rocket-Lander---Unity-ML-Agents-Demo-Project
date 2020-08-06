@@ -20,7 +20,7 @@ namespace HumbleGames
 
         private void OnEnable()
         {
-            cameraFollow.enabled = IsTrainingMode();
+            cameraFollow.enabled = !IsTrainingMode();
 
             // if it is not Heuristic mode => deactivate these objects for other modes (training)
             foreach (GameObject go in objsToActivateInTrainingMode)

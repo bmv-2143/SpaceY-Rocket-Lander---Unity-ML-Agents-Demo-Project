@@ -431,7 +431,7 @@ MonoBehaviour:
     VectorActionSpaceType: 0
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
-  m_BehaviorType: 0
+  m_BehaviorType: 1
   m_BehaviorName: SpaceY
   TeamId: 0
   m_UseChildSensors: 1

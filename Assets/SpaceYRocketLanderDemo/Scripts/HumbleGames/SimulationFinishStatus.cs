@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace HumbleGames
 {
-    public enum SimulationFinishStatus 
+    public enum SimulationEndStatus 
     {
         SUCCESS,
         FAILURE_PLANET_COLLISION,
