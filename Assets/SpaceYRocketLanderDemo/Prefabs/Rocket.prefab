@@ -404,7 +404,6 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 5000
-  simulationState: {fileID: 0}
   tagHolder: {fileID: 11400000, guid: 825b751c9450cf1409b30114af8c7247, type: 2}
   rewardConfig: {fileID: 11400000, guid: afb6df78223c4194dbfbbc3219ac144a, type: 2}
   leftLegLandingProbe: {fileID: 6569713505540972216}
@@ -432,7 +431,7 @@ MonoBehaviour:
     VectorActionSpaceType: 0
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
-  m_BehaviorType: 1
+  m_BehaviorType: 0
   m_BehaviorName: SpaceY
   TeamId: 0
   m_UseChildSensors: 1

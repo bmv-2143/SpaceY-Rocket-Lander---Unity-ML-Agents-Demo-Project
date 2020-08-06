@@ -12885,11 +12885,6 @@ PrefabInstance:
       propertyPath: targetPlanet
       value: 
       objectReference: {fileID: 1488787311}
-    - target: {fileID: 6569713505141529494, guid: 8f4cc6605c60e234781f3ce7fc3ae389,
-        type: 3}
-      propertyPath: m_BehaviorType
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6574220890091007656, guid: 8f4cc6605c60e234781f3ce7fc3ae389,
         type: 3}
       propertyPath: m_LocalPosition.x
