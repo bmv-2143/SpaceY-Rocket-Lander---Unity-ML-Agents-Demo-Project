@@ -60,8 +60,16 @@ namespace HumbleGames.MLAgents
             //Debug.Log("Collision: " + collision.transform.name);
 
             // Leg probes landing (potential success)
-            simulationState.isLeftLegLanded = IsLeftLegProbeCollision(collision) && IsTargetPlanetCollision(collision);
-            simulationState.isRightLegLanded = IsRightLegProbeCollision(collision) && IsTargetPlanetCollision(collision);
+            if (IsLeftLegProbeCollision(collision) && IsTargetPlanetCollision(collision))
+            {
+                simulationState.isLeftLegLanded = true;
+
+            }
+
+            if (IsRightLegProbeCollision(collision) && IsTargetPlanetCollision(collision))
+            {
+                simulationState.isRightLegLanded = true;
+            }
 
             // ********************************************************************************************************
             //                                        NOTE:
