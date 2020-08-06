@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &97166900 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1512197919025574, guid: b3227a229a72eac4895e4db9651ff3cb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1790719424}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &151909282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1251,7 +1257,7 @@ Transform:
   - {fileID: 1037223175}
   - {fileID: 1488787310}
   m_Father: {fileID: 1460253537}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &781539141
 MonoBehaviour:
@@ -1649,13 +1655,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 883366299}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 192170228}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 1460253537}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &976664904
 GameObject:
@@ -2387,6 +2393,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1460253537}
+  - component: {fileID: 1460253538}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -2406,10 +2413,27 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1919802228}
+  - {fileID: 883366302}
   - {fileID: 781539140}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1460253538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460253536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42949848d5d889245b88bd9b024318ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  behaviorParameters: {fileID: 2057002624}
+  objsDeactivateInTrainingMode:
+  - {fileID: 97166900}
 --- !u!4 &1488787310
 Transform:
   m_ObjectHideFlags: 0
@@ -3514,14 +3538,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919802227}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1897931194}
   - {fileID: 2007056002}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 1460253537}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1919802229
 MonoBehaviour:
