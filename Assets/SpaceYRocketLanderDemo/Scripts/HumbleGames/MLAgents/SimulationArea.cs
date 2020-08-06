@@ -51,10 +51,10 @@ namespace HumbleGames.MLAgents
         [Header("Planets")]
 
         [SerializeField]
-        private GameObject planet1;
+        private GameObject basePlanet;
         
         [SerializeField]
-        private GameObject planet2;
+        private GameObject targetPlanet;
 
         public QuickButton UpdatePlanetsPos = new QuickButton(nameof(classHelper.DesignatePlanets));
 
@@ -64,16 +64,27 @@ namespace HumbleGames.MLAgents
         private GameObject rocket;
 
         [SerializeField]
-        private GameObject planetBodyToDesignateOn;
-
+        private GameObject basePlanetBody;
+        
         /// <summary>
         /// This offset depends on the size of a specific rocket and a specific planet body. It is used to
         /// precisely position rocket on the planet.
         /// </summary>
         [SerializeField]
-        private float rocketToPlanetBodyOffset = 1;
+        private float rocketToBasePlanetBodyOffset = 1;
 
-        public QuickButton UpdateRocketPos = new QuickButton(nameof(classHelper.DesignateRocket));
+        public QuickButton PutRocketOnBlasePlanet = new QuickButton(nameof(classHelper.DesignateRocketOnBlasePlanet));
+
+        [SerializeField]
+        private GameObject targetPlanetBody;
+
+        [SerializeField]
+        private float rocketToTargetPlanetBodyMinOffset = 1;
+        
+        [SerializeField]
+        private float rocketToTargetPlanetBodyMaxOffset = 1;
+        
+        public QuickButton PutRocketNearTargetPlanet = new QuickButton(nameof(classHelper.DesignateRocketNearTargetPlanet));
 
         #endregion
 
@@ -197,23 +208,56 @@ namespace HumbleGames.MLAgents
             do
             {
                 //Debug.LogFormat("{0}: {1}", LOG_TAG, nameof(classHelper.DesignatePlanet));
-                DesignatePlanet(planet1);
-                DesignatePlanet(planet2);
+                DesignatePlanet(basePlanet);
+                DesignatePlanet(targetPlanet);
             } 
-            while (Vector3.Distance(planet1.transform.position, planet2.transform.position) < minDistanceBetweenPlanets);
+            while (Vector3.Distance(basePlanet.transform.position, targetPlanet.transform.position) < minDistanceBetweenPlanets);
 
             DesignateRocket();
         }
 
-        // Position Rocket on Planet 1
+
         private void DesignateRocket()
         {
-            rocket.transform.localPosition = planetBodyToDesignateOn.transform.parent.localPosition;
+            if (Random.value < 0.5)
+            {
+                DesignateRocketOnBlasePlanet();
+            }
+
+            else
+            {
+                DesignateRocketNearTargetPlanet();
+            }
+        }
+
+        // Position Rocket on base planet
+        private void DesignateRocketOnBlasePlanet()
+        {
+            rocket.transform.localPosition = basePlanetBody.transform.parent.localPosition;
 
             // shift the rocket to put it precisely on the planet
             rocket.transform.localPosition = 
                 new Vector3(rocket.transform.localPosition.x,
-                            rocket.transform.localPosition.y + planetBodyToDesignateOn.transform.localScale.x - rocketToPlanetBodyOffset, 
+                            rocket.transform.localPosition.y + basePlanetBody.transform.localScale.x - rocketToBasePlanetBodyOffset, 
+                            0);
+        }
+
+        // Position Rocket near target planet
+        private void DesignateRocketNearTargetPlanet()
+        {
+            rocket.transform.localPosition = targetPlanetBody.transform.parent.localPosition;
+
+            float offsetToTargetPlanet = Random.Range(rocketToTargetPlanetBodyMinOffset, rocketToTargetPlanetBodyMaxOffset);
+
+            //rocket.transform.localEulerAngles = new Vector3(
+            //    rocket.transform.localEulerAngles.x,
+            //    rocket.transform.localEulerAngles.y,
+            //    Random.Range(0, 359));
+
+            // shift the rocket to put it precisely on the planet
+            rocket.transform.localPosition =
+                new Vector3(rocket.transform.localPosition.x,
+                            rocket.transform.localPosition.y + basePlanetBody.transform.localScale.x + offsetToTargetPlanet,
                             0);
         }
     }
