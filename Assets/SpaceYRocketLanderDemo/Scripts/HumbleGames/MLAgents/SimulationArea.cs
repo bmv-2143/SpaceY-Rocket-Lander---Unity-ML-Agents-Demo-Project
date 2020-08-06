@@ -196,7 +196,7 @@ namespace HumbleGames.MLAgents
         {
             do
             {
-                Debug.LogFormat("{0}: {1}", LOG_TAG, nameof(classHelper.DesignatePlanet));
+                //Debug.LogFormat("{0}: {1}", LOG_TAG, nameof(classHelper.DesignatePlanet));
                 DesignatePlanet(planet1);
                 DesignatePlanet(planet2);
             } 
