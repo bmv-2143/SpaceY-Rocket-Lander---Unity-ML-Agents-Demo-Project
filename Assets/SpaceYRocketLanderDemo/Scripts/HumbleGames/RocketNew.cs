@@ -70,10 +70,7 @@ namespace HumbleGames
         [SerializeField]
         private float engineBurstParticlesPlayDuration = 0.3f;
 
-
         private Vector3 initialRotation;
-
-        private Coroutine engineParticlesEmissionCoroutine;
 
         // ------------------------------------------------------------------------------------------------------------
         //                                         Unity Lifecycle
@@ -87,11 +84,6 @@ namespace HumbleGames
         // ------------------------------------------------------------------------------------------------------------
         //                                             Public API
         // ------------------------------------------------------------------------------------------------------------
-
-        public void Initialize()
-        {
-
-        }
 
         public void ResetRocket()
         {
@@ -140,13 +132,8 @@ namespace HumbleGames
         {
             if (enableParticles)
             {
-                if (engineParticlesEmissionCoroutine != null)
-                {
-                    StopCoroutine(engineParticlesEmissionCoroutine);
-                }
-
                 particleSystem.Play();
-                StartCoroutine(PlayParticlesForDuration(particleSystem, engineBurstParticlesPlayDuration));
+                    StartCoroutine(PlayParticlesForDuration(particleSystem, engineBurstParticlesPlayDuration));
             }
         }
 
