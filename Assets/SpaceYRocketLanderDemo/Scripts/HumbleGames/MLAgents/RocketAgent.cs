@@ -288,7 +288,7 @@ namespace HumbleGames.MLAgents
 
             //Debug.LogFormat("{0}: {1}: Action: {2}", LOG_TAG, nameof(classHelper.ApplyActions), vectorAction[0]);
 
-            switch (vectorAction[0])
+            switch (vectorAction[0]) // the first action branch
             {
                 case 0:
                     // do nothing, don't turn on engines
