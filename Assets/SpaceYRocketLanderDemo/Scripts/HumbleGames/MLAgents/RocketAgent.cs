@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.MLAgents;
+﻿using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 
@@ -23,9 +20,6 @@ namespace HumbleGames.MLAgents
         private RewardConfig rewardConfig;
 
         [SerializeField]
-        private RocketNew rocket;
-
-        [SerializeField]
         private GameObject leftLegLandingProbe;
 
         [SerializeField]
@@ -35,11 +29,27 @@ namespace HumbleGames.MLAgents
         [SerializeField]
         private SimulationArea simulationArea;
 
+        [SerializeField]
+        private GameObject basePlanet;
+        
+        [SerializeField]
+        private GameObject targetPlanet;
+
+
+        private RocketNew rocketControl;
+
+        private Rigidbody rocketRb;
+
         // ------------------------------------------------------------------------------------------------------------
         //                                Unity Lifecycle calls
         // ------------------------------------------------------------------------------------------------------------
 
-        // Update is called once per frame
+        private void Awake()
+        {
+            rocketRb = GetComponent<Rigidbody>();
+            rocketControl = GetComponent<RocketNew>();
+        }
+
         private void FixedUpdate()
         {
             ProcessSimulationState();
@@ -128,7 +138,39 @@ namespace HumbleGames.MLAgents
         /// </summary>
         public override void CollectObservations(VectorSensor sensor)
         {
-            //throw new NotImplementedException();
+            // Distance from rocket to base planet          (+1 obsrvation)
+            sensor.AddObservation(Vector3.Distance(transform.localPosition, basePlanet.transform.localPosition));
+
+            // Distance from rocket to target planet        (+1 observation)
+            sensor.AddObservation(Vector3.Distance(transform.localPosition, targetPlanet.transform.localPosition));
+
+            // Direction to target planet                   (+3 observation)
+            sensor.AddObservation((targetPlanet.transform.localPosition - transform.localPosition).normalized);
+
+            // Rocket's orientation                         (+3 observations)
+            sensor.AddObservation(transform.localEulerAngles);
+
+            // Rocket's velocity                            (+3 observations)
+            sensor.AddObservation(rocketRb.velocity);
+
+            // Rocket's angular valocity                    (+3 observations)
+            sensor.AddObservation(rocketRb.angularVelocity);
+
+            // Is left leg landed                           (+1 observation)
+            sensor.AddObservation(simulationState.isLeftLegLanded);
+
+            // Is right let landed                          (+1 observation)
+            sensor.AddObservation(simulationState.isRightLegLanded);
+
+            // Is DeathZone collision accident              (+1 observation)
+            sensor.AddObservation(simulationState.isDeathZoneCollisionAccident);
+
+            // Is planet collision accident                 (+1 observation)
+            sensor.AddObservation(simulationState.isPlanetCollisionAccident);
+
+
+            // Total: 18 NON-RAYCAST observation (Raycast observations (if any) are auto-added -
+            // see agent's RayPerciptionSensor 3D component (if it is added)
         }
 
         /// <summary>
@@ -161,7 +203,7 @@ namespace HumbleGames.MLAgents
         /// </summary>
         private void Reset()
         {
-            rocket.ResetRocket();
+            rocketControl.ResetRocket();
         }
 
         private void MapKeysToActions(float[] actionsOut)
@@ -254,32 +296,32 @@ namespace HumbleGames.MLAgents
 
                 case 1:
                     // MAIN BOTTOM engine is ON
-                    rocket.ActivateMainBottomEngine();
+                    rocketControl.ActivateMainBottomEngine();
                     break;
 
                 case 2:
                     // auxiliary TOP STOP engine is ON
-                    rocket.ActivateStopTopEngine();
+                    rocketControl.ActivateStopTopEngine();
                     break;
 
                 case 3:
                     // auxiliary TOP LEFT engine is ON
-                    rocket.ActivateAuxiliaryTopLeftEngine();
+                    rocketControl.ActivateAuxiliaryTopLeftEngine();
                     break;
 
                 case 4:
                     // auxiliary TOP RIGHT engine is ON
-                    rocket.ActivateAuxiliaryTopRightEngine();
+                    rocketControl.ActivateAuxiliaryTopRightEngine();
                     break;
 
                 case 5:
                     // auxiliary LEFT BOTTOM engine is ON
-                    rocket.ActivateAuxiliaryBottomLeftEngine();
+                    rocketControl.ActivateAuxiliaryBottomLeftEngine();
                     break;
 
                 case 6:
                     // auxiliary RIGHT BOTTOM engine is ON
-                    rocket.ActivateAuxiliaryBottomRightEngine();
+                    rocketControl.ActivateAuxiliaryBottomRightEngine();
                     break;
 
                 default:

@@ -152,7 +152,7 @@ Transform:
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.42}
   m_Children: []
   m_Father: {fileID: 4535146703547326}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &151909284
 BoxCollider:
@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 191451270}
   - component: {fileID: 191451269}
   - component: {fileID: 191451268}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DeathZoneBottom
   m_TagString: DeathZone
   m_Icon: {fileID: 0}
@@ -499,7 +499,7 @@ PrefabInstance:
     - target: {fileID: 7534265888879936014, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7534265888879936014, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
         type: 3}
@@ -647,7 +647,7 @@ GameObject:
   - component: {fileID: 326108586}
   - component: {fileID: 326108589}
   - component: {fileID: 326108587}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Gravity Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -856,7 +856,7 @@ PrefabInstance:
     - target: {fileID: 7534265888879936014, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7534265888879936014, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
         type: 3}
@@ -926,7 +926,7 @@ GameObject:
   - component: {fileID: 594689060}
   - component: {fileID: 594689063}
   - component: {fileID: 594689061}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Gravity Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1376,8 +1376,8 @@ GameObject:
   - component: {fileID: 824612476}
   - component: {fileID: 824612475}
   - component: {fileID: 824612474}
-  m_Layer: 9
-  m_Name: Planet 2
+  m_Layer: 8
+  m_Name: Planet 2 (target)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1657,6 +1657,66 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &976664904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 976664905}
+  - component: {fileID: 976664906}
+  m_Layer: 9
+  m_Name: Radar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &976664905
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976664904}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4535146703547326}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &976664906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976664904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: RayPerceptionSensor
+  m_DetectableTags:
+  - DeathZone
+  - TargetPlanet
+  - Planet
+  m_RaysPerDirection: 16
+  m_MaxRayDegrees: 180
+  m_SphereCastRadius: 0.5
+  m_RayLength: 60
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  m_ObservationStacks: 1
+  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
+  rayMissColor: {r: 0, g: 1, b: 0, a: 1}
+  m_StartVerticalOffset: 0
+  m_EndVerticalOffset: 0
 --- !u!1001 &1027652819
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1702,7 +1762,7 @@ PrefabInstance:
     - target: {fileID: 3117631200934670817, guid: 5031010cc3952b54f91d028ce2ecf8c2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3117631200934670817, guid: 5031010cc3952b54f91d028ce2ecf8c2,
         type: 3}
@@ -1779,8 +1839,8 @@ GameObject:
   - component: {fileID: 1037223180}
   - component: {fileID: 1037223179}
   - component: {fileID: 1037223178}
-  m_Layer: 9
-  m_Name: PlanetBody 1
+  m_Layer: 8
+  m_Name: PlanetBody 1 (base)
   m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2076,7 +2136,7 @@ GameObject:
   - component: {fileID: 1207380115}
   - component: {fileID: 1207380114}
   - component: {fileID: 1207380113}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DeathZoneRight
   m_TagString: DeathZone
   m_Icon: {fileID: 0}
@@ -2379,8 +2439,8 @@ GameObject:
   - component: {fileID: 1488787315}
   - component: {fileID: 1488787314}
   - component: {fileID: 1488787313}
-  m_Layer: 9
-  m_Name: PlanetBody 2
+  m_Layer: 8
+  m_Name: PlanetBody 2 (target)
   m_TagString: TargetPlanet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2604,7 +2664,7 @@ PrefabInstance:
     - target: {fileID: 7534265888879936014, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7534265888879936014, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
         type: 3}
@@ -2693,7 +2753,7 @@ Transform:
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.42}
   m_Children: []
   m_Father: {fileID: 4535146703547326}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1632394160
 BoxCollider:
@@ -2768,8 +2828,8 @@ GameObject:
   - component: {fileID: 1663799436}
   - component: {fileID: 1663799435}
   - component: {fileID: 1663799434}
-  m_Layer: 9
-  m_Name: Planet 1
+  m_Layer: 8
+  m_Name: Planet 1 (base)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3194,7 +3254,7 @@ GameObject:
   - component: {fileID: 1814445958}
   - component: {fileID: 1814445957}
   - component: {fileID: 1814445956}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DeathZoneLeft
   m_TagString: DeathZone
   m_Icon: {fileID: 0}
@@ -3504,7 +3564,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1973723697}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DeathZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3543,7 +3603,7 @@ GameObject:
   - component: {fileID: 1991115737}
   - component: {fileID: 1991115736}
   - component: {fileID: 1991115735}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DeathZoneTop
   m_TagString: DeathZone
   m_Icon: {fileID: 0}
@@ -4093,7 +4153,7 @@ PrefabInstance:
     - target: {fileID: 7534265888879936014, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7534265888879936014, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
         type: 3}
@@ -4184,10 +4244,11 @@ MonoBehaviour:
   simulationState: {fileID: 11400000, guid: 7c50da3343a95d1499951a709f2cefc1, type: 2}
   tagHolder: {fileID: 11400000, guid: 825b751c9450cf1409b30114af8c7247, type: 2}
   rewardConfig: {fileID: 11400000, guid: afb6df78223c4194dbfbbc3219ac144a, type: 2}
-  rocket: {fileID: 2057002625}
-  leftLegLandingProbe: {fileID: 0}
-  rightLegLandingProbe: {fileID: 0}
+  leftLegLandingProbe: {fileID: 1632394158}
+  rightLegLandingProbe: {fileID: 151909282}
   simulationArea: {fileID: 781539141}
+  basePlanet: {fileID: 1037223176}
+  targetPlanet: {fileID: 1488787311}
 --- !u!114 &2057002624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4201,7 +4262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 1
+    VectorObservationSize: 18
     NumStackedVectorObservations: 1
     VectorActionSize: 010000000100000001000000010000000100000001000000
     VectorActionDescriptions: []
@@ -4475,7 +4536,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4535146703547326}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4233802504295994 stripped
 Transform:
@@ -4495,7 +4556,7 @@ Transform:
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 4535146703547326}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4535146703547326
 Transform:
@@ -4508,6 +4569,7 @@ Transform:
   m_LocalPosition: {x: 19.764881, y: 15.894952, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 976664905}
   - {fileID: 4271001590827044}
   - {fileID: 1027652820}
   - {fileID: 4233802504295994}
@@ -4551,7 +4613,7 @@ Transform:
   m_LocalScale: {x: 0.20000002, y: 2.5000005, z: 0.39999998}
   m_Children: []
   m_Father: {fileID: 4535146703547326}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30.000002}
 --- !u!4 &4798054680538262
 Transform:
@@ -4565,7 +4627,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 4535146703547326}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4803655190253972
 Transform:
@@ -4579,7 +4641,7 @@ Transform:
   m_LocalScale: {x: 0.20000002, y: 2.500001, z: 0.4}
   m_Children: []
   m_Father: {fileID: 4535146703547326}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -30.000002}
 --- !u!4 &4915057946595394
 Transform:
@@ -4596,7 +4658,7 @@ Transform:
   - {fileID: 4765354726335960}
   - {fileID: 4093243677636798}
   m_Father: {fileID: 4535146703547326}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23078012852486970
 MeshRenderer:
@@ -5202,7 +5264,7 @@ PrefabInstance:
     - target: {fileID: 7534265888879936014, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7534265888879936014, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
         type: 3}
