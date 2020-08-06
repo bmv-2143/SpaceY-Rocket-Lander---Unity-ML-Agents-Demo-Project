@@ -759,12 +759,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 87808855}
   m_CullTransparentMesh: 0
---- !u!1 &97166900 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1512197919025574, guid: b3227a229a72eac4895e4db9651ff3cb,
-    type: 3}
-  m_PrefabInstance: {fileID: 1790719424}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &173393192
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,7 +1350,7 @@ GameObject:
   - component: {fileID: 215879100}
   m_Layer: 0
   m_Name: Game (2)
-  m_TagString: Untagged
+  m_TagString: ActivateWhileTraining
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5898,7 +5892,7 @@ GameObject:
   - component: {fileID: 1029561726}
   m_Layer: 0
   m_Name: Game (3)
-  m_TagString: Untagged
+  m_TagString: ActivateWhileTraining
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12560,7 +12554,7 @@ GameObject:
   - component: {fileID: 2105991708}
   m_Layer: 0
   m_Name: Game (4)
-  m_TagString: Untagged
+  m_TagString: ActivateWhileTraining
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12775,15 +12769,10 @@ MonoBehaviour:
   behaviorParameters: {fileID: 6569713505141529494, guid: 8f4cc6605c60e234781f3ce7fc3ae389,
     type: 3}
   cameraFollow: {fileID: 1715640926}
-  objsToDeactivateInTrainingMode:
-  - {fileID: 97166900}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  objsToActivateInTrainingMode:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  objsToDeactivateInTrainingMode: []
+  objsToActivateInTrainingMode: []
+  tagToActivateObjsInTrainingMode: ActivateWhileTraining
+  tagToDeactivateObjsInTrainingMode: DeactivateWhileTraining
 --- !u!4 &2124271158
 Transform:
   m_ObjectHideFlags: 0

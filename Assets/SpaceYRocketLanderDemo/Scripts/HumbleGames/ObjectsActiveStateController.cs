@@ -17,6 +17,11 @@ namespace HumbleGames
         [SerializeField]
         private GameObject[] objsToActivateInTrainingMode;
 
+        [SerializeField]
+        private string tagToActivateObjsInTrainingMode = "ActivateWhileTraining";
+        
+        [SerializeField]
+        private string tagToDeactivateObjsInTrainingMode = "DeactivateWhileTraining";
 
         private void OnEnable()
         {
@@ -32,11 +37,30 @@ namespace HumbleGames
             {
                 go.SetActive(!IsTrainingMode());
             }
+
+            ProcessTaggedObjects();
         }
 
         private bool IsTrainingMode()
         {
             return behaviorParameters.BehaviorType != BehaviorType.HeuristicOnly;
+        }
+
+        private void ProcessTaggedObjects()
+        {
+            GameObject[] objsToActivateWhileTraining = GameObject.FindGameObjectsWithTag(tagToActivateObjsInTrainingMode);
+
+            foreach (GameObject go in objsToActivateWhileTraining)
+            {
+                go.SetActive(IsTrainingMode());
+            }
+
+            GameObject[] objsToDeactivateWhileTraining = GameObject.FindGameObjectsWithTag(tagToDeactivateObjsInTrainingMode);
+
+            foreach (GameObject go in objsToDeactivateWhileTraining)
+            {
+                go.SetActive(!IsTrainingMode());
+            }
         }
     }
 }

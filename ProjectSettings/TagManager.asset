@@ -9,6 +9,8 @@ TagManager:
   - LegRightLandingProbe
   - TargetPlanet
   - Planet
+  - DeactivateWhileTraining
+  - ActivateWhileTraining
   layers:
   - Default
   - TransparentFX
