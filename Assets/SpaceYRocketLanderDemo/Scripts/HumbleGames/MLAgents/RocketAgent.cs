@@ -301,6 +301,7 @@ namespace HumbleGames.MLAgents
             if (simulationState.isDeathZoneCollisionAccident)
             {
                 Debug.LogFormat("FAILURE: DeathZoneCollision", LOG_TAG);
+                EventManager.RaiseSimulationEndEvent(SimulationFinishStatus.FAILURE_DEATH_ZONE_COLLISION);
                 GiveDeathZoneCollisionReward();
                 EndEpisode();
                 return;
@@ -309,6 +310,7 @@ namespace HumbleGames.MLAgents
             if (simulationState.isPlanetCollisionAccident)
             {
                 Debug.LogFormat("FAILURE: PlanetCollision", LOG_TAG);
+                EventManager.RaiseSimulationEndEvent(SimulationFinishStatus.FAILURE_PLANET_COLLISION);
                 GivePlanetCollisionReward();
                 EndEpisode();
                 return;
@@ -317,6 +319,7 @@ namespace HumbleGames.MLAgents
             if (simulationState.IsLandingSucces())
             {
                 Debug.LogFormat("SUCCESS: Successfull landing", LOG_TAG);
+                EventManager.RaiseSimulationEndEvent(SimulationFinishStatus.SUCCESS);
                 GiveLandingSuccessReward();
                 EndEpisode();
                 return;

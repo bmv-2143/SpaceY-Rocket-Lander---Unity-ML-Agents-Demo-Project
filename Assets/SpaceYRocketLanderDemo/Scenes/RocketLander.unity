@@ -3439,6 +3439,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1919802228}
   - component: {fileID: 1919802229}
+  - component: {fileID: 1919802230}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -3469,12 +3470,30 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919802227}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7abb8573dda790648815b5383e301824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   titleTxtGo: {fileID: 741046474}
+--- !u!114 &1919802230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919802227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dd7102999c03284b9fc1e168a242101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simulationTitle: {fileID: 741046474}
+  successMessage: Success!
+  failureMessagePrefix: 'Failure: '
+  autoHideTextDelay: 1.5
+  successTextView: {fileID: 1525874715}
+  failureTextView: {fileID: 345649396}
 --- !u!1 &1973723696
 GameObject:
   m_ObjectHideFlags: 0
