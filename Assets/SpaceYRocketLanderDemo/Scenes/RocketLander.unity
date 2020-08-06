@@ -560,6 +560,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 35033023}
   m_CullTransparentMesh: 0
+--- !u!1 &97166900 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1512197919025574, guid: b3227a229a72eac4895e4db9651ff3cb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1790719424}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &98484478
 GameObject:
   m_ObjectHideFlags: 0
@@ -6349,6 +6355,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1017846906}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1017846908 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1512197919025574, guid: b3227a229a72eac4895e4db9651ff3cb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1017846906}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1037223175
 Transform:
   m_ObjectHideFlags: 0
@@ -6616,6 +6628,12 @@ PrefabInstance:
 --- !u!4 &1049338483 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4820187179594922, guid: b3227a229a72eac4895e4db9651ff3cb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1049338482}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1049338484 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1512197919025574, guid: b3227a229a72eac4895e4db9651ff3cb,
     type: 3}
   m_PrefabInstance: {fileID: 1049338482}
   m_PrefabAsset: {fileID: 0}
@@ -7374,6 +7392,12 @@ PrefabInstance:
 --- !u!4 &1208999933 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4820187179594922, guid: b3227a229a72eac4895e4db9651ff3cb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1208999932}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1208999934 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1512197919025574, guid: b3227a229a72eac4895e4db9651ff3cb,
     type: 3}
   m_PrefabInstance: {fileID: 1208999932}
   m_PrefabAsset: {fileID: 0}
@@ -12798,6 +12822,10 @@ MonoBehaviour:
   - {fileID: 1335631847}
   - {fileID: 1793508149}
   - {fileID: 1693202504}
+  - {fileID: 97166900}
+  - {fileID: 1049338484}
+  - {fileID: 1017846908}
+  - {fileID: 1208999934}
 --- !u!4 &2124271158
 Transform:
   m_ObjectHideFlags: 0
@@ -12857,6 +12885,11 @@ PrefabInstance:
       propertyPath: targetPlanet
       value: 
       objectReference: {fileID: 1488787311}
+    - target: {fileID: 6569713505141529494, guid: 8f4cc6605c60e234781f3ce7fc3ae389,
+        type: 3}
+      propertyPath: m_BehaviorType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6574220890091007656, guid: 8f4cc6605c60e234781f3ce7fc3ae389,
         type: 3}
       propertyPath: m_LocalPosition.x
