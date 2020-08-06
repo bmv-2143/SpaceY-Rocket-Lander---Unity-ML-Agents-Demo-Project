@@ -9,7 +9,11 @@ namespace HumbleGames
         private BehaviorParameters behaviorParameters;
 
         [SerializeField]
+        private CameraFollow cameraFollow;
+
+        [SerializeField]
         private GameObject[] objsDeactivateInTrainingMode;
+
 
         private void OnEnable()
         {
@@ -18,6 +22,8 @@ namespace HumbleGames
             {
                 go.SetActive(ShouldObjectBeActive());
             }
+
+            cameraFollow.enabled = ShouldObjectBeActive();
         }
 
         private bool ShouldObjectBeActive()
