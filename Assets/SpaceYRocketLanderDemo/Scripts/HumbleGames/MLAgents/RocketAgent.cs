@@ -71,14 +71,6 @@ namespace HumbleGames.MLAgents
                 simulationState.isRightLegLanded = true;
             }
 
-            // ********************************************************************************************************
-            //                                        NOTE:
-            // If rocket's speed is very high it can trigger PlanetCollision(Falure) case even if it landed precisely 
-            // on both leg probes. 
-            // If you want to avoid such behaviour increase the size of leg probes or accuracy of PhysX in 
-            // ProjectSettings.
-            // ********************************************************************************************************
-
             // Collision with a planet (failure)
             simulationState.isPlanetCollisionAccident =
                 (IsTargetPlanetCollision(collision) || IsPlanetCollision(collision)) &&
