@@ -4264,7 +4264,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 0
+  MaxStep: 5000
   simulationState: {fileID: 11400000, guid: 7c50da3343a95d1499951a709f2cefc1, type: 2}
   tagHolder: {fileID: 11400000, guid: 825b751c9450cf1409b30114af8c7247, type: 2}
   rewardConfig: {fileID: 11400000, guid: afb6df78223c4194dbfbbc3219ac144a, type: 2}
