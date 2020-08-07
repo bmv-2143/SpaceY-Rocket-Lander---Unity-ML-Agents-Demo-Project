@@ -1,5 +1,13 @@
-Trained model results (when model's file attached to the behaviour):
+-----------------------------------------------------------------------------------------------------------------------
+Training stats (stats collected while training):
+
+Total: 35751 simulations, totalSuccessRate: 58,25291%, totalSuccessCount: 20826, totalFailCount: 14925
+-----------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------
+Trained model results (stats collected when model's file was attached to the behaviour component):
 
 SimulationStatsTracker: totalSimulations: 793, succesRate: 75,53594%, successCount: 599, failCount: 194
 
 Note: in this environment in 50% of cases the rocket is spawned near (above) the target planet.
+-----------------------------------------------------------------------------------------------------------------------
