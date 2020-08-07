@@ -4245,7 +4245,7 @@ MonoBehaviour:
   rocketToTargetPlanetBodyMaxOffset: 20
   angleDeg: 28.753927
   rocketPositioningAngleDistortion: -39.19883
-  rocketNearTargetPlanetProbability: 20
+  rocketNearTargetPlanetProbability: 1
 --- !u!1 &799166052
 GameObject:
   m_ObjectHideFlags: 0
@@ -4814,7 +4814,7 @@ MonoBehaviour:
   rocketToTargetPlanetBodyMaxOffset: 20
   angleDeg: 28.753927
   rocketPositioningAngleDistortion: -39.19883
-  rocketNearTargetPlanetProbability: 20
+  rocketNearTargetPlanetProbability: 1
 --- !u!1 &845274783
 GameObject:
   m_ObjectHideFlags: 0
@@ -6285,7 +6285,7 @@ MonoBehaviour:
   rocketToTargetPlanetBodyMaxOffset: 20
   angleDeg: 28.753927
   rocketPositioningAngleDistortion: -39.19883
-  rocketNearTargetPlanetProbability: 20
+  rocketNearTargetPlanetProbability: 1
 --- !u!1 &1087829353
 GameObject:
   m_ObjectHideFlags: 0
@@ -6553,7 +6553,7 @@ MonoBehaviour:
   rocketToTargetPlanetBodyMaxOffset: 20
   angleDeg: 28.753927
   rocketPositioningAngleDistortion: -39.19883
-  rocketNearTargetPlanetProbability: 20
+  rocketNearTargetPlanetProbability: 1
 --- !u!1 &1142737590
 GameObject:
   m_ObjectHideFlags: 0
