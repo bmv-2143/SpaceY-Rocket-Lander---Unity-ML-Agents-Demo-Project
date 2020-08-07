@@ -1,0 +1,17 @@
+-----------------------------------------------------------------------------------------------------------------------
+Training stats (stats collected while training):
+
+There were some errors in Unity Editor, so the simulation was stopped and resumed a few times.
+
+1) SimulationStatsTracker: totalSimulations: 100,  successRateOver[100]: 64% totalSuccesRate: 64%, totalSuccessCount: 64, totalFailCount: 36
+2) SimulationStatsTracker: totalSimulations: 3487,  successRateOver[100]: 77% totalSuccesRate: 72,41181%, totalSuccessCount: 2525, totalFailCount: 962
+3) SimulationStatsTracker: totalSimulations: 28000,  successRateOver[100]: 83% totalSuccesRate: 81,36072%, totalSuccessCount: 22781, totalFailCount: 5219
+-----------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------
+Trained model results (stats collected when model's file was attached to the behaviour component):
+
+SimulationStatsTracker: totalSimulations: 100,  successRateOver[100]: 83% totalSuccesRate: 83%, totalSuccessCount: 83, totalFailCount: 17
+
+Note: in this environment in 50% of cases the rocket is spawned near (above) the target planet.
+-----------------------------------------------------------------------------------------------------------------------
