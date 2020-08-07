@@ -12199,6 +12199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 585a50941bac69942802e8d734bafc7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numLastSimsToTrack: 100
 --- !u!4 &2036140146
 Transform:
   m_ObjectHideFlags: 0
