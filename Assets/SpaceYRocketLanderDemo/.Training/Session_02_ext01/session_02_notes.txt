@@ -1,4 +1,7 @@
 -----------------------------------------------------------------------------------------------------------------------
+The continuation training of the model from the Session 01
+-----------------------------------------------------------------------------------------------------------------------
+
 Training stats (stats collected while training):
 
 There were some errors in Unity Editor, so the simulation was stopped and resumed a few times.
