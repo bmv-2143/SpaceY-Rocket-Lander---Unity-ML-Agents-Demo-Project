@@ -52,18 +52,21 @@ namespace HumbleGames
 
             UpdateLastSimulationsSet(status);
 
-            Debug.LogFormat("{0}: totalSimulations: {1},  " +
-                            "successRateOver[{2}]: {3}% " +
-                            "totalSuccesRate: {4}%, " +
-                            "totalSuccessCount: {5}, " +
-                            "totalFailCount: {6}",
-                            LOG_TAG, 
-                            totalSimulations,
-                            numLastSimsToTrack,
-                            GetSuccessRateOfLastSimulationsSet(),
-                            totalSuccessRate,
-                            totalSuccessCount,
-                            totalFailCount);
+            if (totalSimulations % 100 == 0)
+            {
+                Debug.LogFormat("{0}: totalSimulations: {1},  " +
+                                "successRateOver[{2}]: {3}% " +
+                                "totalSuccesRate: {4}%, " +
+                                "totalSuccessCount: {5}, " +
+                                "totalFailCount: {6}",
+                                LOG_TAG, 
+                                totalSimulations,
+                                numLastSimsToTrack,
+                                GetSuccessRateOfLastSimulationsSet(),
+                                totalSuccessRate,
+                                totalSuccessCount,
+                                totalFailCount);
+            }
         }
 
         private float GetSuccessRateOfLastSimulationsSet()
