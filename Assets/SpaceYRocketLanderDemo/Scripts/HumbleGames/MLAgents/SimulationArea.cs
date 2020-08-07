@@ -1,4 +1,5 @@
-﻿using RoboRyanTron.QuickButtons;
+﻿using HumbleGames.Attributes;
+using RoboRyanTron.QuickButtons;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -75,6 +76,8 @@ namespace HumbleGames.MLAgents
 
         public QuickButton PutRocketOnBlasePlanet = new QuickButton(nameof(classHelper.DesignateRocketOnBlasePlanet));
 
+        [Space]
+
         [SerializeField]
         private GameObject targetPlanetBody;
 
@@ -83,7 +86,18 @@ namespace HumbleGames.MLAgents
         
         [SerializeField]
         private float rocketToTargetPlanetBodyMaxOffset = 1;
-        
+
+        [ReadOnly]
+        [SerializeField]
+        private float angleDeg;
+
+        [ReadOnly]
+        [SerializeField]
+        private float rocketPositioningAngleDistortion;
+
+        [SerializeField]
+        private float rocketNearTargetPlanetProbability = 50;
+
         public QuickButton PutRocketNearTargetPlanet = new QuickButton(nameof(classHelper.DesignateRocketNearTargetPlanet));
 
         #endregion
@@ -211,7 +225,8 @@ namespace HumbleGames.MLAgents
                 DesignatePlanet(basePlanet);
                 DesignatePlanet(targetPlanet);
             } 
-            while (Vector3.Distance(basePlanet.transform.position, targetPlanet.transform.position) < minDistanceBetweenPlanets);
+            while (Vector3.Distance(basePlanet.transform.position, targetPlanet.transform.position) < 
+                  minDistanceBetweenPlanets);
 
             DesignateRocket();
         }
@@ -219,14 +234,14 @@ namespace HumbleGames.MLAgents
 
         private void DesignateRocket()
         {
-            if (Random.value < 0.5)
+            if (Random.value < rocketNearTargetPlanetProbability / 100)
             {
-                DesignateRocketOnBlasePlanet();
+                DesignateRocketNearTargetPlanet();
             }
 
             else
             {
-                DesignateRocketNearTargetPlanet();
+                DesignateRocketOnBlasePlanet();
             }
         }
 
@@ -240,57 +255,43 @@ namespace HumbleGames.MLAgents
                 new Vector3(rocket.transform.localPosition.x,
                             rocket.transform.localPosition.y + basePlanetBody.transform.localScale.x - rocketToBasePlanetBodyOffset, 
                             0);
+
+            rocket.transform.localEulerAngles = Vector3.zero;
         }
 
         // Position Rocket near target planet
         private void DesignateRocketNearTargetPlanet()
         {
-            rocket.transform.localPosition = targetPlanetBody.transform.parent.localPosition;
+            //rocket.transform.localPosition = targetPlanetBody.transform.parent.localPosition;
 
-            float offsetToTargetPlanet = Random.Range(rocketToTargetPlanetBodyMinOffset, rocketToTargetPlanetBodyMaxOffset);
+            // circle radius - offset to target planet
+            float r = Random.Range(rocketToTargetPlanetBodyMinOffset, rocketToTargetPlanetBodyMaxOffset);
 
-            // --------------------------------------------------------------------------------------------------------
-            //                                       Work in progress
-            // --------------------------------------------------------------------------------------------------------
+            // random angle to position rocket around the target planet
+            angleDeg = 360 * Random.value;
+            float angleRad = Mathf.Deg2Rad * angleDeg;
 
-            //rocket.transform.localEulerAngles = new Vector3(
-            //    rocket.transform.localEulerAngles.x,
-            //    rocket.transform.localEulerAngles.y,
-            //    Random.Range(0, 359));
+            float rocketPosX = targetPlanetBody.transform.position.x + (r * Mathf.Cos(angleRad));
+            float rocketPosY = targetPlanetBody.transform.position.y + (r * Mathf.Sin(angleRad));
 
-            int k1 = Random.value < .5 ? 1 : -1;
-            // shift the rocket to put it precisely on the planet
-            rocket.transform.localPosition =
-                //new Vector3(rocket.transform.localPosition.x, // original
-                new Vector3(rocket.transform.localPosition.x + basePlanetBody.transform.localScale.x + k1 * rocketToTargetPlanetBodyMaxOffset,
-                            rocket.transform.localPosition.y + basePlanetBody.transform.localScale.x + offsetToTargetPlanet,
-                            0);
+            rocket.transform.position = new Vector3(rocketPosX, rocketPosY, 0);
 
+            rocketPositioningAngleDistortion = 120 * Random.value - 60; // random angle in range [-45, 45]
 
-            //float r = offsetToTargetPlanet;
+            // orient rocket so that its legs precisely point at the target planet
+            //rocket.transform.localEulerAngles = new Vector3(0, 0, angleRad * Mathf.Rad2Deg - 90);
 
-            //float angle = 90;
+            // orient rocket so that its legs point at the target planet (not precisely, added distortion angle)
+            rocket.transform.localEulerAngles = new Vector3(
+                0, 0, angleRad * Mathf.Rad2Deg - 90 + rocketPositioningAngleDistortion);
 
-            //rocket.transform.localPosition = new Vector3(
-            //    Mathf.Cos(angle + Mathf.Acos(rocket.transform.localPosition.x / r)),
-            //    Mathf.Sin(angle + Mathf.Asin(rocket.transform.localPosition.y / r)),
-            //    0);
-
-            // --------------------------------------------------------------------------------------------------------
-            /**
-             * How to get points coordinates on circle circumference with equal arcs length in unity
-
-                This is exactly the kind of problem trigonometry was invented to solve; trying to do it without trigonometry is just silly. 
-            
-                If you are starting at point (x,y) on a circle or radius r, and you want to rotate by an angle of a, then the new point is at
-
-                (x,y) = (cos(a + arccos(x/r)), sin(a + arcsin(y/r)))
-
-                And if you need to implement these trig functions yourself, read up on their Taylor series expansions.
-
-            source: https://stackoverflow.com/a/40701077
-             */
-            // --------------------------------------------------------------------------------------------------------
+            // if the rocket is spawned to close to the base planet => redesignate the rocket
+            if (Vector3.Distance(rocket.transform.position, basePlanet.transform.position) < 
+                rocketToTargetPlanetBodyMinOffset) 
+            {
+                Debug.LogFormat("{0}: Rocket is to close to base planet: redesignation", LOG_TAG);
+                DesignateRocketNearTargetPlanet();
+            }
         }
     }
 }

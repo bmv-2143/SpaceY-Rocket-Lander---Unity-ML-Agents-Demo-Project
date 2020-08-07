@@ -1078,8 +1078,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191451266}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -30, z: 0}
-  m_LocalScale: {x: 96, y: 0.05, z: 0.05}
+  m_LocalPosition: {x: 0, y: -40, z: 0}
+  m_LocalScale: {x: 128, y: 0.05, z: 0.05}
   m_Children: []
   m_Father: {fileID: 1973723697}
   m_RootOrder: 1
@@ -1932,6 +1932,9 @@ MonoBehaviour:
   targetPlanetBody: {fileID: 527057343}
   rocketToTargetPlanetBodyMinOffset: -3
   rocketToTargetPlanetBodyMaxOffset: 4
+  angleDeg: 0
+  rocketPositioningAngleDistortion: 0
+  rocketNearTargetPlanetProbability: 50
 --- !u!1 &345649394
 GameObject:
   m_ObjectHideFlags: 0
@@ -4282,8 +4285,8 @@ MonoBehaviour:
   deathZoneBottom: {fileID: 191451266}
   deathZoneLeft: {fileID: 1814445954}
   deathZoneRight: {fileID: 1207380111}
-  deathZoneWidth: 96
-  deathZoneHeight: 60
+  deathZoneWidth: 128
+  deathZoneHeight: 80
   planetDesignationAreaWidth: 40
   planetDesignationAreaHeight: 25
   showPlanetDesignationArea: 1
@@ -4293,8 +4296,11 @@ MonoBehaviour:
   basePlanetBody: {fileID: 1037223176}
   rocketToBasePlanetBodyOffset: 2.7
   targetPlanetBody: {fileID: 1488787311}
-  rocketToTargetPlanetBodyMinOffset: -3
-  rocketToTargetPlanetBodyMaxOffset: 4
+  rocketToTargetPlanetBodyMinOffset: 10
+  rocketToTargetPlanetBodyMaxOffset: 20
+  angleDeg: 28.753927
+  rocketPositioningAngleDistortion: -39.19883
+  rocketNearTargetPlanetProbability: 50
 --- !u!1 &799166052
 GameObject:
   m_ObjectHideFlags: 0
@@ -5923,7 +5929,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663799433}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.111282, y: 2.098446, z: 0}
+  m_LocalPosition: {x: -14.296986, y: 12.293949, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1037223177}
@@ -6842,8 +6848,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207380111}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 48, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 60, z: 0.05}
+  m_LocalPosition: {x: 64, y: 0, z: 0}
+  m_LocalScale: {x: 0.05, y: 80, z: 0.05}
   m_Children: []
   m_Father: {fileID: 1973723697}
   m_RootOrder: 3
@@ -8493,7 +8499,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824612473}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.49712, y: 6.772175, z: 0}
+  m_LocalPosition: {x: 9.646225, y: 5.256852, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1488787312}
@@ -8982,6 +8988,9 @@ MonoBehaviour:
   targetPlanetBody: {fileID: 1788203132}
   rocketToTargetPlanetBodyMinOffset: -3
   rocketToTargetPlanetBodyMaxOffset: 4
+  angleDeg: 0
+  rocketPositioningAngleDistortion: 0
+  rocketNearTargetPlanetProbability: 50
 --- !u!1001 &1656034223
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10399,8 +10408,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814445954}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -48, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 60, z: 0.05}
+  m_LocalPosition: {x: -64, y: 0, z: 0}
+  m_LocalScale: {x: 0.05, y: 80, z: 0.05}
   m_Children: []
   m_Father: {fileID: 1973723697}
   m_RootOrder: 2
@@ -11389,8 +11398,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1991115733}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 30, z: 0}
-  m_LocalScale: {x: 96, y: 0.05, z: 0.05}
+  m_LocalPosition: {x: 0, y: 40, z: 0}
+  m_LocalScale: {x: 128, y: 0.05, z: 0.05}
   m_Children: []
   m_Father: {fileID: 1973723697}
   m_RootOrder: 0
@@ -12737,6 +12746,9 @@ MonoBehaviour:
   targetPlanetBody: {fileID: 969632532}
   rocketToTargetPlanetBodyMinOffset: -3
   rocketToTargetPlanetBodyMaxOffset: 4
+  angleDeg: 0
+  rocketPositioningAngleDistortion: 0
+  rocketNearTargetPlanetProbability: 50
 --- !u!1 &2124271156
 GameObject:
   m_ObjectHideFlags: 0
@@ -12915,12 +12927,12 @@ PrefabInstance:
     - target: {fileID: 6574220890091007656, guid: 8f4cc6605c60e234781f3ce7fc3ae389,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.49712
+      value: -14.296986
       objectReference: {fileID: 0}
     - target: {fileID: 6574220890091007656, guid: 8f4cc6605c60e234781f3ce7fc3ae389,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.66331
+      value: 19.593948
       objectReference: {fileID: 0}
     - target: {fileID: 6574220890091007656, guid: 8f4cc6605c60e234781f3ce7fc3ae389,
         type: 3}

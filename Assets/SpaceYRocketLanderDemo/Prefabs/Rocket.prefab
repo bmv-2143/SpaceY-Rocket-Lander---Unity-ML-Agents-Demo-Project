@@ -429,7 +429,7 @@ MonoBehaviour:
     VectorActionSize: 07000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
-  m_Model: {fileID: 0}
+  m_Model: {fileID: 5022602860645237092, guid: bbf938ca36b2bd147a4ef75d2ac8a3ae, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: SpaceY
@@ -965,7 +965,7 @@ MonoBehaviour:
   m_DetectableTags:
   - DeathZone
   - TargetPlanet
-  - Planet
+  - BasePlanet
   m_RaysPerDirection: 16
   m_MaxRayDegrees: 180
   m_SphereCastRadius: 0.5
