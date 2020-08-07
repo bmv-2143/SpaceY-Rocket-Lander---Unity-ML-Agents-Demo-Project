@@ -30,3 +30,12 @@ tensorboard --logdir summaries
 
 3.2. Run Tensorboard (for new ML-Agents versions, "space-y_01" is in "results" folder, see training command above):
 tensorboard --logdir space-y_01
+
+-------------------------------------------------------
+How to load and continue training ot the previous model
+-------------------------------------------------------
+// for old ML-Agents versions:
+mlagents-learn .\trainer_config_01.yaml --run-id space-y_01 --train --load
+
+// for new ML-Agents versions:
+mlagents-learn .\trainer_config_01.yaml --run-id space-y_01 --train --resume
