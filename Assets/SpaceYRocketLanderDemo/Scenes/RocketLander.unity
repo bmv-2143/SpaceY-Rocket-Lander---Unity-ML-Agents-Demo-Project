@@ -1931,7 +1931,7 @@ MonoBehaviour:
   rocketToBasePlanetBodyOffset: 2.7
   targetPlanetBody: {fileID: 527057343}
   rocketToTargetPlanetBodyMinOffset: -3
-  rocketToTargetPlanetBodyMaxOffset: 2
+  rocketToTargetPlanetBodyMaxOffset: 4
 --- !u!1 &345649394
 GameObject:
   m_ObjectHideFlags: 0
@@ -4294,7 +4294,7 @@ MonoBehaviour:
   rocketToBasePlanetBodyOffset: 2.7
   targetPlanetBody: {fileID: 1488787311}
   rocketToTargetPlanetBodyMinOffset: -3
-  rocketToTargetPlanetBodyMaxOffset: 2
+  rocketToTargetPlanetBodyMaxOffset: 4
 --- !u!1 &799166052
 GameObject:
   m_ObjectHideFlags: 0
@@ -8981,7 +8981,7 @@ MonoBehaviour:
   rocketToBasePlanetBodyOffset: 2.7
   targetPlanetBody: {fileID: 1788203132}
   rocketToTargetPlanetBodyMinOffset: -3
-  rocketToTargetPlanetBodyMaxOffset: 2
+  rocketToTargetPlanetBodyMaxOffset: 4
 --- !u!1001 &1656034223
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12736,7 +12736,7 @@ MonoBehaviour:
   rocketToBasePlanetBodyOffset: 2.7
   targetPlanetBody: {fileID: 969632532}
   rocketToTargetPlanetBodyMinOffset: -3
-  rocketToTargetPlanetBodyMaxOffset: 2
+  rocketToTargetPlanetBodyMaxOffset: 4
 --- !u!1 &2124271156
 GameObject:
   m_ObjectHideFlags: 0
@@ -12915,12 +12915,12 @@ PrefabInstance:
     - target: {fileID: 6574220890091007656, guid: 8f4cc6605c60e234781f3ce7fc3ae389,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.49712
+      value: 20.49712
       objectReference: {fileID: 0}
     - target: {fileID: 6574220890091007656, guid: 8f4cc6605c60e234781f3ce7fc3ae389,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.781599
+      value: 20.66331
       objectReference: {fileID: 0}
     - target: {fileID: 6574220890091007656, guid: 8f4cc6605c60e234781f3ce7fc3ae389,
         type: 3}

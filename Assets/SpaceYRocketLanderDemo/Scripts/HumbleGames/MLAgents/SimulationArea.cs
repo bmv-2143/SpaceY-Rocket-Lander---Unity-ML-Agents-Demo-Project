@@ -249,16 +249,48 @@ namespace HumbleGames.MLAgents
 
             float offsetToTargetPlanet = Random.Range(rocketToTargetPlanetBodyMinOffset, rocketToTargetPlanetBodyMaxOffset);
 
+            // --------------------------------------------------------------------------------------------------------
+            //                                       Work in progress
+            // --------------------------------------------------------------------------------------------------------
+
             //rocket.transform.localEulerAngles = new Vector3(
             //    rocket.transform.localEulerAngles.x,
             //    rocket.transform.localEulerAngles.y,
             //    Random.Range(0, 359));
 
+            int k1 = Random.value < .5 ? 1 : -1;
             // shift the rocket to put it precisely on the planet
             rocket.transform.localPosition =
-                new Vector3(rocket.transform.localPosition.x,
+                //new Vector3(rocket.transform.localPosition.x, // original
+                new Vector3(rocket.transform.localPosition.x + basePlanetBody.transform.localScale.x + k1 * rocketToTargetPlanetBodyMaxOffset,
                             rocket.transform.localPosition.y + basePlanetBody.transform.localScale.x + offsetToTargetPlanet,
                             0);
+
+
+            //float r = offsetToTargetPlanet;
+
+            //float angle = 90;
+
+            //rocket.transform.localPosition = new Vector3(
+            //    Mathf.Cos(angle + Mathf.Acos(rocket.transform.localPosition.x / r)),
+            //    Mathf.Sin(angle + Mathf.Asin(rocket.transform.localPosition.y / r)),
+            //    0);
+
+            // --------------------------------------------------------------------------------------------------------
+            /**
+             * How to get points coordinates on circle circumference with equal arcs length in unity
+
+                This is exactly the kind of problem trigonometry was invented to solve; trying to do it without trigonometry is just silly. 
+            
+                If you are starting at point (x,y) on a circle or radius r, and you want to rotate by an angle of a, then the new point is at
+
+                (x,y) = (cos(a + arccos(x/r)), sin(a + arcsin(y/r)))
+
+                And if you need to implement these trig functions yourself, read up on their Taylor series expansions.
+
+            source: https://stackoverflow.com/a/40701077
+             */
+            // --------------------------------------------------------------------------------------------------------
         }
     }
 }
