@@ -1,7 +1,7 @@
 ﻿using Unity.MLAgents.Policies;
 using UnityEngine;
 
-namespace HumbleGames
+namespace HumbleGames.Utils
 {
     public class ObjectsActiveStateController : MonoBehaviour
     {
