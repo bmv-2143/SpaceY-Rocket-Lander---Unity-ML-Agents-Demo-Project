@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace HumbleGames.BallThrowerGame.Utilities
+namespace HumbleGames.Utils
 {
     /// <summary>
     /// Draws Circle with LineRenderer
