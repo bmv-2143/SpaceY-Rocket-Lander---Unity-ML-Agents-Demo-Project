@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace HumbleGames
+namespace HumbleGames.Utils
 {
     [CreateAssetMenu(fileName = "TagHolder", menuName = "ScriptableObjects/TagHolder", order = 1)]
     public class TagHolder : ScriptableObject

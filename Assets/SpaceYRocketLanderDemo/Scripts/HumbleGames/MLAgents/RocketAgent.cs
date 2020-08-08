@@ -1,4 +1,5 @@
-﻿using Unity.MLAgents;
+﻿using HumbleGames.Utils;
+using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 
