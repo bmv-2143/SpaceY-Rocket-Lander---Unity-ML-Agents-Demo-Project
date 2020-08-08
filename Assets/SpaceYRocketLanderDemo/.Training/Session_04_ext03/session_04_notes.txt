@@ -1,0 +1,30 @@
+-----------------------------------------------------------------------------------------------------------------------
+The continuation training of the model from the Session 03
+-----------------------------------------------------------------------------------------------------------------------
+
+The probability of spawning the rocket near target planet was reduced to 1% from 20%.
+
+-----------------------------------------------------------------------------------------------------------------------
+Training stats (stats collected while training):
+
+1) SimulationStatsTracker: totalSimulations: 100,  successRateOver[100]: 88% totalSuccesRate: 88%, totalSuccessCount: 88, totalFailCount: 12
+2) SimulationStatsTracker: totalSimulations: 200,  successRateOver[100]: 84% totalSuccesRate: 86%, totalSuccessCount: 172, totalFailCount: 28
+3) SimulationStatsTracker: totalSimulations: 300,  successRateOver[100]: 86% totalSuccesRate: 86%, totalSuccessCount: 258, totalFailCount: 42
+
+... ... ...
+
+[End - 2]  SimulationStatsTracker: totalSimulations: 148900,  successRateOver[100]: 97% totalSuccesRate: 90,71323%, totalSuccessCount: 135072, totalFailCount: 13828
+[End - 1]  SimulationStatsTracker: totalSimulations: 149000,  successRateOver[100]: 94% totalSuccesRate: 90,71544%, totalSuccessCount: 135166, totalFailCount: 13834
+[End]      SimulationStatsTracker: totalSimulations: 149100,  successRateOver[100]: 98% totalSuccesRate: 90,72032%, totalSuccessCount: 135264, totalFailCount: 13836
+
+-----------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------
+Some trained model results (stats collected when model's file was attached to the behaviour component):
+
+1) SimulationStatsTracker: totalSimulations: 100,  successRateOver[100]: 96% totalSuccesRate: 96%, totalSuccessCount: 96, totalFailCount: 4
+2) SimulationStatsTracker: totalSimulations: 200,  successRateOver[100]: 96% totalSuccesRate: 96%, totalSuccessCount: 192, totalFailCount: 8
+3) SimulationStatsTracker: totalSimulations: 300,  successRateOver[100]: 92% totalSuccesRate: 94,66666%, totalSuccessCount: 284, totalFailCount: 16
+
+Note: in this environment in 1% of cases the rocket is spawned near (above) the target planet.
+-----------------------------------------------------------------------------------------------------------------------
