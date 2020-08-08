@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace HumbleGames
+namespace HumbleGames.UI
 {
     public class HideTitle : MonoBehaviour
     {
