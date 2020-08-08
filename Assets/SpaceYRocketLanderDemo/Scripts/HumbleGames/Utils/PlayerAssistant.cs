@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace HumbleGames
+namespace HumbleGames.Utils
 {
     public class PlayerAssistant : MonoBehaviour
     {
