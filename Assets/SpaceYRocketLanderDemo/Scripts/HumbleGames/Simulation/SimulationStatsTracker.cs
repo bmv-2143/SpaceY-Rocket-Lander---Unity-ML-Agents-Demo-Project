@@ -1,8 +1,7 @@
-﻿using HumbleGames.Simulation;
-using System.Linq;
+﻿using System.Linq;
 using UnityEngine;
 
-namespace HumbleGames
+namespace HumbleGames.Simulation
 {
     public class SimulationStatsTracker : MonoBehaviour
     {
