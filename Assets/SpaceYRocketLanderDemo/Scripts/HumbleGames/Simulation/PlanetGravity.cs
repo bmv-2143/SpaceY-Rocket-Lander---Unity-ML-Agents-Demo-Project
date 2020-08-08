@@ -1,7 +1,7 @@
-﻿using HumbleGames.BallThrowerGame.Utilities;
+﻿using HumbleGames.Utils;
 using UnityEngine;
 
-namespace HumbleGames
+namespace HumbleGames.Simulation
 {
     public class PlanetGravity : MonoBehaviour
     {
