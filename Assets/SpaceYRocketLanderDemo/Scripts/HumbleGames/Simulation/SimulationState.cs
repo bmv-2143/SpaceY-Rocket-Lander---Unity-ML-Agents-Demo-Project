@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace HumbleGames
+namespace HumbleGames.Simulation
 {
     public class SimulationState : MonoBehaviour
     {
