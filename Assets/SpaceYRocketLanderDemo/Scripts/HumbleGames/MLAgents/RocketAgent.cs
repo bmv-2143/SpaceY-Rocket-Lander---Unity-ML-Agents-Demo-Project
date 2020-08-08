@@ -198,7 +198,7 @@ namespace HumbleGames.MLAgents
         /// <returns>A vectorAction array of floats that will be passed into <see cref="AgentAction(float[])"/></returns>
         public override void Heuristic(float[] actionsOut)
         {
-            MapKeysToActions(actionsOut);
+            UserInput.Instance.MapKeysToMlAgentsActions(actionsOut);
         }
 
         // ============================================================================================================
@@ -210,71 +210,6 @@ namespace HumbleGames.MLAgents
         private void Reset()
         {
             rocketControl.ResetRocket();
-        }
-
-        private void MapKeysToActions(float[] actionsOut)
-        {
-            // --------------------------------------------------------------------------------------------------------
-            // Rocket Controls:
-            // 
-            //       S   
-            //       ^
-            //    Q | | E
-            //      | |
-            //      | |
-            //    A | | D
-            //     /   \
-            //       W
-            // 
-            // --------------------------------------------------------------------------------------------------------
-
-            // Move forward (main bottom\stern engine)
-            if (Input.GetKey(KeyCode.W))
-            {
-                //Debug.LogFormat("{0}: {1}: Key: W", LOG_TAG, nameof(classHelper.MapKeysToActions));
-                actionsOut[0] = 1f;
-            }
-
-            // Move backwards (auxiliary top\bow engine)
-            else if (Input.GetKey(KeyCode.S))
-            {
-                //Debug.LogFormat("{0}: {1}: Key: S", LOG_TAG, nameof(classHelper.MapKeysToActions));
-                actionsOut[0] = 2f;
-            }
-
-            // Top left auxiliary engine
-            else if (Input.GetKey(KeyCode.Q))
-            {
-                //Debug.LogFormat("{0}: {1}: Key: Q", LOG_TAG, nameof(classHelper.MapKeysToActions));
-                actionsOut[0] = 3f;
-            }
-
-            // Top right auxiliary engine
-            else if (Input.GetKey(KeyCode.E))
-            {
-                //Debug.LogFormat("{0}: {1}: Key: E", LOG_TAG, nameof(classHelper.MapKeysToActions));
-                actionsOut[0] = 4f;
-            }
-
-            // Bottom left auxiliary engine
-            else if (Input.GetKey(KeyCode.A))
-            {
-                //Debug.LogFormat("{0}: {1}: Key: A", LOG_TAG, nameof(classHelper.MapKeysToActions));
-                actionsOut[0] = 5f;
-            }
-
-            // Bottom right auxiliary engine
-            else if (Input.GetKey(KeyCode.D))
-            {
-                //Debug.LogFormat("{0}: {1}: Key: D", LOG_TAG, nameof(classHelper.MapKeysToActions));
-                actionsOut[0] = 6f;
-            }
-
-            // No keys detected - do nothing
-            else
-            {
-                actionsOut[0] = 0;
-            }
         }
 
         private void ApplyActions(float[] vectorAction)
