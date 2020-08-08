@@ -2339,7 +2339,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 501808567}
-  - component: {fileID: 501808569}
   - component: {fileID: 501808568}
   m_Layer: 0
   m_Name: UI
@@ -2382,19 +2381,6 @@ MonoBehaviour:
   autoHideTextDelay: 1.5
   successTextView: {fileID: 2075978265}
   failureTextView: {fileID: 2000306455}
---- !u!114 &501808569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 501808566}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7abb8573dda790648815b5383e301824, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  titleTxtGo: {fileID: 917463818}
 --- !u!1 &504418130
 GameObject:
   m_ObjectHideFlags: 0
@@ -3406,7 +3392,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 640770217}
-  - component: {fileID: 640770219}
   - component: {fileID: 640770218}
   m_Layer: 0
   m_Name: UI
@@ -3449,19 +3434,6 @@ MonoBehaviour:
   autoHideTextDelay: 1.5
   successTextView: {fileID: 314849060}
   failureTextView: {fileID: 1815323376}
---- !u!114 &640770219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 640770216}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7abb8573dda790648815b5383e301824, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  titleTxtGo: {fileID: 941531861}
 --- !u!1 &662855899
 GameObject:
   m_ObjectHideFlags: 0
@@ -11043,7 +11015,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1919802228}
-  - component: {fileID: 1919802229}
   - component: {fileID: 1919802230}
   m_Layer: 0
   m_Name: UI
@@ -11068,19 +11039,6 @@ Transform:
   m_Father: {fileID: 1460253537}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1919802229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1919802227}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7abb8573dda790648815b5383e301824, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  titleTxtGo: {fileID: 741046474}
 --- !u!114 &1919802230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12603,7 +12561,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2089371887}
-  - component: {fileID: 2089371889}
   - component: {fileID: 2089371888}
   m_Layer: 0
   m_Name: UI
@@ -12646,19 +12603,6 @@ MonoBehaviour:
   autoHideTextDelay: 1.5
   successTextView: {fileID: 2071694029}
   failureTextView: {fileID: 327283147}
---- !u!114 &2089371889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2089371886}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7abb8573dda790648815b5383e301824, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  titleTxtGo: {fileID: 2130441696}
 --- !u!1 &2123923211
 GameObject:
   m_ObjectHideFlags: 0
