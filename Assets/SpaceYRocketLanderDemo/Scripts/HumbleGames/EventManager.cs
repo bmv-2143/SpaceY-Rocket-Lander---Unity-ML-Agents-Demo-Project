@@ -1,4 +1,6 @@
 ﻿
+using HumbleGames.Simulation;
+
 namespace HumbleGames
 {
     public class EventManager

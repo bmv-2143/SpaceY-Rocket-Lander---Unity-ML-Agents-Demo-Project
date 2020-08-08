@@ -1,6 +1,4 @@
-﻿using HumbleGames;
-using System.Collections;
-using System.Collections.Generic;
+﻿using HumbleGames.Simulation;
 using System.Linq;
 using UnityEngine;
 
