@@ -16183,13 +16183,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 781539140}
     m_Modifications:
+    - target: {fileID: 1512197919025574, guid: b3227a229a72eac4895e4db9651ff3cb, type: 3}
+      propertyPath: m_Name
+      value: StarFieldDustStorm
+      objectReference: {fileID: 0}
     - target: {fileID: 4820187179594922, guid: b3227a229a72eac4895e4db9651ff3cb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4820187179594922, guid: b3227a229a72eac4895e4db9651ff3cb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4820187179594922, guid: b3227a229a72eac4895e4db9651ff3cb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -16215,10 +16219,17 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 198097979404992234, guid: b3227a229a72eac4895e4db9651ff3cb,
-        type: 3}
-      propertyPath: ShapeModule.m_Scale.y
-      value: 45
+    - target: {fileID: 4820187179594922, guid: b3227a229a72eac4895e4db9651ff3cb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4820187179594922, guid: b3227a229a72eac4895e4db9651ff3cb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4820187179594922, guid: b3227a229a72eac4895e4db9651ff3cb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3227a229a72eac4895e4db9651ff3cb, type: 3}
