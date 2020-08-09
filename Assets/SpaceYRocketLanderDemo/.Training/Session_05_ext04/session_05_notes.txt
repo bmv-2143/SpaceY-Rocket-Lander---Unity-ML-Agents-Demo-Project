@@ -1,0 +1,35 @@
+-----------------------------------------------------------------------------------------------------------------------
+The continuation training of the model from the Session 04
+-----------------------------------------------------------------------------------------------------------------------
+
+The probability of spawning the rocket near target planet was reduced to 1% from 0.001%.
+
+-----------------------------------------------------------------------------------------------------------------------
+Training stats (stats collected while training):
+
+1) SimulationStatsTracker: totalSimulations: 100,  successRateOver[100]: 100% totalSuccesRate: 100%, totalSuccessCount: 100, totalFailCount: 0
+2) SimulationStatsTracker: totalSimulations: 200,  successRateOver[100]: 92% totalSuccesRate: 96%, totalSuccessCount: 192, totalFailCount: 8
+3) SimulationStatsTracker: totalSimulations: 300,  successRateOver[100]: 99% totalSuccesRate: 97%, totalSuccessCount: 291, totalFailCount: 9
+
+... ... ...
+SimulationStatsTracker: totalSimulations: 8900,  successRateOver[100]: 96% totalSuccesRate: 95,29214%, totalSuccessCount: 8481, totalFailCount: 419
+SimulationStatsTracker: totalSimulations: 9000,  successRateOver[100]: 94% totalSuccesRate: 95,27778%, totalSuccessCount: 8575, totalFailCount: 425
+SimulationStatsTracker: totalSimulations: 9100,  successRateOver[100]: 95% totalSuccesRate: 95,27473%, totalSuccessCount: 8670, totalFailCount: 430
+
+... ... ...
+
+[End - 2]  
+[End - 1]  
+[End]      
+
+-----------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------
+Some trained model results (stats collected when model's file was attached to the behaviour component):
+
+1) ...
+2) ...
+3) ...
+
+Note: in this environment in 0.001% of cases the rocket is spawned near (above) the target planet.
+-----------------------------------------------------------------------------------------------------------------------
