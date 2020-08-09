@@ -181,33 +181,38 @@ namespace HumbleGames.SpaceY.MLAgents
         {
             if (showPlanetDesignationArea)
             {
+                DrawPlanetDesignationAreaBounds();
+            }
+
+        }
+        private void DrawPlanetDesignationAreaBounds()
+        {
                 Gizmos.color = Color.blue;
 
                 Vector3 planetDesignationAreaCornerTopLeft =
-                    new Vector3(transform.localPosition.x - planetDesignationAreaWidth / 2,
-                                transform.localPosition.x + planetDesignationAreaHeight / 2,
+                    new Vector3(deathZone.transform.position.x - planetDesignationAreaWidth / 2,
+                                deathZone.transform.position.y + planetDesignationAreaHeight / 2,
                                 0);
 
                 Vector3 planetDesignationAreaCornerTopRight =
-                    new Vector3(transform.localPosition.x + planetDesignationAreaWidth / 2,
-                                transform.localPosition.x + planetDesignationAreaHeight / 2,
+                    new Vector3(deathZone.transform.position.x + planetDesignationAreaWidth / 2,
+                                deathZone.transform.position.y + planetDesignationAreaHeight / 2,
                                 0);
 
                 Vector3 planetDesignationAreaCornerBottomRight =
-                    new Vector3(transform.localPosition.x + planetDesignationAreaWidth / 2,
-                                transform.localPosition.x - planetDesignationAreaHeight / 2,
+                    new Vector3(deathZone.transform.position.x + planetDesignationAreaWidth / 2,
+                                deathZone.transform.position.y - planetDesignationAreaHeight / 2,
                                 0);
 
                 Vector3 planetDesignationAreaCornerBottomLeft =
-                    new Vector3(transform.localPosition.x - planetDesignationAreaWidth / 2,
-                                transform.localPosition.x - planetDesignationAreaHeight / 2,
+                    new Vector3(deathZone.transform.position.x - planetDesignationAreaWidth / 2,
+                                deathZone.transform.position.y - planetDesignationAreaHeight / 2,
                                 0);
 
                 Gizmos.DrawLine(planetDesignationAreaCornerTopLeft, planetDesignationAreaCornerTopRight);
                 Gizmos.DrawLine(planetDesignationAreaCornerTopRight, planetDesignationAreaCornerBottomRight);
                 Gizmos.DrawLine(planetDesignationAreaCornerBottomRight, planetDesignationAreaCornerBottomLeft);
                 Gizmos.DrawLine(planetDesignationAreaCornerBottomLeft, planetDesignationAreaCornerTopLeft);
-            }
         }
 
         // Position planets not to close to DeathZone and to each other
