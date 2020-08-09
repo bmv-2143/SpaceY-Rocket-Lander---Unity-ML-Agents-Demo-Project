@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-namespace HumbleGames.Attributes
+namespace HumbleGames.SpaceY.Attributes
 {
     /// <summary>
     /// This class contain custom drawer for ReadOnly attribute.

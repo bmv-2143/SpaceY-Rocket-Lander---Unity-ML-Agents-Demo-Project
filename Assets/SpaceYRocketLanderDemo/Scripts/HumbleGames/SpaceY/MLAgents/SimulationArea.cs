@@ -1,9 +1,10 @@
-﻿using HumbleGames.Attributes;
+﻿using HumbleGames.SpaceY.Attributes;
+using HumbleGames.SpaceY.Simulation;
 using RoboRyanTron.QuickButtons;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace HumbleGames.MLAgents
+namespace HumbleGames.SpaceY.MLAgents
 {
     public class SimulationArea : MonoBehaviour
     {

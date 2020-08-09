@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace HumbleGames.MLAgents
+namespace HumbleGames.SpaceY.MLAgents
 {
     [CreateAssetMenu(fileName = "RewardConfig", menuName = "ScriptableObjects/RewardConfig", order = 1)]
     public class RewardConfig : ScriptableObject

@@ -1,4 +1,4 @@
-﻿namespace HumbleGames.Simulation
+﻿namespace HumbleGames.SpaceY.Simulation
 {
     public enum SimulationEndStatus 
     {

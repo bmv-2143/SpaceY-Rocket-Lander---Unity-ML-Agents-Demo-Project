@@ -1,7 +1,6 @@
-﻿
-using HumbleGames.Simulation;
+﻿using HumbleGames.SpaceY.Simulation;
 
-namespace HumbleGames
+namespace HumbleGames.SpaceY
 {
     public class EventManager
     {

@@ -1,8 +1,8 @@
-﻿using HumbleGames.Simulation;
+﻿using HumbleGames.SpaceY.Simulation;
 using System.Collections;
 using UnityEngine;
 
-namespace HumbleGames.Simulation
+namespace HumbleGames.SpaceY.Simulation
 {
     public class RocketNew : MonoBehaviour
     {

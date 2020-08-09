@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace HumbleGames.Simulation
+namespace HumbleGames.SpaceY.Simulation
 {
     public class SimulationState : MonoBehaviour
     {

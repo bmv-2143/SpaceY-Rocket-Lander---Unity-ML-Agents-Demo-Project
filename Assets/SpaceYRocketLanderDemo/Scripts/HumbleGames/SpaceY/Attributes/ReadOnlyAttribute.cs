@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace HumbleGames.Attributes
+namespace HumbleGames.SpaceY.Attributes
 {
     /// <summary>
     /// Read Only attribute.

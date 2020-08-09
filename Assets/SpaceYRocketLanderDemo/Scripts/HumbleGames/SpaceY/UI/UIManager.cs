@@ -1,9 +1,10 @@
-﻿using HumbleGames.Simulation;
+﻿using HumbleGames.SpaceY.Simulation;
+using HumbleGames.SpaceY.Simulation;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace HumbleGames.UI
+namespace HumbleGames.SpaceY.UI
 {
     public class UIManager : MonoBehaviour
     {

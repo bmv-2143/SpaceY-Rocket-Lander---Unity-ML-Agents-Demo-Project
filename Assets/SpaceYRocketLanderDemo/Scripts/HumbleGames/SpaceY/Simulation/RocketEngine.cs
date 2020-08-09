@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace HumbleGames.Simulation
+namespace HumbleGames.SpaceY.Simulation
 {
     public class RocketEngine : MonoBehaviour
     {

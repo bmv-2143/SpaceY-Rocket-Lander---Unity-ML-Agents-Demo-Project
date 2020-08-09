@@ -1,7 +1,7 @@
-﻿using HumbleGames.Utils;
+﻿using HumbleGames.SpaceY.Utils;
 using UnityEngine;
 
-namespace HumbleGames.Simulation
+namespace HumbleGames.SpaceY.Simulation
 {
     public class PlanetGravity : MonoBehaviour
     {

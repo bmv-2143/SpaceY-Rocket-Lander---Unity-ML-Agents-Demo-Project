@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace HumbleGames
+namespace HumbleGames.SpaceY
 {
     public class UserInput : MonoBehaviour
     {

@@ -1,10 +1,10 @@
-﻿using HumbleGames.Simulation;
-using HumbleGames.Utils;
+﻿using HumbleGames.SpaceY.Simulation;
+using HumbleGames.SpaceY.Utils;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 
-namespace HumbleGames.MLAgents
+namespace HumbleGames.SpaceY.MLAgents
 {
     public class RocketAgent : Agent
     {

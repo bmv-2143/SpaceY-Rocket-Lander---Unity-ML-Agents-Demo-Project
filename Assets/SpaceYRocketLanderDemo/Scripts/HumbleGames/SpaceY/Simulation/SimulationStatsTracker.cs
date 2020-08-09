@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using UnityEngine;
 
-namespace HumbleGames.Simulation
+namespace HumbleGames.SpaceY.Simulation
 {
     public class SimulationStatsTracker : MonoBehaviour
     {
