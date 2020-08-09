@@ -5715,8 +5715,8 @@ MonoBehaviour:
   deathZoneRight: {fileID: 1129959162}
   deathZoneWidth: 128
   deathZoneHeight: 80
-  planetDesignationAreaWidth: 40
-  planetDesignationAreaHeight: 25
+  planetDesignationAreaWidth: 80
+  planetDesignationAreaHeight: 50
   showPlanetDesignationArea: 1
   basePlanet: {fileID: 835587617}
   targetPlanet: {fileID: 590154797}
@@ -6878,8 +6878,8 @@ MonoBehaviour:
   deathZoneRight: {fileID: 1207380111}
   deathZoneWidth: 128
   deathZoneHeight: 80
-  planetDesignationAreaWidth: 40
-  planetDesignationAreaHeight: 25
+  planetDesignationAreaWidth: 80
+  planetDesignationAreaHeight: 50
   showPlanetDesignationArea: 1
   basePlanet: {fileID: 1663799433}
   targetPlanet: {fileID: 824612473}
@@ -7763,8 +7763,8 @@ MonoBehaviour:
   deathZoneRight: {fileID: 1510677718}
   deathZoneWidth: 128
   deathZoneHeight: 80
-  planetDesignationAreaWidth: 40
-  planetDesignationAreaHeight: 25
+  planetDesignationAreaWidth: 80
+  planetDesignationAreaHeight: 50
   showPlanetDesignationArea: 1
   basePlanet: {fileID: 477444647}
   targetPlanet: {fileID: 1263841266}
@@ -9604,7 +9604,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663799433}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.800231, y: 8.442283, z: 0}
+  m_LocalPosition: {x: -29.703682, y: 13.15813, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1037223177}
@@ -9914,8 +9914,8 @@ MonoBehaviour:
   deathZoneRight: {fileID: 220347794}
   deathZoneWidth: 128
   deathZoneHeight: 80
-  planetDesignationAreaWidth: 40
-  planetDesignationAreaHeight: 25
+  planetDesignationAreaWidth: 80
+  planetDesignationAreaHeight: 50
   showPlanetDesignationArea: 1
   basePlanet: {fileID: 874960435}
   targetPlanet: {fileID: 978577057}
@@ -10150,8 +10150,8 @@ MonoBehaviour:
   deathZoneRight: {fileID: 445075288}
   deathZoneWidth: 128
   deathZoneHeight: 80
-  planetDesignationAreaWidth: 40
-  planetDesignationAreaHeight: 25
+  planetDesignationAreaWidth: 80
+  planetDesignationAreaHeight: 50
   showPlanetDesignationArea: 1
   basePlanet: {fileID: 1508794050}
   targetPlanet: {fileID: 929275555}
@@ -10378,8 +10378,8 @@ MonoBehaviour:
   deathZoneRight: {fileID: 2002355867}
   deathZoneWidth: 128
   deathZoneHeight: 80
-  planetDesignationAreaWidth: 40
-  planetDesignationAreaHeight: 25
+  planetDesignationAreaWidth: 80
+  planetDesignationAreaHeight: 50
   showPlanetDesignationArea: 1
   basePlanet: {fileID: 455062978}
   targetPlanet: {fileID: 1196601067}
@@ -13757,7 +13757,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824612473}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.450805, y: -11.539194, z: 0}
+  m_LocalPosition: {x: 20.28903, y: 16.139854, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1488787312}
@@ -19096,12 +19096,12 @@ PrefabInstance:
     - target: {fileID: 6574220890091007656, guid: 8f4cc6605c60e234781f3ce7fc3ae389,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.800231
+      value: -29.703682
       objectReference: {fileID: 0}
     - target: {fileID: 6574220890091007656, guid: 8f4cc6605c60e234781f3ce7fc3ae389,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.742283
+      value: 20.45813
       objectReference: {fileID: 0}
     - target: {fileID: 6574220890091007656, guid: 8f4cc6605c60e234781f3ce7fc3ae389,
         type: 3}
