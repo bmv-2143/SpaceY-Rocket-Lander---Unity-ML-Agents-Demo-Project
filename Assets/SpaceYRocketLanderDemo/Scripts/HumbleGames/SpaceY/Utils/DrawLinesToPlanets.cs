@@ -2,9 +2,11 @@
 
 namespace HumbleGames.SpaceY.Utils
 {
-    public class PlayerAssistant : MonoBehaviour
+    /// <summary>
+    /// Draws lines from the rocket to the planets.
+    /// </summary>
+    public class DrawLinesToPlanets : MonoBehaviour
     {
-
         [SerializeField]
         private GameObject rocket;
 
@@ -17,8 +19,8 @@ namespace HumbleGames.SpaceY.Utils
         // Update is called once per frame
         void Update()
         {
-            Debug.DrawLine(rocket.transform.position, planet1.transform.position, Color.magenta);
-            Debug.DrawLine(rocket.transform.position, planet2.transform.position, Color.magenta);
+            Debug.DrawLine(rocket.transform.position, planet1.transform.position, Color.blue);
+            Debug.DrawLine(rocket.transform.position, planet2.transform.position, Color.green);
         }
     }
 }
