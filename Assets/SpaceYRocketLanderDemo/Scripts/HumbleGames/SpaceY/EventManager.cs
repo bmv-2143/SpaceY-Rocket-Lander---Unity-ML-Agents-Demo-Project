@@ -11,6 +11,34 @@ namespace HumbleGames.SpaceY
         {
             OnSimulationEnd?.Invoke(status);
         }
+
+        // ------------------------------------------------------------------------------------------------------------
+        //                                          Rocket Events
+        // ------------------------------------------------------------------------------------------------------------
+
+        public delegate void RocketMainEngineAction();
+        public static event RocketMainEngineAction OnRocketMainEngine;
+
+        public static void RaiseRocketMainEngineEvent()
+        {
+            OnRocketMainEngine?.Invoke();
+        }
+
+        public delegate void RocketAuxEngineAction();
+        public static event RocketAuxEngineAction OnRockeAuxEngine;
+
+        public static void RaiseRocketAuxEngineEvent()
+        {
+            OnRockeAuxEngine?.Invoke();
+        }
+
+        public delegate void RocketAccidentAction();
+        public static event RocketAccidentAction OnRockeAccident;
+
+        public static void RaiseRocketAccidentEvent()
+        {
+            OnRockeAccident?.Invoke();
+        }
     }
 
 }

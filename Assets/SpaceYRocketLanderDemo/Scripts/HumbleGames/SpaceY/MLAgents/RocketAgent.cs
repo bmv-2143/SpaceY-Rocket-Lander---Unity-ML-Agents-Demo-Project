@@ -285,6 +285,7 @@ namespace HumbleGames.SpaceY.MLAgents
             if (simulationState.isPlanetCollisionAccident)
             {
                 //Debug.LogFormat("FAILURE: PlanetCollision", LOG_TAG);
+                EventManager.RaiseRocketAccidentEvent();
                 EventManager.RaiseSimulationEndEvent(SimulationEndStatus.FAILURE_PLANET_COLLISION);
                 GivePlanetCollisionReward();
                 EndEpisode();

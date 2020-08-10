@@ -97,36 +97,42 @@ namespace HumbleGames.SpaceY.Simulation
         {
             ActivateEngineParticles(particlesMainBottomEngine);
             mainBottomEngine.ApplyEngineForce(rocketRb, powerMainEngine);
+            EventManager.RaiseRocketMainEngineEvent();
         }
 
         public void ActivateStopTopEngine()
         {
             ActivateEngineParticles(particlesStopTopEngine);
             stopTopEngine.ApplyEngineForce(rocketRb, powerStopEngine);
+            EventManager.RaiseRocketAuxEngineEvent();
         }
 
         public void ActivateAuxiliaryTopLeftEngine()
         {
             ActivateEngineParticles(particlesTopLeftEngine);
             topLeftEngine.ApplyEngineForce(rocketRb, powerSideEngines);
+            EventManager.RaiseRocketAuxEngineEvent();
         }
 
         public void ActivateAuxiliaryTopRightEngine()
         {
             ActivateEngineParticles(particlesTopRightEngine);
             topRightEngine.ApplyEngineForce(rocketRb, powerSideEngines);
+            EventManager.RaiseRocketAuxEngineEvent();
         }
 
         public void ActivateAuxiliaryBottomLeftEngine()
         {
             ActivateEngineParticles(particlesBottomLeftEngine);
             bottomLeftEngine.ApplyEngineForce(rocketRb, powerSideEngines);
+            EventManager.RaiseRocketAuxEngineEvent();
         }
 
         public void ActivateAuxiliaryBottomRightEngine()
         {
             ActivateEngineParticles(particlesBottomRightEngine);
             bottomRightEngine.ApplyEngineForce(rocketRb, powerSideEngines);
+            EventManager.RaiseRocketAuxEngineEvent();
         }
 
         private void ActivateEngineParticles(ParticleSystem particleSystem)

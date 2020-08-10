@@ -4,15 +4,37 @@ namespace HumbleGames.SpaceY
 {
     public class AudioControl : MonoBehaviour
     {
+        [SerializeField]
+        private AudioSource soundSource;
+        
+        [SerializeField]
+        private AudioClip mainEngineSfx;
+        
+        [SerializeField]
+        private AudioClip sideEngineSfx;
+        
+        [SerializeField]
+        private AudioClip accidentSfx;
 
-        public AudioSource soundSource;
+        [Tooltip("Don't play rocket engine Sfx more often than (fps)")]
+        [SerializeField]
+        private int engineSfxMinPlayDelayFps = 15;
 
-        public AudioClip mainEngineSfx;
-        public AudioClip sideEngineSfx;
-        public AudioClip accidentSfx;
+        private int engineSfxLastPlayedFrame;
 
-        private const int FRAMES_TO_WAIT = 15;
-        private int mainEngineClipPlayedFrame;
+        private void OnEnable()
+        {
+            EventManager.OnRocketMainEngine += PlaySfxMainEngine;
+            EventManager.OnRockeAuxEngine += PlaySfxSideEngine;
+            EventManager.OnRockeAccident += PlaySfxAccident;
+        }
+
+        private void OnDisable()
+        {
+            EventManager.OnRocketMainEngine -= PlaySfxMainEngine;
+            EventManager.OnRockeAuxEngine -= PlaySfxSideEngine;
+            EventManager.OnRockeAccident -= PlaySfxAccident;
+        }
 
         // ------------------------------------- Public API -------------------------------------------
 
@@ -38,10 +60,10 @@ namespace HumbleGames.SpaceY
         {
             int currentFrame = Time.frameCount;
 
-            if (currentFrame - mainEngineClipPlayedFrame > FRAMES_TO_WAIT)
+            if (currentFrame - engineSfxLastPlayedFrame > engineSfxMinPlayDelayFps)
             {
                 soundSource.PlayOneShot(clip, volume);
-                mainEngineClipPlayedFrame = currentFrame;
+                engineSfxLastPlayedFrame = currentFrame;
             }
         }
     }
