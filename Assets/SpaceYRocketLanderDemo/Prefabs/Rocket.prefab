@@ -880,6 +880,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6574220890091007656}
     m_Modifications:
+    - target: {fileID: 3141677904632182081, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3769975545235469254, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
         type: 3}
       propertyPath: rocketRb
@@ -983,6 +988,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6574220890091007656}
     m_Modifications:
+    - target: {fileID: 3141677904632182081, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3769975545235469254, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
         type: 3}
       propertyPath: rocketRb
@@ -1101,6 +1111,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6574220890091007656}
     m_Modifications:
+    - target: {fileID: 3141677904632182081, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3769975545235469254, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
         type: 3}
       propertyPath: rocketRb
@@ -1279,6 +1294,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BottomMainEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7517176899058124462, guid: 5031010cc3952b54f91d028ce2ecf8c2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5031010cc3952b54f91d028ce2ecf8c2, type: 3}
 --- !u!198 &8261070365844543394 stripped
@@ -1312,6 +1332,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6574220890091007656}
     m_Modifications:
+    - target: {fileID: 3141677904632182081, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3769975545235469254, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
         type: 3}
       propertyPath: rocketRb
@@ -1430,6 +1455,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6574220890091007656}
     m_Modifications:
+    - target: {fileID: 3141677904632182081, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3769975545235469254, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
         type: 3}
       propertyPath: rocketRb
