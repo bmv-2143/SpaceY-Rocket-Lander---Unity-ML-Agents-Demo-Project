@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace HumbleGames.SpaceY.Simulation
 {
-    public class RocketNew : MonoBehaviour
+    public class Rocket : MonoBehaviour
     {
         // TODO: move into a separate RocketConfig Scriptable Object
 

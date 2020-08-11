@@ -39,7 +39,7 @@ namespace HumbleGames.SpaceY.MLAgents
         private GameObject targetPlanet;
 
         private SimulationState simulationState;
-        private RocketNew rocketControl;
+        private Rocket rocketControl;
         private Rigidbody rocketRb;
         private BehaviorParameters behavourParameters;
 
@@ -50,7 +50,7 @@ namespace HumbleGames.SpaceY.MLAgents
         private void Awake()
         {
             rocketRb = GetComponent<Rigidbody>();
-            rocketControl = GetComponent<RocketNew>();
+            rocketControl = GetComponent<Rocket>();
             simulationState = GetComponent<SimulationState>();
             behavourParameters = GetComponent<BehaviorParameters>();
         }
