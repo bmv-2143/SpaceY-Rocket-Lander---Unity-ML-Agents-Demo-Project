@@ -15,6 +15,12 @@ namespace HumbleGames.SpaceY.UI
         private SimulationConfig simulationConfig;
 
         [SerializeField]
+        private GameObject musicHolderObject;
+        
+        [SerializeField]
+        private Text musicButtonText;
+
+        [SerializeField]
         private Text changeBehaviourTypeButtonText;
 
         [SerializeField]
@@ -55,6 +61,13 @@ namespace HumbleGames.SpaceY.UI
         public void OnButtonSwitchBehaviorType()
         {
             UpdateSwitchBehaviorTypeButtonText();
+        }
+
+        public void OnButtonSwitchMusic()
+        {
+            musicHolderObject.SetActive(!musicHolderObject.activeSelf);
+
+            musicButtonText.text = musicHolderObject.activeSelf ? "Music: ON" : "Music: OFF";
         }
 
         private void UpdateSwitchBehaviorTypeButtonText()
