@@ -1,15 +1,29 @@
 ﻿using HumbleGames.SpaceY.Simulation;
+using Unity.MLAgents.Policies;
 
 namespace HumbleGames.SpaceY
 {
     public class EventManager
     {
+
+        // ------------------------------------------------------------------------------------------------------------
+        //                                       Simulation Events
+        // ------------------------------------------------------------------------------------------------------------
+
         public delegate void SimulationEndAction(SimulationEndStatus status);
         public static event SimulationEndAction OnSimulationEnd;
 
         public static void RaiseSimulationEndEvent(SimulationEndStatus status)
         {
             OnSimulationEnd?.Invoke(status);
+        }
+
+        public delegate void BehaviourTypeChangedAction(BehaviorType behaviourType);
+        public static event BehaviourTypeChangedAction OnBehaviourTypeChanged;
+
+        public static void RaiseBehaviourTypeChangedEvent(BehaviorType behaviourType)
+        {
+            OnBehaviourTypeChanged?.Invoke(behaviourType);
         }
 
         // ------------------------------------------------------------------------------------------------------------

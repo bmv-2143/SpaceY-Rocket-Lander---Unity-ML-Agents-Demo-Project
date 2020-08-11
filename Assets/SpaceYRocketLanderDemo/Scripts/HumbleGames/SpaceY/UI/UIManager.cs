@@ -1,6 +1,7 @@
-﻿using HumbleGames.SpaceY.Simulation;
+﻿using HumbleGames.SpaceY.MLAgents;
 using HumbleGames.SpaceY.Simulation;
 using System.Collections;
+using Unity.MLAgents.Policies;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,12 @@ namespace HumbleGames.SpaceY.UI
     public class UIManager : MonoBehaviour
     {
         private readonly string LOG_TAG = typeof(UIManager).Name;
+
+        [SerializeField]
+        private SimulationConfig simulationConfig;
+
+        [SerializeField]
+        private Text changeBehaviourTypeButtonText;
 
         [SerializeField]
         private GameObject simulationTitle;
@@ -43,6 +50,27 @@ namespace HumbleGames.SpaceY.UI
         private void OnDisable()
         {
             EventManager.OnSimulationEnd -= OnSimulationEnd;
+        }
+
+        public void OnButtonSwitchBehaviorType()
+        {
+            UpdateSwitchBehaviorTypeButtonText();
+        }
+
+        private void UpdateSwitchBehaviorTypeButtonText()
+        {
+            if ((simulationConfig.SimulationBehaviourType == BehaviorType.Default) ||
+                (simulationConfig.SimulationBehaviourType == BehaviorType.InferenceOnly))
+            {
+                simulationConfig.SimulationBehaviourType = BehaviorType.HeuristicOnly;
+                changeBehaviourTypeButtonText.text = "Player control";
+            }
+
+            else if (simulationConfig.SimulationBehaviourType == BehaviorType.HeuristicOnly)
+            {
+                simulationConfig.SimulationBehaviourType = BehaviorType.Default;
+                changeBehaviourTypeButtonText.text = "ML-Agent control";
+            }
         }
 
         private void OnSimulationEnd(SimulationEndStatus status)

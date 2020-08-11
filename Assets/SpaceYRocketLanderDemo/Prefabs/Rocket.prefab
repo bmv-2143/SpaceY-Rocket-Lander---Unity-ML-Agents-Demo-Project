@@ -194,6 +194,7 @@ MonoBehaviour:
   leftLegLandingProbe: {fileID: 6569713505540972216}
   rightLegLandingProbe: {fileID: 6569713507013146292}
   simulationArea: {fileID: 0}
+  simulationConfig: {fileID: 11400000, guid: 9a5be0ac4a7907b44aa9fd3af6b9ca8b, type: 2}
   basePlanet: {fileID: 0}
   targetPlanet: {fileID: 0}
 --- !u!114 &6569713505141529494
@@ -214,7 +215,7 @@ MonoBehaviour:
     VectorActionSize: 07000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
-  m_Model: {fileID: 0}
+  m_Model: {fileID: 5022602860645237092, guid: cb7b1017c76ac774b9b2fd78ad86b0bb, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: SpaceY

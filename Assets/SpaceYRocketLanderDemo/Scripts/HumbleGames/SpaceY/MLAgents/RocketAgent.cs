@@ -1,6 +1,7 @@
 ﻿using HumbleGames.SpaceY.Simulation;
 using HumbleGames.SpaceY.Utils;
 using Unity.MLAgents;
+using Unity.MLAgents.Policies;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 
@@ -29,6 +30,9 @@ namespace HumbleGames.SpaceY.MLAgents
         private SimulationArea simulationArea;
 
         [SerializeField]
+        private SimulationConfig simulationConfig;
+
+        [SerializeField]
         private GameObject basePlanet;
         
         [SerializeField]
@@ -37,6 +41,7 @@ namespace HumbleGames.SpaceY.MLAgents
         private SimulationState simulationState;
         private RocketNew rocketControl;
         private Rigidbody rocketRb;
+        private BehaviorParameters behavourParameters;
 
         // ------------------------------------------------------------------------------------------------------------
         //                                Unity Lifecycle calls
@@ -47,6 +52,21 @@ namespace HumbleGames.SpaceY.MLAgents
             rocketRb = GetComponent<Rigidbody>();
             rocketControl = GetComponent<RocketNew>();
             simulationState = GetComponent<SimulationState>();
+            behavourParameters = GetComponent<BehaviorParameters>();
+        }
+
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+            EventManager.OnBehaviourTypeChanged += OnBehaviourTypeChagned;
+
+            simulationConfig.SimulationBehaviourType = behavourParameters.BehaviorType;
+        }
+
+        protected override  void OnDisable()
+        {
+            base.OnDisable();
+            EventManager.OnBehaviourTypeChanged -= OnBehaviourTypeChagned;
         }
 
         private void FixedUpdate()
@@ -300,6 +320,12 @@ namespace HumbleGames.SpaceY.MLAgents
                 EndEpisode();
                 return;
             }
+        }
+
+        private void OnBehaviourTypeChagned(BehaviorType behaviourType)
+        {
+            EndEpisode();
+            behavourParameters.BehaviorType = behaviourType;
         }
 
         // ------------------------------------------------------------------------------------------------------------

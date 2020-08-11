@@ -1,4 +1,6 @@
-﻿using Unity.MLAgents.Policies;
+﻿using HumbleGames.SpaceY.MLAgents;
+using System;
+using Unity.MLAgents.Policies;
 using UnityEngine;
 
 namespace HumbleGames.SpaceY.Utils
@@ -6,16 +8,7 @@ namespace HumbleGames.SpaceY.Utils
     public class ObjectsActiveStateController : MonoBehaviour
     {
         [SerializeField]
-        private BehaviorParameters behaviorParameters;
-
-        [SerializeField]
-        private CameraFollow cameraFollow;
-
-        [SerializeField]
-        private GameObject[] objsToDeactivateInTrainingMode;
-        
-        [SerializeField]
-        private GameObject[] objsToActivateInTrainingMode;
+        private SimulationConfig simulationConfig;
 
         [SerializeField]
         private string tagToActivateObjsInTrainingMode = "ActivateWhileTraining";
@@ -23,10 +16,34 @@ namespace HumbleGames.SpaceY.Utils
         [SerializeField]
         private string tagToDeactivateObjsInTrainingMode = "DeactivateWhileTraining";
 
+        [Space]
+
+        [SerializeField]
+        private GameObject[] objsToDeactivateInTrainingMode;
+        
+        [SerializeField]
+        private GameObject[] objsToActivateInTrainingMode;
+
+
+        GameObject[] objsToActivateWhileTraining;
+        GameObject[] objsToDeactivateWhileTraining;
+
         private void OnEnable()
         {
-            cameraFollow.enabled = !IsTrainingMode();
+            objsToActivateWhileTraining = GameObject.FindGameObjectsWithTag(tagToActivateObjsInTrainingMode);
+            objsToDeactivateWhileTraining = GameObject.FindGameObjectsWithTag(tagToDeactivateObjsInTrainingMode);
 
+            UpdateObjectsAndComponentsState();
+            EventManager.OnBehaviourTypeChanged += OnBehaviourChanged;
+        }
+
+        private void OnDisable()
+        {
+            EventManager.OnBehaviourTypeChanged -= OnBehaviourChanged;
+        }
+
+        private void UpdateObjectsAndComponentsState()
+        {
             // if it is not Heuristic mode => deactivate these objects for other modes (training)
             foreach (GameObject go in objsToActivateInTrainingMode)
             {
@@ -43,24 +60,26 @@ namespace HumbleGames.SpaceY.Utils
 
         private bool IsTrainingMode()
         {
-            return behaviorParameters.BehaviorType != BehaviorType.HeuristicOnly;
+            //return simulationConfig.SimulationBehaviourType != BehaviorType.HeuristicOnly;
+            return simulationConfig.simulationMode == SimulationConfig.SimulationMode.Training;
         }
 
         private void ProcessTaggedObjects()
         {
-            GameObject[] objsToActivateWhileTraining = GameObject.FindGameObjectsWithTag(tagToActivateObjsInTrainingMode);
-
             foreach (GameObject go in objsToActivateWhileTraining)
             {
                 go.SetActive(IsTrainingMode());
             }
 
-            GameObject[] objsToDeactivateWhileTraining = GameObject.FindGameObjectsWithTag(tagToDeactivateObjsInTrainingMode);
-
             foreach (GameObject go in objsToDeactivateWhileTraining)
             {
                 go.SetActive(!IsTrainingMode());
             }
+        }
+
+        private void OnBehaviourChanged(BehaviorType behaviourType)
+        {
+            UpdateObjectsAndComponentsState();
         }
     }
 }
