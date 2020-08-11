@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
+#if UNITY_EDITOR
 namespace HumbleGames.SpaceY.Attributes
 {
     /// <summary>
@@ -33,3 +34,4 @@ namespace HumbleGames.SpaceY.Attributes
         }
     }
 }
+#endif
