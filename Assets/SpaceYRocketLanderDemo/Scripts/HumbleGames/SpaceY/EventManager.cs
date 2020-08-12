@@ -26,6 +26,14 @@ namespace HumbleGames.SpaceY
             OnBehaviourTypeChanged?.Invoke(behaviourType);
         }
 
+        public delegate void TrainingSuccessRateAchievedAction(float successRate, int numOfSimulations);
+        public static event TrainingSuccessRateAchievedAction OnTrainingSuccessRateAchieved;
+
+        public static void RaiseTrainingSuccessRateAchievedEvent(float successRate, int numOfSimulations)
+        {
+            OnTrainingSuccessRateAchieved?.Invoke(successRate, numOfSimulations);
+        }
+
         // ------------------------------------------------------------------------------------------------------------
         //                                          Rocket Events
         // ------------------------------------------------------------------------------------------------------------

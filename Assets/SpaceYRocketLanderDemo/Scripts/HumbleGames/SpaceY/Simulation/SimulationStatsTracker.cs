@@ -22,7 +22,8 @@ namespace HumbleGames.SpaceY.Simulation
         private int totalSuccessCount;
         private int totalFailCount;
         private float totalSuccessRate;
-
+        private float successRateOfLastSimsSmallSet;
+        private float successRateOfLastSimsLargeSet;
 
         private void OnEnable()
         {
@@ -52,51 +53,23 @@ namespace HumbleGames.SpaceY.Simulation
             }
 
             totalSuccessRate = 100f * totalSuccessCount / totalSimulations;
-
             UpdateLastSimulationSets(status);
-
-            if (totalSimulations % numLastSimsToTrackSmallSet == 0)
-            {
-                Debug.LogFormat("{0}: SMALL: totalSimulations: {1},  " +
-                                "successRateOver[{2}]: {3}% " +
-                                "totalSuccesRate: {4}%, " +
-                                "totalSuccessCount: {5}, " +
-                                "totalFailCount: {6}",
-                                LOG_TAG,
-                                totalSimulations,
-                                numLastSimsToTrackSmallSet,
-                                GetSuccessRateOfLastSimsSmallSet(),
-                                totalSuccessRate,
-                                totalSuccessCount,
-                                totalFailCount);
-            }
-
-            if (totalSimulations % numLastSimsToTrackLargeSet == 0)
-            {
-                Debug.LogFormat("{0}: LARGE: totalSimulations: {1},  " +
-                                "successRateOver[{2}]: {3}% " +
-                                "totalSuccesRate: {4}%, " +
-                                "totalSuccessCount: {5}, " +
-                                "totalFailCount: {6}",
-                                LOG_TAG,
-                                totalSimulations,
-                                numLastSimsToTrackLargeSet,
-                                GetSuccessRateOfLastSimsLargeSet(),
-                                totalSuccessRate,
-                                totalSuccessCount,
-                                totalFailCount);
-            }
+            EventManager.RaiseTrainingSuccessRateAchievedEvent(successRateOfLastSimsLargeSet, numLastSimsToTrackLargeSet);
+            PrintSimsSmallSetStatsIfRequired();
+            PrintSimsLargeSetStatsIfRequired();
         }
 
-        private float GetSuccessRateOfLastSimsSmallSet()
+        private float CalculateSuccessRateOfLastSimsSmallSet()
         {
-            return 100f * resultsOfLastTrackedSimsSmallSet.Sum() / numLastSimsToTrackSmallSet;
+            successRateOfLastSimsSmallSet = 100f * resultsOfLastTrackedSimsSmallSet.Sum() / numLastSimsToTrackSmallSet;
+            return successRateOfLastSimsSmallSet;
         }
 
-        private float GetSuccessRateOfLastSimsLargeSet()
+        private float CalculateSuccessRateOfLastSimsLargeSet()
         {
             // TODO: refactor, don't sum large sets each time
-            return 100f * resultsOfLastTrackedSimsLargeSet.Sum() / numLastSimsToTrackLargeSet;
+            successRateOfLastSimsLargeSet = 100f * resultsOfLastTrackedSimsLargeSet.Sum() / numLastSimsToTrackLargeSet;
+            return successRateOfLastSimsLargeSet;
         }
 
         private void UpdateLastSimulationSets(SimulationEndStatus status)
@@ -123,6 +96,44 @@ namespace HumbleGames.SpaceY.Simulation
             if (lastTrackedSimsLargeSetIndex >= numLastSimsToTrackLargeSet)
             {
                 lastTrackedSimsLargeSetIndex = 0;
+            }
+        }
+
+        private void PrintSimsSmallSetStatsIfRequired()
+        {
+            if (totalSimulations % numLastSimsToTrackSmallSet == 0)
+            {
+                Debug.LogFormat("{0}: SMALL: totalSimulations: {1},  " +
+                                "successRateOver[{2}]: {3}% " +
+                                "totalSuccesRate: {4}%, " +
+                                "totalSuccessCount: {5}, " +
+                                "totalFailCount: {6}",
+                                LOG_TAG,
+                                totalSimulations,
+                                numLastSimsToTrackSmallSet,
+                                CalculateSuccessRateOfLastSimsSmallSet(),
+                                totalSuccessRate,
+                                totalSuccessCount,
+                                totalFailCount);
+            }
+        }
+
+        private void PrintSimsLargeSetStatsIfRequired()
+        {
+            if (totalSimulations % numLastSimsToTrackLargeSet == 0)
+            {
+                Debug.LogFormat("{0}: LARGE: totalSimulations: {1},  " +
+                                "successRateOver[{2}]: {3}% " +
+                                "totalSuccesRate: {4}%, " +
+                                "totalSuccessCount: {5}, " +
+                                "totalFailCount: {6}",
+                                LOG_TAG,
+                                totalSimulations,
+                                numLastSimsToTrackLargeSet,
+                                CalculateSuccessRateOfLastSimsLargeSet(),
+                                totalSuccessRate,
+                                totalSuccessCount,
+                                totalFailCount);
             }
         }
     }
