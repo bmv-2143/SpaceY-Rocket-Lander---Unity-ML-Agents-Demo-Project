@@ -6,8 +6,6 @@ namespace HumbleGames.SpaceY.Simulation
 {
     public class Rocket : MonoBehaviour
     {
-        // TODO: move into a separate RocketConfig Scriptable Object
-
         [SerializeField]
         private bool enableParticles = true;
 
@@ -45,8 +43,6 @@ namespace HumbleGames.SpaceY.Simulation
         
         [SerializeField]
         private RocketEngine topRightEngine;
-
-
 
         [Header("Visualisation")]
 
