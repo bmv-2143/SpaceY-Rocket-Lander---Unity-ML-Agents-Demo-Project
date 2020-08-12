@@ -54,9 +54,14 @@ namespace HumbleGames.SpaceY.Simulation
 
             totalSuccessRate = 100f * totalSuccessCount / totalSimulations;
             UpdateLastSimulationSets(status);
-            EventManager.RaiseTrainingSuccessRateAchievedEvent(successRateOfLastSimsLargeSet, numLastSimsToTrackLargeSet);
+
             PrintSimsSmallSetStatsIfRequired();
             PrintSimsLargeSetStatsIfRequired();
+
+            if (totalSimulations % numLastSimsToTrackLargeSet == 0)
+            {
+                EventManager.RaiseTrainingSuccessRateAchievedEvent(successRateOfLastSimsLargeSet, numLastSimsToTrackLargeSet);
+            }
         }
 
         private float CalculateSuccessRateOfLastSimsSmallSet()
