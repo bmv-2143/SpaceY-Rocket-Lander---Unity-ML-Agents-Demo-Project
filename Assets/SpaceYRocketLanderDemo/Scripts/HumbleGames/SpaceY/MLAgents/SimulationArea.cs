@@ -3,6 +3,7 @@ using HumbleGames.SpaceY.Simulation;
 using RoboRyanTron.QuickButtons;
 using UnityEngine;
 using UnityEngine.Assertions;
+using static HumbleGames.SpaceY.Simulation.SuccessBasedCurriculumTrainer;
 
 namespace HumbleGames.SpaceY.MLAgents
 {
@@ -121,6 +122,20 @@ namespace HumbleGames.SpaceY.MLAgents
             DesignatePlanets();
         }
 
+        public void SetSimulationTrainingParams(SimulationTrainingParams trainingParams)
+        {
+            deathZoneWidth = trainingParams.deathZoneWidth;
+            deathZoneHeight = trainingParams.deathZoneHeight;
+
+            planetDesignationAreaWidth = trainingParams.planetDesignationAreaWidth;
+            planetDesignationAreaHeight = trainingParams.planetDesignationAreaHeight;
+
+            rocketToTargetPlanetBodyMinOffset = trainingParams.rocketToTargetPlanetMinOffset;
+            rocketToTargetPlanetBodyMaxOffset = trainingParams.rocketToTargetPlanetMaxOffset;
+
+            rocketNearTargetPlanetProbability = trainingParams.rocketSpawnNearTargetPlanetProbability;
+        }
+
         // ------------------------------------------------------------------------------------------------------------
         //                                  Unity Lifecycle Methods
         // ------------------------------------------------------------------------------------------------------------
@@ -131,6 +146,11 @@ namespace HumbleGames.SpaceY.MLAgents
             Assert.IsTrue(planetDesignationAreaHeight <= deathZoneHeight);
             Assert.IsTrue(minDistanceBetweenPlanets < planetDesignationAreaHeight || 
                           minDistanceBetweenPlanets < planetDesignationAreaWidth);
+
+            // TODO: refactor - hardcoded values, they should be relative to 1) PlanetBody size, 2) DeathZone size
+            Assert.IsTrue(rocketToTargetPlanetBodyMinOffset >= 8);
+            Assert.IsTrue(rocketToTargetPlanetBodyMaxOffset <= 21);
+            Assert.IsTrue(rocketToTargetPlanetBodyMinOffset <= rocketToTargetPlanetBodyMaxOffset);
 
             UpdateMinDistanceBetweenPlanets();
         }

@@ -930,6 +930,7 @@ GameObject:
   - component: {fileID: 730701415}
   - component: {fileID: 730701414}
   - component: {fileID: 730701417}
+  - component: {fileID: 730701418}
   m_Layer: 0
   m_Name: Simulations
   m_TagString: Untagged
@@ -997,6 +998,110 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a49e9941c2cc28b4dae4c42f3d1dd2b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &730701418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730701413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5e7ceb647d5b68489bd365ee867a13c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setTrainingParamsInAwake: 1
+  successRatesToParams:
+  - successRate: 85
+    simulationParams:
+      deathZoneWidth: 128
+      deathZoneHeight: 80
+      planetDesignationAreaWidth: 80
+      planetDesignationAreaHeight: 50
+      rocketToTargetPlanetMinOffset: 8
+      rocketToTargetPlanetMaxOffset: 9
+      rocketSpawnNearTargetPlanetProbability: 100
+  - successRate: 85
+    simulationParams:
+      deathZoneWidth: 128
+      deathZoneHeight: 80
+      planetDesignationAreaWidth: 80
+      planetDesignationAreaHeight: 50
+      rocketToTargetPlanetMinOffset: 10
+      rocketToTargetPlanetMaxOffset: 12
+      rocketSpawnNearTargetPlanetProbability: 100
+  - successRate: 85
+    simulationParams:
+      deathZoneWidth: 128
+      deathZoneHeight: 80
+      planetDesignationAreaWidth: 80
+      planetDesignationAreaHeight: 50
+      rocketToTargetPlanetMinOffset: 13
+      rocketToTargetPlanetMaxOffset: 15
+      rocketSpawnNearTargetPlanetProbability: 100
+  - successRate: 85
+    simulationParams:
+      deathZoneWidth: 128
+      deathZoneHeight: 80
+      planetDesignationAreaWidth: 80
+      planetDesignationAreaHeight: 50
+      rocketToTargetPlanetMinOffset: 16
+      rocketToTargetPlanetMaxOffset: 19
+      rocketSpawnNearTargetPlanetProbability: 100
+  - successRate: 85
+    simulationParams:
+      deathZoneWidth: 128
+      deathZoneHeight: 80
+      planetDesignationAreaWidth: 80
+      planetDesignationAreaHeight: 50
+      rocketToTargetPlanetMinOffset: 20
+      rocketToTargetPlanetMaxOffset: 21
+      rocketSpawnNearTargetPlanetProbability: 100
+  - successRate: 85
+    simulationParams:
+      deathZoneWidth: 128
+      deathZoneHeight: 80
+      planetDesignationAreaWidth: 80
+      planetDesignationAreaHeight: 50
+      rocketToTargetPlanetMinOffset: 15
+      rocketToTargetPlanetMaxOffset: 21
+      rocketSpawnNearTargetPlanetProbability: 80
+  - successRate: 85
+    simulationParams:
+      deathZoneWidth: 128
+      deathZoneHeight: 80
+      planetDesignationAreaWidth: 80
+      planetDesignationAreaHeight: 50
+      rocketToTargetPlanetMinOffset: 15
+      rocketToTargetPlanetMaxOffset: 21
+      rocketSpawnNearTargetPlanetProbability: 60
+  - successRate: 85
+    simulationParams:
+      deathZoneWidth: 128
+      deathZoneHeight: 80
+      planetDesignationAreaWidth: 80
+      planetDesignationAreaHeight: 50
+      rocketToTargetPlanetMinOffset: 15
+      rocketToTargetPlanetMaxOffset: 21
+      rocketSpawnNearTargetPlanetProbability: 40
+  - successRate: 85
+    simulationParams:
+      deathZoneWidth: 128
+      deathZoneHeight: 80
+      planetDesignationAreaWidth: 80
+      planetDesignationAreaHeight: 50
+      rocketToTargetPlanetMinOffset: 15
+      rocketToTargetPlanetMaxOffset: 21
+      rocketSpawnNearTargetPlanetProbability: 20
+  - successRate: 85
+    simulationParams:
+      deathZoneWidth: 128
+      deathZoneHeight: 80
+      planetDesignationAreaWidth: 80
+      planetDesignationAreaHeight: 50
+      rocketToTargetPlanetMinOffset: 15
+      rocketToTargetPlanetMaxOffset: 21
+      rocketSpawnNearTargetPlanetProbability: 0
 --- !u!1 &741046474
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,10 +1339,10 @@ MonoBehaviour:
   basePlanetBody: {fileID: 1037223176}
   rocketToBasePlanetBodyOffset: 2.8
   targetPlanetBody: {fileID: 1488787311}
-  rocketToTargetPlanetBodyMinOffset: 10
-  rocketToTargetPlanetBodyMaxOffset: 20
-  angleDeg: 28.753927
-  rocketPositioningAngleDistortion: -39.19883
+  rocketToTargetPlanetBodyMinOffset: 21
+  rocketToTargetPlanetBodyMaxOffset: 21
+  angleDeg: 6.4558845
+  rocketPositioningAngleDistortion: 33.945465
   rocketNearTargetPlanetProbability: 0.001
 --- !u!1 &799166052
 GameObject:
@@ -4160,12 +4265,12 @@ PrefabInstance:
     - target: {fileID: 6574220890091007656, guid: 8f4cc6605c60e234781f3ce7fc3ae389,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -29.703682
+      value: 41.155865
       objectReference: {fileID: 0}
     - target: {fileID: 6574220890091007656, guid: 8f4cc6605c60e234781f3ce7fc3ae389,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.35813
+      value: 18.501057
       objectReference: {fileID: 0}
     - target: {fileID: 6574220890091007656, guid: 8f4cc6605c60e234781f3ce7fc3ae389,
         type: 3}
@@ -4185,12 +4290,12 @@ PrefabInstance:
     - target: {fileID: 6574220890091007656, guid: 8f4cc6605c60e234781f3ce7fc3ae389,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.4194414
       objectReference: {fileID: 0}
     - target: {fileID: 6574220890091007656, guid: 8f4cc6605c60e234781f3ce7fc3ae389,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.90778244
       objectReference: {fileID: 0}
     - target: {fileID: 6574220890091007656, guid: 8f4cc6605c60e234781f3ce7fc3ae389,
         type: 3}
