@@ -14,5 +14,14 @@ namespace HumbleGames.SpaceY.MLAgents
         /// Used for calculation of stepwise reward of RocketAgent.
         /// </summary>
         public float agentStepwiseRewardBase = -1f;
+
+        /// <summary>
+        /// A number of rocket's steps (fixed updates) to stay on target planet with both legs to consider that the 
+        /// landing is successfull.
+        /// </summary>
+        public int stepsOnPlanetForSuccess = 12;
+        
+        public float bothLegsOnPlanetStepwiseReward = 0.02f;
+
     }
 }

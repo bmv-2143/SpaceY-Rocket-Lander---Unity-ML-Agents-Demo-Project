@@ -15,4 +15,7 @@ MonoBehaviour:
   landingSuccessReward: 1
   deathZoneCollisionReward: -1
   planetCollisionReward: -1
+  legProbeTouchesBasePlanetReward: -0.001
   agentStepwiseRewardBase: -1
+  stepsOnPlanetForSuccess: 30
+  bothLegsOnPlanetStepwiseReward: 0.02
