@@ -26,10 +26,10 @@ How to use Tensorboard
 2. CD to diry where trainer_config.yaml is located
 
 3.1. Run Tensorboard (for old ML-Agents versions):
-tensorboard --logdir summaries
+tensorboard --logdir ./results/summaries
 
 3.2. Run Tensorboard (for new ML-Agents versions, "space-y_01" is in "results" folder, see training command above):
-tensorboard --logdir space-y_01
+tensorboard --logdir ./results/space-y_01
 
 -------------------------------------------------------
 How to load and continue training ot the previous model
