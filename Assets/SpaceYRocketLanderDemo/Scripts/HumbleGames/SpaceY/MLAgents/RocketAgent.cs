@@ -38,10 +38,17 @@ namespace HumbleGames.SpaceY.MLAgents
         [SerializeField]
         private GameObject targetPlanet;
 
+        [SerializeField]
+        private BoxCollider leftLandingFootCollider;
+        
+        [SerializeField]
+        private BoxCollider rightLandingFootCollider;
+
         private SimulationState simulationState;
         private Rocket rocketControl;
         private Rigidbody rocketRb;
         private BehaviorParameters behavourParameters;
+        private int stepsOnPlanet;
 
         // ------------------------------------------------------------------------------------------------------------
         //                                Unity Lifecycle calls
@@ -86,55 +93,27 @@ namespace HumbleGames.SpaceY.MLAgents
 
         private void HandleCollisionEnterOrStay(Collision collision) 
         {
-            //Debug.Log("Collision: " + collision.transform.name);
-
-            // Leg probes landing (potential success)
-            if (IsLeftLegProbeCollision(collision) && IsTargetPlanetCollision(collision))
-            {
-                simulationState.isLeftLegLanded = true;
-
-            }
-
-            if (IsRightLegProbeCollision(collision) && IsTargetPlanetCollision(collision))
-            {
-                simulationState.isRightLegLanded = true;
-            }
-
-            // Leg probes touch base planet (give a little negative reward, to prevent agent sitting on planet)
-            if ((IsLeftLegProbeCollision(collision) && IsBasePlanetCollision(collision)) ||
-                (IsRightLegProbeCollision(collision) && IsBasePlanetCollision(collision)))
-            {
-                GiveLegProbeTouchesBasePlanetReward();
-            }
-
-            // Collision with a planet (failure)
+            //Collision with a planet(failure)
             simulationState.isPlanetCollisionAccident =
-                (IsTargetPlanetCollision(collision) || IsBasePlanetCollision(collision)) &&
-                !(IsRightLegProbeCollision(collision) || IsLeftLegProbeCollision(collision));
+                !(simulationState.isLeftLegLandedOnTargetPlanet  ||
+                  simulationState.isRightLegLandedOnTargetPlanet ||
+                  simulationState.isLeftLegLandedOnBasePlanet    ||
+                  simulationState.isRightLegLandedOnBasePlanet)  &&
+                 (IsTargetPlanetCollision(collision) || IsBasePlanetCollision(collision));
 
 
             // Collision with DeathZones (failure)
             simulationState.isDeathZoneCollisionAccident = collision.transform.CompareTag(tagHolder.deathZone);
         }
 
-        private bool IsLeftLegProbeCollision(Collision collision)
-        {
-            return collision.GetContact(0).thisCollider.CompareTag(tagHolder.legLeftLandingProbe);
-        }
-
-        private bool IsRightLegProbeCollision(Collision collision)
-        {
-            return collision.GetContact(0).thisCollider.CompareTag(tagHolder.legRightLandingProbe);
-        }
-
         private bool IsTargetPlanetCollision(Collision collision)
         {
-            return collision.GetContact(0).otherCollider.CompareTag(tagHolder.targetPlanet);
+             return collision.transform.CompareTag(tagHolder.targetPlanet);
         }
 
         private bool IsBasePlanetCollision(Collision collision)
         {
-            return collision.GetContact(0).otherCollider.CompareTag(tagHolder.basePlanet);
+            return collision.transform.CompareTag(tagHolder.basePlanet);
         }
 
         // ------------------------------------------------------------------------------------------------------------
@@ -183,10 +162,10 @@ namespace HumbleGames.SpaceY.MLAgents
             sensor.AddObservation(rocketRb.angularVelocity);
 
             // Is left leg landed                           (+1 observation)
-            sensor.AddObservation(simulationState.isLeftLegLanded);
+            sensor.AddObservation(simulationState.isLeftLegLandedOnTargetPlanet);
 
             // Is right let landed                          (+1 observation)
-            sensor.AddObservation(simulationState.isRightLegLanded);
+            sensor.AddObservation(simulationState.isRightLegLandedOnTargetPlanet);
 
             // Is DeathZone collision accident              (+1 observation)
             sensor.AddObservation(simulationState.isDeathZoneCollisionAccident);
@@ -230,6 +209,7 @@ namespace HumbleGames.SpaceY.MLAgents
         private void Reset()
         {
             rocketControl.ResetRocket();
+            stepsOnPlanet = 0;
         }
 
         private void ApplyActions(float[] vectorAction)
@@ -312,13 +292,35 @@ namespace HumbleGames.SpaceY.MLAgents
                 return;
             }
 
-            if (simulationState.IsLandingSucces())
+            if (simulationState.isLeftLegLandedOnBasePlanet || simulationState.isRightLegLandedOnBasePlanet)
             {
-                //Debug.LogFormat("SUCCESS: Successfull landing", LOG_TAG);
-                EventManager.RaiseSimulationEndEvent(SimulationEndStatus.SUCCESS);
-                GiveLandingSuccessReward();
-                EndEpisode();
-                return;
+                GiveLegProbeTouchesBasePlanetReward();
+            }
+
+            if (simulationState.AreBothLegsOnTargetPlanet())
+            {
+                stepsOnPlanet++;
+
+                if (stepsOnPlanet >= rewardConfig.stepsOnPlanetForSuccess)
+                {
+                    //Debug.LogFormat("SUCCESS: Successfull landing", LOG_TAG);
+                    EventManager.RaiseSimulationEndEvent(SimulationEndStatus.SUCCESS);
+                    GiveLandingSuccessReward();
+                    EndEpisode();
+                    return;
+                }
+
+                else
+                {
+                    GiveBothLegsStayOnTargetPlanetReward();
+                }
+            }
+
+            else
+            {
+                // remove reward (if any) given for steps that both legs stayed on planet
+                GiveBothLegsStayOnTargetPlanetThenLeftPlanetReward(stepsOnPlanet);
+                stepsOnPlanet = 0;
             }
         }
 
@@ -343,6 +345,21 @@ namespace HumbleGames.SpaceY.MLAgents
             { 
                 AddReward(rewardConfig.agentStepwiseRewardBase / MaxStep);
             }
+        }
+
+        private void GiveBothLegsStayOnTargetPlanetReward()
+        {
+            AddReward(rewardConfig.bothLegsOnPlanetStepwiseReward);
+        }
+
+        /// <summary>
+        /// Negative reward - remove all the reward that was given in all previous steps when both legs were on the 
+        /// target planet.
+        /// </summary>
+        /// <param name="numberOfStepsWhenLegWasOnPlanet"></param>
+        private void GiveBothLegsStayOnTargetPlanetThenLeftPlanetReward(int numberOfStepsWhenLegWasOnPlanet)
+        {
+            AddReward(-numberOfStepsWhenLegWasOnPlanet * rewardConfig.bothLegsOnPlanetStepwiseReward);
         }
 
         private void GiveLandingSuccessReward()
