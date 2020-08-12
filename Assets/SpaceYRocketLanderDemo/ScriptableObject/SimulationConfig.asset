@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdd30ec6e08167e4886674e79ccfa022, type: 3}
   m_Name: SimulationConfig
   m_EditorClassIdentifier: 
-  simulationMode: 0
+  simulationMode: 1
