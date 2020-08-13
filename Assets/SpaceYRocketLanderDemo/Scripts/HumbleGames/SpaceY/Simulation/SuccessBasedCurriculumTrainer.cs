@@ -10,7 +10,12 @@ namespace HumbleGames.SpaceY.Simulation
         private readonly string LOG_TAG = typeof(SuccessBasedCurriculumTrainer).Name;
 
         [SerializeField]
-        private bool setTrainingParamsInAwake;
+        private bool enableCurriculumTraining;
+
+        [SerializeField]
+        private int curriculumTrainingParamsStartAtIndex;
+
+        [Space]
 
         [SerializeField]
         private SuccessRateToTrainingParams[] successRatesToParams;
@@ -25,21 +30,27 @@ namespace HumbleGames.SpaceY.Simulation
 
             Assert.IsTrue(simulationAreas.Length > 0);
 
-            if (setTrainingParamsInAwake)
+            if (enableCurriculumTraining)
             {
                 // activate the first set of simulation params
-                SetSimulationiTrainingParams(successRatesToParams[0].simulationParams);
+                SetSimulationiTrainingParams(successRatesToParams[curriculumTrainingParamsStartAtIndex].simulationParams);
             }
         }
 
         private void OnEnable()
         {
-            EventManager.OnTrainingSuccessRateAchieved += OnTrainingSuccessRateAchieved;
+            if (enableCurriculumTraining)
+            {
+                EventManager.OnTrainingSuccessRateAchieved += OnTrainingSuccessRateAchieved;
+            }
         }
 
         private void OnDisable()
         {
-            EventManager.OnTrainingSuccessRateAchieved -= OnTrainingSuccessRateAchieved;
+            if (enableCurriculumTraining)
+            {
+                EventManager.OnTrainingSuccessRateAchieved -= OnTrainingSuccessRateAchieved;
+            }
         }
 
         private void OnTrainingSuccessRateAchieved(float achievedSuccessRate, int numOfSimulations)

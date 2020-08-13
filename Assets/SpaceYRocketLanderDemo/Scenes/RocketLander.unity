@@ -4885,7 +4885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5e7ceb647d5b68489bd365ee867a13c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  setTrainingParamsInAwake: 1
+  setTrainingParamsInAwake: 0
   successRatesToParams:
   - successRate: 85
     simulationParams:
