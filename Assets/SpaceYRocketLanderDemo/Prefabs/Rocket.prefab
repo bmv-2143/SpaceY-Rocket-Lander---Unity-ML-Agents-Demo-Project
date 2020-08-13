@@ -179,7 +179,7 @@ MonoBehaviour:
     VectorActionSize: 07000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
-  m_Model: {fileID: 5022602860645237092, guid: cb7b1017c76ac774b9b2fd78ad86b0bb, type: 3}
+  m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: SpaceY
@@ -488,8 +488,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6569713505540972216}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.4, y: -2.3, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.42}
+  m_LocalPosition: {x: -1.3925, y: -2.356, z: 0}
+  m_LocalScale: {x: 0.23, y: 0.15, z: 0.42}
   m_Children: []
   m_Father: {fileID: 6574220890091007656}
   m_RootOrder: 11
@@ -674,8 +674,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6569713507013146292}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.4, y: -2.3, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.42}
+  m_LocalPosition: {x: 1.3925, y: -2.356, z: 0}
+  m_LocalScale: {x: 0.23, y: 0.15, z: 0.42}
   m_Children: []
   m_Father: {fileID: 6574220890091007656}
   m_RootOrder: 13
