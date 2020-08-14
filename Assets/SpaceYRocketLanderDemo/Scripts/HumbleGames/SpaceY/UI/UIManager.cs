@@ -49,13 +49,20 @@ namespace HumbleGames.SpaceY.UI
 
         private void OnEnable()
         {
-            EventManager.OnSimulationEnd += OnSimulationEnd;
+            if (simulationConfig.simulationMode == SimulationConfig.SimulationMode.Demo)
+            {
+                EventManager.OnSimulationEnd += OnSimulationEnd;
+            }
+
             StartCoroutine(ShowThenHideObject(simulationTitle, autoHideTextDelay));
         }
 
         private void OnDisable()
         {
-            EventManager.OnSimulationEnd -= OnSimulationEnd;
+            if (simulationConfig.simulationMode == SimulationConfig.SimulationMode.Demo)
+            {
+                EventManager.OnSimulationEnd -= OnSimulationEnd;
+            }
         }
 
         public void OnButtonSwitchBehaviorType()
