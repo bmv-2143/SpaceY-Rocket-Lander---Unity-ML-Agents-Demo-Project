@@ -38,12 +38,6 @@ namespace HumbleGames.SpaceY.MLAgents
         [SerializeField]
         private GameObject targetPlanet;
 
-        [SerializeField]
-        private BoxCollider leftLandingFootCollider;
-        
-        [SerializeField]
-        private BoxCollider rightLandingFootCollider;
-
         private SimulationState simulationState;
         private Rocket rocketControl;
         private Rigidbody rocketRb;
