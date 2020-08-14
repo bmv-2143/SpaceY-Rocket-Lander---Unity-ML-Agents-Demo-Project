@@ -1,16 +1,41 @@
 # SpaceY (Unity ML-Agents demo project)
 
-This project demonstrates how machine learning algorithm can be used to teach
-a rocket to lift off from one planet, then fly and land onto another.
+## About
 
-You can find a video that shows how neural network drives the rocket
-[here](https://youtu.be/NBz9mrxIMJo).
+This project was created for [Unity ML-Agents Challenge I](https://connect.unity.com/challenges/ml-agents-1). Its initial version won
+a [Creative Application Award](https://blogs.unity3d.com/2018/02/28/introducing-the-winners-of-the-first-ml-agents-challenge/) in this challenge.
 
-Rocket has six engines that apply different acceleration at different positions
-of rocket body.
+## Simulation description
 
-You can switch simulation to "Brain: Player" mode, by pressing corresponding button in
-the top right corner, in which you can control the rocket with the following keys:
+This project demonstrates how a machine learning algorithm ([Unity ML-Agents](https://github.com/Unity-Technologies/ml-agents)) can be used to teach
+a rocket to lift off from one planet, then fly and land onto another one.
+
+You can find a [video](https://youtu.be/NBz9mrxIMJo) that shows how a neural network drives the rocket
+here:
+
+[![SpaceY demo video](http://img.youtube.com/vi/NBz9mrxIMJo/0.jpg)](https://youtu.be/NBz9mrxIMJo)
+
+- The rocket has six engines that apply different accelerations at different positions
+of the rocket body.
+- The planets have gravity that acts in their immediate vicinity
+- The rocket must not leave the rectangular simulation area
+TODO
+
+## Win conditions
+TODO
+
+## Loss conditions
+TODO
+
+The [provided trained model](todo) has more than 98% success rate.
+
+## Downloads
+
+* [SpaceY v0.04 (Windows build)](todo)
+
+# Controls
+"ML-Agent"\"Player control" button in the top right corner switches the way the simulation can be controlled.
+In "Player control" mode you can control the rocket with the following keys:
 
 * "Q" - upper left side engine;
 * "E" - upper right side engine;
@@ -19,11 +44,42 @@ the top right corner, in which you can control the rocket with the following key
 * "S" - main bottom engine;
 * "W" - top stop engine.
 
-## Prerequisites
+* "Esc" - close application
 
-If you want to run trained models in Unity you need to install TensorFlowSharp
-plugin as described [here](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Getting-Started-with-Balance-Ball.md#setting-up-tensorflowsharp-support).
+## Unity Editor \ Ml-Agents Package compatibility
+
+SpaceY v0.4 supports:
+
+* Unity Editor 2019.4.6f1
+* Unity ML-Agents Package v1.0.3
+
+It might work with later Unity Editor and ML-Agents Package versions, but this is not guarnteed.
+
+## Training environment setup
+
+Follow the instructions to setup the training environment:
+
+* [Anaconda Download & Install](https://learn.unity.com/tutorial/anaconda-download-install?uv=2019.3&courseId=5e470160edbc2a15578b13d7&projectId=5ec83171edbc2a44309bf22e)
+* [Anaconda Environment Setup](https://learn.unity.com/tutorial/anaconda-environment-setup?uv=2019.3&courseId=5e470160edbc2a15578b13d7&projectId=5ec83171edbc2a44309bf22e)
 
 ## Training
 
 You can find more detail how to train this simulation [here](Assets/SpaceYRocketLanderDemo/Docs/HOW_TO_TRAIN.MD)
+
+TODO: Mention .Training folder
+TODO: Mention how to train faster
+
+### Simulation Configuration
+
+1. Select the desired "Behaviour Type" in "Assets\Prefabs\Rocket.prefab\ Behaviour Parameters (script component).
+2. Select a Simulation Mode (Demo or Training) in "Assets\ScriptableObjects\SimulationConfig.asset"
+
+   In Demo mode particles and some other objects\components that make a simulation look better are enabled.   
+
+   In Training mode the mentioned above visual improvement objects\compoents are disabled.
+
+
+## Success based Curriculum learning
+
+## Training tips
+
