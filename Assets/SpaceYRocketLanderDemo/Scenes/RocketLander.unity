@@ -617,6 +617,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 730701416}
+  - component: {fileID: 730701419}
   - component: {fileID: 730701415}
   - component: {fileID: 730701414}
   - component: {fileID: 730701417}
@@ -793,6 +794,24 @@ MonoBehaviour:
       rocketToTargetPlanetMinOffset: 15
       rocketToTargetPlanetMaxOffset: 21
       rocketSpawnNearTargetPlanetProbability: 0
+--- !u!114 &730701419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730701413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00905de9c949d7c47b669282b293e6b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deployEnvoronmentsInAwake: 0
+  gameEnvironmentToClone: {fileID: 1460253536}
+  offsetX: 160
+  offsetY: 100
+  columns: 4
+  rows: 4
 --- !u!1 &741046474
 GameObject:
   m_ObjectHideFlags: 0
@@ -1699,6 +1718,12 @@ RectTransform:
   m_AnchoredPosition: {x: 2, y: -18}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 1}
+--- !u!1 &1460253536 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2440079459764946818, guid: 75fc54e774e877548a53690c02460d81,
+    type: 3}
+  m_PrefabInstance: {fileID: 2440079460990317794}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1460253537 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2440079459764946819, guid: 75fc54e774e877548a53690c02460d81,
@@ -2549,7 +2574,7 @@ PrefabInstance:
     - target: {fileID: 2440079459764946819, guid: 75fc54e774e877548a53690c02460d81,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -80
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2440079459764946819, guid: 75fc54e774e877548a53690c02460d81,
         type: 3}
@@ -2564,17 +2589,17 @@ PrefabInstance:
     - target: {fileID: 2440079459764946819, guid: 75fc54e774e877548a53690c02460d81,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2440079459764946819, guid: 75fc54e774e877548a53690c02460d81,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2440079459764946819, guid: 75fc54e774e877548a53690c02460d81,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2440079459764946819, guid: 75fc54e774e877548a53690c02460d81,
         type: 3}
