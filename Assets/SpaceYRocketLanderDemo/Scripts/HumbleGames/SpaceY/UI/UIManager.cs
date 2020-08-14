@@ -70,6 +70,16 @@ namespace HumbleGames.SpaceY.UI
             musicButtonText.text = musicHolderObject.activeSelf ? "Music: ON" : "Music: OFF";
         }
 
+        public void OnButtonSetResolution1280x720()
+        {
+            Display.displays[0].SetRenderingResolution(1280, 720);
+        }
+
+        public void OnButtonSetResolution1920x1080()
+        {
+            Display.displays[0].SetRenderingResolution(1920, 1080);
+        }
+
         private void UpdateSwitchBehaviorTypeButtonText()
         {
             if ((simulationConfig.SimulationBehaviourType == BehaviorType.Default) ||
