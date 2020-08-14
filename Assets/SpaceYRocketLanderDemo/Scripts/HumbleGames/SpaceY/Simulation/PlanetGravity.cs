@@ -1,4 +1,5 @@
-﻿using HumbleGames.SpaceY.Utils;
+﻿using HumbleGames.SpaceY.MLAgents;
+using HumbleGames.SpaceY.Utils;
 using UnityEngine;
 
 namespace HumbleGames.SpaceY.Simulation
@@ -10,10 +11,17 @@ namespace HumbleGames.SpaceY.Simulation
         public float gravityRange;
         public float gravityStrength = 25;
 
+        // TODO: refactor, remove SimulationConfig dependency
+        [SerializeField]
+        private SimulationConfig simulationConfig;
+
         private void Start()
         {
             DrawCircle drawCircleScript = GetComponent<DrawCircle>();
             drawCircleScript.radiusXY = gravityRange;
+            
+            // TODO: refactor, it might be better to move this logic to object active state switcher
+            drawCircleScript.enabled = simulationConfig.simulationMode == SimulationConfig.SimulationMode.Demo;
         }
 
         private void FixedUpdate()

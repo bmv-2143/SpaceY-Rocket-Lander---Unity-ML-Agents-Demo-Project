@@ -376,6 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1cb6f632c98f8e4c9d05e0047a27e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  simulationConfig: {fileID: 11400000, guid: 9a5be0ac4a7907b44aa9fd3af6b9ca8b, type: 2}
   radiusXY: 30
   segments: 32
 --- !u!114 &2440079459431638121
@@ -968,6 +969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1cb6f632c98f8e4c9d05e0047a27e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  simulationConfig: {fileID: 11400000, guid: 9a5be0ac4a7907b44aa9fd3af6b9ca8b, type: 2}
   radiusXY: 30
   segments: 32
 --- !u!114 &2440079460203717273

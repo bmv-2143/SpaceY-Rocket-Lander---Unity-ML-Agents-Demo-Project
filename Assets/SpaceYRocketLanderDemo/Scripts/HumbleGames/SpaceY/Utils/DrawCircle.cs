@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using HumbleGames.SpaceY.MLAgents;
+using UnityEngine;
 
 namespace HumbleGames.SpaceY.Utils
 {
@@ -9,7 +10,10 @@ namespace HumbleGames.SpaceY.Utils
     /// </summary>
     public class DrawCircle : MonoBehaviour
     {
-        
+        // TODO: refactor, remove SimulationConfig dependency
+        [SerializeField]
+        private SimulationConfig simulationConfig;
+
         [SerializeField]
         public float radiusXY;
 
@@ -34,9 +38,11 @@ namespace HumbleGames.SpaceY.Utils
 
         void Start()
         {
-
             line = gameObject.GetComponent<LineRenderer>();
 
+            // TODO: refactor, it might be better to move this logic to object active state switcher
+            line.enabled = simulationConfig.simulationMode == SimulationConfig.SimulationMode.Demo;
+ 
             line.positionCount = segments + 1;
             line.useWorldSpace = false;
 
