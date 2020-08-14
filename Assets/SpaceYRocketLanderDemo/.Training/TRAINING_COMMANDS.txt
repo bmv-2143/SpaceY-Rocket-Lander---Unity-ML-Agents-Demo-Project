@@ -17,6 +17,8 @@ How to train
 2. Run training command. Output is stored in the "results" folder:
 mlagents-learn .\trainer_config_01.yaml --run-id space-y_01 --train
 
+2b. Run training command. Output is stored in the "results" folder (another example):
+mlagents-learn .\trainer_config_01.yaml --run-id space-y_01 --train --time-scale=10 --quality-level=0 --width=512 --height=512
 ----------------------
 How to use Tensorboard
 ----------------------
