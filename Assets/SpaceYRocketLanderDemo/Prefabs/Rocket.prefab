@@ -180,7 +180,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
   m_Model: {fileID: 0}
-  m_InferenceDevice: 0
+  m_InferenceDevice: 1
   m_BehaviorType: 0
   m_BehaviorName: SpaceY
   TeamId: 0
@@ -209,8 +209,6 @@ MonoBehaviour:
   simulationConfig: {fileID: 11400000, guid: 9a5be0ac4a7907b44aa9fd3af6b9ca8b, type: 2}
   basePlanet: {fileID: 0}
   targetPlanet: {fileID: 0}
-  leftLandingFootCollider: {fileID: 0}
-  rightLandingFootCollider: {fileID: 0}
 --- !u!114 &6569713505141529495
 MonoBehaviour:
   m_ObjectHideFlags: 0
