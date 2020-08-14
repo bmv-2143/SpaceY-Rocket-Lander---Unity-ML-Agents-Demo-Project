@@ -180,7 +180,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
   m_Model: {fileID: 0}
-  m_InferenceDevice: 1
+  m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: SpaceY
   TeamId: 0
@@ -968,6 +968,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Particles TopStopEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7531138241925246626, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
+        type: 3}
+      propertyPath: m_TagString
+      value: DeactivateWhileTraining
+      objectReference: {fileID: 0}
     - target: {fileID: 7534265888879936014, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1075,6 +1080,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Particles TopLeftEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531138241925246626, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
+        type: 3}
+      propertyPath: m_TagString
+      value: DeactivateWhileTraining
       objectReference: {fileID: 0}
     - target: {fileID: 7534265888879936014, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
         type: 3}
@@ -1198,6 +1208,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Particles TopRightEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531138241925246626, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
+        type: 3}
+      propertyPath: m_TagString
+      value: DeactivateWhileTraining
       objectReference: {fileID: 0}
     - target: {fileID: 7534265888879936014, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
         type: 3}
@@ -1362,6 +1377,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BottomMainEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3118990901913509197, guid: 5031010cc3952b54f91d028ce2ecf8c2,
+        type: 3}
+      propertyPath: m_TagString
+      value: DeactivateWhileTraining
+      objectReference: {fileID: 0}
     - target: {fileID: 7517176899058124462, guid: 5031010cc3952b54f91d028ce2ecf8c2,
         type: 3}
       propertyPath: m_IsActive
@@ -1419,6 +1439,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Particles BottomRightEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531138241925246626, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
+        type: 3}
+      propertyPath: m_TagString
+      value: DeactivateWhileTraining
       objectReference: {fileID: 0}
     - target: {fileID: 7534265888879936014, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
         type: 3}
@@ -1542,6 +1567,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Particles BottomLeftEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531138241925246626, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
+        type: 3}
+      propertyPath: m_TagString
+      value: DeactivateWhileTraining
       objectReference: {fileID: 0}
     - target: {fileID: 7534265888879936014, guid: 0c4e4e36cbc28c44291bb47f5a9ca44c,
         type: 3}
