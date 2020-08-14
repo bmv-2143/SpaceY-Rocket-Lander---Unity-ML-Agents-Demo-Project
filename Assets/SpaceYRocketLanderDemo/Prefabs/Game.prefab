@@ -29,8 +29,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 10, y: 1, z: 10}
-  m_Children:
-  - {fileID: 2440079459826170209}
+  m_Children: []
   m_Father: {fileID: 2440079460148392421}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
@@ -395,6 +394,7 @@ MonoBehaviour:
   gravityAffectedObject: {fileID: 2386525154841064822}
   gravityRange: 12
   gravityStrength: 1
+  simulationConfig: {fileID: 11400000, guid: 9a5be0ac4a7907b44aa9fd3af6b9ca8b, type: 2}
 --- !u!120 &2440079459431638120
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -622,8 +622,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 10, y: 1, z: 10}
-  m_Children:
-  - {fileID: 2440079459725796645}
+  m_Children: []
   m_Father: {fileID: 2440079459524600716}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
@@ -688,85 +687,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1 &2440079459725796644
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2440079459725796645}
-  - component: {fileID: 2440079459725796651}
-  - component: {fileID: 2440079459725796650}
-  m_Layer: 8
-  m_Name: Gravity Plane
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2440079459725796645
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2440079459725796644}
-  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.24, y: 0.24, z: 0.24}
-  m_Children: []
-  m_Father: {fileID: 2440079459701710568}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
---- !u!33 &2440079459725796651
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2440079459725796644}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &2440079459725796650
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2440079459725796644}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: c0e05f0edc11abc4f87e54b632019b70, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!1 &2440079459764946818
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,7 +698,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2440079459764946819}
   m_Layer: 0
-  m_Name: Game (1)
+  m_Name: Game
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -800,85 +720,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2440079459826170208
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2440079459826170209}
-  - component: {fileID: 2440079459826170215}
-  - component: {fileID: 2440079459826170214}
-  m_Layer: 8
-  m_Name: Gravity Plane
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2440079459826170209
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2440079459826170208}
-  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.24, y: 0.24, z: 0.24}
-  m_Children: []
-  m_Father: {fileID: 2440079459204622805}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
---- !u!33 &2440079459826170215
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2440079459826170208}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &2440079459826170214
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2440079459826170208}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 18b0bdfcadf12424fb9d2d12c8a2f8dd, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!1 &2440079460049542253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1145,6 +986,7 @@ MonoBehaviour:
   gravityAffectedObject: {fileID: 2386525154841064822}
   gravityRange: 12
   gravityStrength: 1
+  simulationConfig: {fileID: 11400000, guid: 9a5be0ac4a7907b44aa9fd3af6b9ca8b, type: 2}
 --- !u!120 &2440079460203717272
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1375,7 +1217,7 @@ GameObject:
   - component: {fileID: 2440079460511238343}
   m_Layer: 8
   m_Name: Gravity Plane
-  m_TagString: Untagged
+  m_TagString: DeactivateWhileTraining
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1458,7 +1300,7 @@ GameObject:
   - component: {fileID: 2440079460779553097}
   m_Layer: 8
   m_Name: Gravity Plane
-  m_TagString: Untagged
+  m_TagString: DeactivateWhileTraining
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1807,6 +1649,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f4cc6605c60e234781f3ce7fc3ae389, type: 3}
+--- !u!54 &2386525154841064822 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 6624244251856159874, guid: 8f4cc6605c60e234781f3ce7fc3ae389,
+    type: 3}
+  m_PrefabInstance: {fileID: 8858766245925401076}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2435598465242832732 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6574220890091007656, guid: 8f4cc6605c60e234781f3ce7fc3ae389,
@@ -1816,12 +1664,6 @@ Transform:
 --- !u!1 &2439171386994806720 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6568787591704215092, guid: 8f4cc6605c60e234781f3ce7fc3ae389,
-    type: 3}
-  m_PrefabInstance: {fileID: 8858766245925401076}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &2386525154841064822 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 6624244251856159874, guid: 8f4cc6605c60e234781f3ce7fc3ae389,
     type: 3}
   m_PrefabInstance: {fileID: 8858766245925401076}
   m_PrefabAsset: {fileID: 0}
