@@ -60,7 +60,7 @@ namespace HumbleGames.SpaceY.Simulation
 
             if (totalSimulations % numLastSimsToTrackLargeSet == 0)
             {
-                EventManager.RaiseTrainingSuccessRateAchievedEvent(successRateOfLastSimsLargeSet, numLastSimsToTrackLargeSet);
+                EventManager.RaiseTrainingLargeSetStatsUpdatedEvent(successRateOfLastSimsLargeSet, numLastSimsToTrackLargeSet);
             }
         }
 

@@ -26,12 +26,12 @@ namespace HumbleGames.SpaceY
             OnBehaviourTypeChanged?.Invoke(behaviourType);
         }
 
-        public delegate void TrainingSuccessRateAchievedAction(float successRate, int numOfSimulations);
-        public static event TrainingSuccessRateAchievedAction OnTrainingSuccessRateAchieved;
+        public delegate void TrainingLargeSetStatsUpdatedAction(float successRate, int numOfSimulations);
+        public static event TrainingLargeSetStatsUpdatedAction OnTrainingLargeSetStatsUpdated;
 
-        public static void RaiseTrainingSuccessRateAchievedEvent(float successRate, int numOfSimulations)
+        public static void RaiseTrainingLargeSetStatsUpdatedEvent(float lastLargeSetSuccessRate, int numOfSimulationsInLargeSet)
         {
-            OnTrainingSuccessRateAchieved?.Invoke(successRate, numOfSimulations);
+            OnTrainingLargeSetStatsUpdated?.Invoke(lastLargeSetSuccessRate, numOfSimulationsInLargeSet);
         }
 
         // ------------------------------------------------------------------------------------------------------------

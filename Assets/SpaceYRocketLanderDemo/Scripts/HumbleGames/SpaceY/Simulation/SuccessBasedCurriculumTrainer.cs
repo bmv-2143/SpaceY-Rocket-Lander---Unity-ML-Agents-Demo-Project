@@ -41,7 +41,7 @@ namespace HumbleGames.SpaceY.Simulation
         {
             if (enableCurriculumTraining)
             {
-                EventManager.OnTrainingSuccessRateAchieved += OnTrainingSuccessRateAchieved;
+                EventManager.OnTrainingLargeSetStatsUpdated += OnTrainingSuccessRateAchieved;
             }
         }
 
@@ -49,7 +49,7 @@ namespace HumbleGames.SpaceY.Simulation
         {
             if (enableCurriculumTraining)
             {
-                EventManager.OnTrainingSuccessRateAchieved -= OnTrainingSuccessRateAchieved;
+                EventManager.OnTrainingLargeSetStatsUpdated -= OnTrainingSuccessRateAchieved;
             }
         }
 
