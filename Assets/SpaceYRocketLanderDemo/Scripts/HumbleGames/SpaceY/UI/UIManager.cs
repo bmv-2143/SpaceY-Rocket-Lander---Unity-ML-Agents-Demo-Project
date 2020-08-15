@@ -55,6 +55,9 @@ namespace HumbleGames.SpaceY.UI
         [SerializeField]
         private Text totalSuccessRateText;
 
+        [SerializeField]
+        private Text versionNumberText;
+
         private StringBuilder totalSimulationsSb;
         private StringBuilder totalSuccessRateSb;
         private StringBuilder totalSuccessSb;
@@ -81,6 +84,8 @@ namespace HumbleGames.SpaceY.UI
             totalFailSb        = new StringBuilder();
 
             OnTotalStatsUpdated(0, 0, 0, 0);
+
+            versionNumberText.text = "v." + Application.version;
         }
 
         private void OnEnable()
