@@ -29,7 +29,7 @@ The provided trained model ("Assets/SpaceYRocketLanderDemo/TrainedModels") has m
 
 ## Downloads
 
-* [SpaceY v1.0 (Windows_x86-64)](repo/blob/develop/Builds/SpaceY_v1.0_windows_x86-64.zip)
+* [SpaceY v1.0 (Windows_x86-64)](../blob/develop/Builds/SpaceY_v1.0_windows_x86-64.zip)
 
 # Controls
 "ML-Agent\Player control" button in the top right corner switches the simulation control mode to a player or the trained neural network control.
@@ -99,7 +99,7 @@ turn ON\OFF the success based curriculum training (see below) and to setup curri
 
 ### Training commands
 
-Some useful training commands [TRAINING_COMMANDS](repo/blob/develop/Assets/SpaceYRocketLanderDemo/.Training/TRAINING_COMMANDS.txt)
+Some useful training commands [TRAINING_COMMANDS](../blob/develop/Assets/SpaceYRocketLanderDemo/.Training/TRAINING_COMMANDS.txt)
 
 ### Training tips
 
