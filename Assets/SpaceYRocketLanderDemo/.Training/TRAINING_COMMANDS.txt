@@ -1,0 +1,43 @@
+--------------
+Basic commands
+--------------
+
+// list anaconda environments:
+conda env list
+
+// activate a specific environment:
+conda activate ml-agents-1.0.3
+
+------------
+How to train
+------------
+
+1. CD to diry where trainer_config.yaml is located
+
+2. Run training command. Output is stored in the "results" folder:
+mlagents-learn .\trainer_config_01.yaml --run-id space-y_01 --train
+
+2b. Run training command. Output is stored in the "results" folder (another example):
+mlagents-learn .\trainer_config_01.yaml --run-id space-y_01 --train --time-scale=10 --quality-level=0 --width=512 --height=512
+----------------------
+How to use Tensorboard
+----------------------
+
+1. Open another conda terminal
+
+2. CD to diry where trainer_config.yaml is located
+
+3.1. Run Tensorboard (for old ML-Agents versions):
+tensorboard --logdir ./results/summaries
+
+3.2. Run Tensorboard (for new ML-Agents versions, "space-y_01" is in "results" folder, see training command above):
+tensorboard --logdir ./results/space-y_01
+
+-------------------------------------------------------
+How to load and continue training ot the previous model
+-------------------------------------------------------
+// for old ML-Agents versions:
+mlagents-learn .\trainer_config_01.yaml --run-id space-y_01 --train --load
+
+// for new ML-Agents versions:
+mlagents-learn .\trainer_config_01.yaml --run-id space-y_01 --train --resume

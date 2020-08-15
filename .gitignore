@@ -9,8 +9,8 @@
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
+#/[Bb]uild/
+#/[Bb]uilds/
 /Assets/AssetStoreTools*
 sysinfo.txt
 *.pidb.meta
@@ -139,3 +139,4 @@ LightingData.asset.meta
 #/Assets/ML-Agents/
 /Assets/ML-Agents/Plugins/
 /Assets/Third Party Assets/Unity Technologies/Recorder
+/Assets/ML-Agents/Timers/
