@@ -4,9 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - ROCKET
-  - EXCLUDE_FROM_CENTER_OF_MASS
-  - TARGET_PLANET
+  - DeathZone
+  - LegLeftLandingProbe
+  - LegRightLandingProbe
+  - TargetPlanet
+  - DeactivateWhileTraining
+  - ActivateWhileTraining
+  - BasePlanet
   layers:
   - Default
   - TransparentFX

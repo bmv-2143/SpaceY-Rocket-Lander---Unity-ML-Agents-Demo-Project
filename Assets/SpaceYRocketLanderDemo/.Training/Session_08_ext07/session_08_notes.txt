@@ -1,0 +1,51 @@
+-----------------------------------------------------------------------------------------------------------------------
+This session is the extension of the training session 07 (that used success based curriculum learning)
+-----------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------
+Training Run A
+-----------------------------------------------------------------------------------------------------------------------
+Training stats (stats collected while training):
+1) SimulationStatsTracker: LARGE: totalSimulations: 1000,  successRateOver[1000]: 87,7% totalSuccesRate: 87,7%, totalSuccessCount: 877, totalFailCount: 123
+2) SimulationStatsTracker: LARGE: totalSimulations: 2000,  successRateOver[1000]: 96,2% totalSuccesRate: 91,95%, totalSuccessCount: 1839, totalFailCount: 161
+3) SimulationStatsTracker: LARGE: totalSimulations: 3000,  successRateOver[1000]: 97,2% totalSuccesRate: 93,7%, totalSuccessCount: 2811, totalFailCount: 189
+...
+
+[End - 2]  SimulationStatsTracker: LARGE: totalSimulations: 12000,  successRateOver[1000]: 97,5% totalSuccesRate: 97,00833%, totalSuccessCount: 11641, totalFailCount: 359
+[End - 1]  SimulationStatsTracker: LARGE: totalSimulations: 13000,  successRateOver[1000]: 99,3% totalSuccesRate: 97,18462%, totalSuccessCount: 12634, totalFailCount: 366
+[End]      SimulationStatsTracker: LARGE: totalSimulations: 14000,  successRateOver[1000]: 98% totalSuccesRate: 97,24286%, totalSuccessCount: 13614, totalFailCount: 386 
+
+-----------------------------------------------------------------------------------------------------------------------
+Training Run B
+-----------------------------------------------------------------------------------------------------------------------
+1) SimulationStatsTracker: LARGE: totalSimulations: 1000,  successRateOver[1000]: 98,4% totalSuccesRate: 98,4%, totalSuccessCount: 984, totalFailCount: 16
+2) SimulationStatsTracker: LARGE: totalSimulations: 2000,  successRateOver[1000]: 99% totalSuccesRate: 98,7%, totalSuccessCount: 1974, totalFailCount: 26
+3) SimulationStatsTracker: LARGE: totalSimulations: 3000,  successRateOver[1000]: 98,6% totalSuccesRate: 98,66666%, totalSuccessCount: 2960, totalFailCount: 40
+
+[End - 2] SimulationStatsTracker: LARGE: totalSimulations: 49000,  successRateOver[1000]: 98,1% totalSuccesRate: 98,72449%, totalSuccessCount: 48375, totalFailCount: 625
+[End - 1] SimulationStatsTracker: LARGE: totalSimulations: 50000,  successRateOver[1000]: 98,8% totalSuccesRate: 98,726%, totalSuccessCount: 49363, totalFailCount: 637
+[End]     SimulationStatsTracker: LARGE: totalSimulations: 51000,  successRateOver[1000]: 98,7% totalSuccesRate: 98,72549%, totalSuccessCount: 50350, totalFailCount: 650
+-----------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------
+Some trained model results (model B) (stats collected when model's file was attached to the behaviour component):
+
+1) SimulationStatsTracker: SMALL: totalSimulations: 100,  successRateOver[100]: 98% totalSuccesRate: 98%, totalSuccessCount: 98, totalFailCount: 2
+2) SimulationStatsTracker: SMALL: totalSimulations: 200,  successRateOver[100]: 99% totalSuccesRate: 98,5%, totalSuccessCount: 197, totalFailCount: 3
+3) SimulationStatsTracker: SMALL: totalSimulations: 300,  successRateOver[100]: 98% totalSuccesRate: 98,33334%, totalSuccessCount: 295, totalFailCount: 5
+4) SimulationStatsTracker: SMALL: totalSimulations: 400,  successRateOver[100]: 99% totalSuccesRate: 98,5%, totalSuccessCount: 394, totalFailCount: 6
+5) SimulationStatsTracker: SMALL: totalSimulations: 500,  successRateOver[100]: 99% totalSuccesRate: 98,6%, totalSuccessCount: 493, totalFailCount: 7
+
+-----------------------------------------------------------------------------------------------------------------------
+Timescale was set to 1 during the training:
+-----------------------------------------------------------------------------------------------------------------------
+
+Time\Physics values (Unity default)
+
+Fixed Timestep: 0.02
+Maximum Allowed Timestep: 0.1
+TimeScale: 1
+Maximum Particle Timestep: 0.03
+
+-----------------------------------------------------------------------------------------------------------------------
+
