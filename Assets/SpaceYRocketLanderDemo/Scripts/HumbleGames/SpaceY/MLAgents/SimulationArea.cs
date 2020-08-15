@@ -1,5 +1,4 @@
 ﻿using HumbleGames.SpaceY.Attributes;
-using HumbleGames.SpaceY.Simulation;
 using RoboRyanTron.QuickButtons;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -37,7 +36,6 @@ namespace HumbleGames.SpaceY.MLAgents
         [SerializeField]
         private float deathZoneHeight = 40f;
 
-        //public QuickButton UpdateDeathZones = new QuickButton("UpdateDeathZoneSizesAndPositions");
         public QuickButton UpdateDeathZones = new QuickButton(nameof(classHelper.UpdateDeathZoneSizesAndPositions));
 
         [Header("Planet Designation Area")]
@@ -181,19 +179,12 @@ namespace HumbleGames.SpaceY.MLAgents
                                       float width, float height, float borderThickness)
         {
             top.transform.localScale = new Vector3(width, borderThickness, borderThickness);
-
             top.transform.localPosition = new Vector3(0, height / 2, 0);
-
             bottom.transform.localScale = top.transform.localScale;
-
             bottom.transform.localPosition = new Vector3(0, -height / 2, 0);
-
             left.transform.localScale = new Vector3(borderThickness, height, borderThickness);
-
             left.transform.localPosition = new Vector3(-width / 2, 0, 0);
-
             right.transform.localScale = left.transform.localScale;
-
             right.transform.localPosition = new Vector3(width / 2, 0, 0);
         }
 

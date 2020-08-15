@@ -13,13 +13,11 @@ namespace HumbleGames.SpaceY.Utils
 
         public Transform m_Player; // Reference to the player's transform.
 
-
         private void Awake()
         {
             // Setting up the reference.
             //m_Player = GameObject.FindGameObjectWithTag("Player").transform;
         }
-
 
         private bool CheckXMargin()
         {
@@ -29,19 +27,16 @@ namespace HumbleGames.SpaceY.Utils
             return result;
         }
 
-
         private bool CheckYMargin()
         {
             // Returns true if the distance between the camera and the player in the y axis is greater than the y margin.
             return Mathf.Abs(transform.position.y - m_Player.position.y) > yMargin;
         }
 
-
         private void Update()
         {
             TrackPlayer();
         }
-
 
         private void TrackPlayer()
         {

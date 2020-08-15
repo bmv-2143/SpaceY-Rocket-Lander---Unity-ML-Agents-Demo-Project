@@ -34,12 +34,9 @@ namespace HumbleGames.SpaceY.Simulation
             if (IsInGravityRange(gravityAffectedObject))
             {
                 Vector3 movementDirection = transform.position - gravityAffectedObject.transform.position;
-
                 Vector3 movementDirectionNormalized =
                          new Vector3(movementDirection.x, movementDirection.y, 0).normalized;
-
                 Vector3 planetGravityForce = movementDirectionNormalized * gravityStrength;
-
                 gravityAffectedObject.AddForce(planetGravityForce, ForceMode.Acceleration);
             }
         }

@@ -21,7 +21,6 @@ namespace HumbleGames.SpaceY.Simulation
         private SuccessRateToTrainingParams[] successRatesToParams;
 
         private SimulationArea[] simulationAreas;
-
         private int activeTrainingParamsIndex;
 
         private void Awake()

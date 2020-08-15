@@ -24,9 +24,7 @@ namespace HumbleGames.SpaceY.Simulation
         private int rows;
 
         public QuickButton DeployEnvironments = new QuickButton(nameof(classHandle.DeployGameEnvironments));
-
         private GameObject[,] deployedEnvironments;
-
         private const GameEnvironmentDeployer classHandle = null;
 
         private void Awake()
