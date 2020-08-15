@@ -309,7 +309,7 @@ MonoBehaviour:
     m_Top: 8
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 16
+  m_Spacing: 32
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -634,7 +634,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &432861323
 MonoBehaviour:
@@ -668,7 +668,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Fail: 6'
+  m_Text: 'Fail: '
 --- !u!222 &432861324
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -820,7 +820,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'SuccessRate: 50%'
+  m_Text: 'Success Rate: '
 --- !u!222 &612556732
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1532,7 +1532,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 150, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1034053900
 MonoBehaviour:
@@ -1566,7 +1566,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Success: 6'
+  m_Text: 'Success: '
 --- !u!222 &1034053901
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1896,7 +1896,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 120, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1400000938
 MonoBehaviour:
@@ -1930,7 +1930,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Total: 12'
+  m_Text: 'Total: '
 --- !u!222 &1400000939
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2470,6 +2470,10 @@ MonoBehaviour:
   autoHideTextDelay: 1.5
   successTextView: {fileID: 1525874715}
   failureTextView: {fileID: 345649396}
+  totalSimulationsText: {fileID: 1400000938}
+  totalSuccessText: {fileID: 1034053900}
+  totalFailText: {fileID: 432861323}
+  totalSuccessRateText: {fileID: 612556731}
 --- !u!1 &2007055998
 GameObject:
   m_ObjectHideFlags: 0

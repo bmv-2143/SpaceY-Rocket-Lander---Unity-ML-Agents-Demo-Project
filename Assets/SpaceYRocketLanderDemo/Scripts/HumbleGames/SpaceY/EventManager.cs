@@ -34,6 +34,14 @@ namespace HumbleGames.SpaceY
             OnTrainingLargeSetStatsUpdated?.Invoke(lastLargeSetSuccessRate, numOfSimulationsInLargeSet);
         }
 
+        public delegate void TrainingTotalStatsUpdatedAction(int totalSimulations, int totalSuccess, int totalFailures, float successRate);
+        public static event TrainingTotalStatsUpdatedAction OnTrainingTotalStatsUpdated;
+
+        public static void RaiseTrainingTotalStatsUpdatedEvent(int totalSimulations, int totalSuccess, int totalFailures, float successRate)
+        {
+            OnTrainingTotalStatsUpdated?.Invoke(totalSimulations, totalSuccess, totalFailures, successRate);
+        }
+
         // ------------------------------------------------------------------------------------------------------------
         //                                          Rocket Events
         // ------------------------------------------------------------------------------------------------------------

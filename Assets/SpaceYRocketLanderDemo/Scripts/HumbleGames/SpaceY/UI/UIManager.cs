@@ -1,6 +1,8 @@
 ﻿using HumbleGames.SpaceY.MLAgents;
 using HumbleGames.SpaceY.Simulation;
+using System;
 using System.Collections;
+using System.Text;
 using Unity.MLAgents.Policies;
 using UnityEngine;
 using UnityEngine.UI;
@@ -41,10 +43,44 @@ namespace HumbleGames.SpaceY.UI
         [SerializeField]
         private Text failureTextView;
 
+        [SerializeField]
+        private Text totalSimulationsText;
+        
+        [SerializeField]
+        private Text totalSuccessText;
+        
+        [SerializeField]
+        private Text totalFailText;
+        
+        [SerializeField]
+        private Text totalSuccessRateText;
+
+        private StringBuilder totalSimulationsSb;
+        private StringBuilder totalSuccessRateSb;
+        private StringBuilder totalSuccessSb;
+        private StringBuilder totalFailSb;
+
+        private string totalSimulationsPrefix;
+        private string totalSuccessPrefix;
+        private string totalFailPrefix;
+        private string totalSuccessRatePrefix;
+
         private void Awake()
         {
             successTextView.gameObject.SetActive(false);
             failureTextView.gameObject.SetActive(false);
+
+            totalSimulationsPrefix = totalSimulationsText.text;
+            totalSuccessPrefix     = totalSuccessText.text;
+            totalFailPrefix     = totalFailText.text;
+            totalSuccessRatePrefix     = totalSuccessRateText.text;
+
+            totalSimulationsSb = new StringBuilder();
+            totalSuccessRateSb = new StringBuilder();
+            totalSuccessSb     = new StringBuilder();
+            totalFailSb        = new StringBuilder();
+
+            OnTotalStatsUpdated(0, 0, 0, 0);
         }
 
         private void OnEnable()
@@ -54,6 +90,7 @@ namespace HumbleGames.SpaceY.UI
                 EventManager.OnSimulationEnd += OnSimulationEnd;
             }
 
+            EventManager.OnTrainingTotalStatsUpdated += OnTotalStatsUpdated;
             StartCoroutine(ShowThenHideObject(simulationTitle, autoHideTextDelay));
         }
 
@@ -63,6 +100,8 @@ namespace HumbleGames.SpaceY.UI
             {
                 EventManager.OnSimulationEnd -= OnSimulationEnd;
             }
+            
+            EventManager.OnTrainingTotalStatsUpdated -= OnTotalStatsUpdated;
         }
 
         public void OnButtonSwitchBehaviorType()
@@ -114,6 +153,19 @@ namespace HumbleGames.SpaceY.UI
             {
                 ShowEndGameText(failureTextView, GetFailureMessage(status));
             }
+        }
+
+        private void OnTotalStatsUpdated(int totalSimulations, int totalSuccess, int totalFailures, float totalSuccessRate)
+        {
+            totalSimulationsSb.Clear();
+            totalSuccessSb.Clear();
+            totalFailSb.Clear();
+            totalSuccessRateSb.Clear();
+
+            totalSimulationsText.text = totalSimulationsSb.Append(totalSimulationsPrefix).Append(totalSimulations).ToString();
+            totalSuccessText.text = totalSuccessSb.Append(totalSuccessPrefix).Append(totalSuccess).ToString();
+            totalFailText.text = totalFailSb.Append(totalFailPrefix).Append(totalFailures).ToString();
+            totalSuccessRateText.text = totalSuccessRateSb.Append(totalSuccessRatePrefix).Append(totalSuccessRate).ToString();
         }
 
         private void ShowEndGameText(Text textView, string message)

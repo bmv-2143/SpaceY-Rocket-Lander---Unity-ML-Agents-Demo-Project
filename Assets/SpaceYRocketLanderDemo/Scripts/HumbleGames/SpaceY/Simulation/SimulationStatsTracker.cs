@@ -62,6 +62,8 @@ namespace HumbleGames.SpaceY.Simulation
             {
                 EventManager.RaiseTrainingLargeSetStatsUpdatedEvent(successRateOfLastSimsLargeSet, numLastSimsToTrackLargeSet);
             }
+
+            EventManager.RaiseTrainingTotalStatsUpdatedEvent(totalSimulations, totalSuccessCount, totalFailCount, totalSuccessRate);
         }
 
         private float CalculateSuccessRateOfLastSimsSmallSet()
