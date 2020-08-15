@@ -162,10 +162,14 @@ namespace HumbleGames.SpaceY.UI
             totalFailSb.Clear();
             totalSuccessRateSb.Clear();
 
-            totalSimulationsText.text = totalSimulationsSb.Append(totalSimulationsPrefix).Append(totalSimulations).ToString();
+            totalSimulationsText.text = 
+                totalSimulationsSb.Append(totalSimulationsPrefix).Append(totalSimulations).ToString();
             totalSuccessText.text = totalSuccessSb.Append(totalSuccessPrefix).Append(totalSuccess).ToString();
             totalFailText.text = totalFailSb.Append(totalFailPrefix).Append(totalFailures).ToString();
-            totalSuccessRateText.text = totalSuccessRateSb.Append(totalSuccessRatePrefix).Append(totalSuccessRate).ToString();
+            totalSuccessRateText.text = totalSuccessRateSb.
+                                        Append(totalSuccessRatePrefix).
+                                        Append(Math.Round(totalSuccessRate, 2)).
+                                        Append("%").ToString();
         }
 
         private void ShowEndGameText(Text textView, string message)
