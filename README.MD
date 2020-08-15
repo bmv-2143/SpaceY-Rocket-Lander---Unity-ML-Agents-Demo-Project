@@ -21,7 +21,7 @@ here:
 of the rocket body.
 - The planets have gravity that acts in their vicinity
 
-- The rocket must not leave the rectangular simulation area. It is a loss if it leaves the simulation area.
+- The rocket must not leave the rectangular simulation area. It is a loss if it leaves it.
 - The rocket can touch the planets only with its legs, otherwise it is a loss.
 - The rocket must touch the second planet with both of its legs and keep touching it for a while for a successful landing.
 
@@ -32,7 +32,7 @@ The provided trained model ("Assets/SpaceYRocketLanderDemo/TrainedModels") has m
 * [SpaceY v1.0 (Windows_x86-64)](repo/blob/develop/Builds/SpaceY_v1.0_windows_x86-64.zip)
 
 # Controls
-"ML-Agent\Player control" button in the top right corner switches the simulation controll mode to a player or the trained neural network control.
+"ML-Agent\Player control" button in the top right corner switches the simulation control mode to a player or the trained neural network control.
 
 In "Player control" mode you can control the rocket with the following keys:
 
@@ -52,7 +52,7 @@ SpaceY v1.0 supports:
 * Unity Editor 2019.4.6f1
 * Unity ML-Agents Package v1.0.3
 
-It might work with later Unity Editor and ML-Agents Package versions, but this is not guarnteed.
+It might work with later Unity Editor and ML-Agents Package versions, but this is not guaranteed.
 
 ## Training environment setup
 
@@ -70,30 +70,30 @@ The ".Training" folder is not displayed in Unity Editor (use your file manager t
 
 ### Setup training
 
-1. Select the "Default" Behaviour Type  in "Assets/SpaceYRocketLanderDemo/Prefabs/Rocket.prefab" Behaviour Parameters (script component).
+1. Select the "Default" Behavior Type  in "Assets/SpaceYRocketLanderDemo/Prefabs/Rocket.prefab" Behavior Parameters (script component).
 
 2. Select a Simulation Mode = "Training" in "Assets/SpaceYRocketLanderDemo/ScriptableObjects/SimulationConfig.asset"
 
-   In Demo mode particles and some other objects\components that make a simulation look better are enabled.   
+   In "Demo" mode particles and some other objects\components that make a simulation look better are enabled.   
 
-   In Training mode the mentioned above visual improvement objects\compoents are disabled.
+   In "Training" mode the mentioned above visual improvement objects\components are disabled.
 
 3. You can use "Simulations object \ Game Environment Deployer" script in RocketLander scene to assist in cloning of Game Simulation Training Environments
 
 4. You can use "Simulations object \ Success Based Curriculum Trainer" script in RocketLander scene to
 turn ON\OFF the success based curriculum training (see below) and to setup curriculum params.
 
-5. Issue a taining command and press Play button in Unity Editor.
+5. Issue a training command and press Play button in Unity Editor.
 
 ### Start demo mode
 
-1. Select the "Heuristic only" Behaviour Type  in "Assets/SpaceYRocketLanderDemo/Prefabs/Rocket.prefab" Behaviour Parameters (script component).
+1. Select the "Heuristic only" Behavior Type  in "Assets/SpaceYRocketLanderDemo/Prefabs/Rocket.prefab" Behavior Parameters (script component).
 
 2. Select "Demo" Simulation Mode in "Assets/SpaceYRocketLanderDemo/ScriptableObjects/SimulationConfig.asset"
 
 3. Press Play button in Unity Editor
 
-### Success based Curriculum learing
+### Success based Curriculum learning
 
 "Simulations object \ Success Based Curriculum Trainer" script in RocketLander scene can turn ON\OFF success based curriculum training - when a model reaches a specified success rate (e.g. more than 85%), it switches next set of curriculum params.
 
@@ -103,4 +103,4 @@ Some useful training commands [TRAINING_COMMANDS](repo/blob/develop/Assets/Space
 
 ### Training tips
 
-Afters some expirements it seems that the fastest way to train (on my hardware: Intel Core i5-3570K (2012), Nvidia RTX 2070 Super) is to train using CPU instead of GPU, use TimeScale=1 with a large number of training environments >= 100. Training at a higher TimeScale values with lower number of simulation environments and\or using GPU instead of CPU produced worse results.
+Afters some experiments it seems that the fastest way to train (on my hardware: Intel Core i5-3570K (2012), Nvidia RTX 2070 Super) is to train using CPU instead of GPU, use TimeScale=1 with a large number of training environments >= 100. Training at a higher TimeScale values with lower number of simulation environments and\or using GPU instead of CPU produced worse results.
